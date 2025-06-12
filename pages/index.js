@@ -200,7 +200,7 @@ const AIEngineerWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-2xl font-bold bg-gradient-to-r from-yellow-100 to-yellow-100 bg-clip-text text-transparent flex items-center">
-              <img
+              <Image
                 src="/Artwork.png"
                 alt="Parker Case Logo"
                 className="inline-block h-15 w-24 mr-2"
