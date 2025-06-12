@@ -15,6 +15,7 @@ import {
   Users,
   Star,
   ArrowRight,
+  Heart,
   Menu,
   X,
 } from "lucide-react";
@@ -35,11 +36,34 @@ const AIEngineerWebsite = () => {
     {
       title: "AI Personal Stylist",
       status: "Patent Pending",
-description:
+      description:
         "Revolutionary cross-site personalization system deployed as browser extension and injectable widget. Features computer vision wardrobe analysis, celebrity styling database integration, real-time trend ingestion, and modular virtual try-on capabilities. Commission-based retailer model enables seamless partnerships while maintaining user privacy through encrypted profile synchronization across domains.",
-      tech: ["TensorFlow.js", "Computer Vision", "WebSockets", "Browser Extensions", "Privacy Architecture"],
+      tech: [
+        "TensorFlow.js",
+        "Computer Vision",
+        "WebSockets",
+        "Browser Extensions",
+        "Privacy Architecture",
+      ],
       icon: <Star className="w-6 h-6" />,
       gradient: "from-red-500 to-pink-500",
+    },
+    {
+      title: "Multi-Faceted AI Grocery Assistant",
+      status: "5 Patents Pending",
+      description:
+        "Breakthrough medical nutrition therapy system combining multi-criteria optimization (health + budget + convenience) with conversational meal planning and cross-retailer integration. Features adaptive learning algorithms, health condition-specific recipe modification, drug-food interaction monitoring, family history-based disease prevention, and intelligent ingredient substitution. Transforms grocery shopping into personalized medical nutrition therapy with predictive shopping intelligence and clinical guideline integration.",
+      tech: [
+        "Medical AI",
+        "Multi-Criteria Optimization",
+        "Natural Language Processing",
+        "Cross-Retailer APIs",
+        "Behavioral Learning",
+        "Clinical Integration",
+        "Browser Extensions",
+      ],
+      icon: <Heart className="w-6 h-6" />,
+      gradient: "from-green-500 to-blue-600",
     },
     {
       title: "AI Knowledge Dashboard",
@@ -51,11 +75,17 @@ description:
       gradient: "from-pink-500 to-cyan-400",
     },
     {
-      title: "EcoScraper Pro",
+      title: "Conservatron 12000",
       status: "Production Ready",
       description:
-        "Advanced wildlife crime monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, Mercari, and other online marketplaces. Utilizes machine learning to identify suspicious listings, generates automated reports for law enforcement, and supports anti-poaching organizations with real-time marketplace surveillance.",
-      tech: ["Python", "Selenium", "NLP", "Image Recognition", "Legal Compliance APIs"],
+        "Advanced wildlife crime monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, Poshmark, and other online marketplaces. Utilizes machine learning to identify suspicious listings, generates automated reports for law enforcement, and supports anti-poaching organizations with real-time marketplace surveillance.",
+      tech: [
+        "Python",
+        "Selenium",
+        "NLP",
+        "Image Recognition",
+        "Legal Compliance APIs",
+      ],
       icon: <Search className="w-6 h-6" />,
       gradient: "from-emerald-700 to-blue-300",
     },
@@ -164,13 +194,13 @@ description:
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 via-blue-700 to-orange-600 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-red-200 via-blue-800 to-orange-400 text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-white">
-              <Image
+            <div className="text-2xl font-bold bg-gradient-to-r from-yellow-100 to-yellow-100 bg-clip-text text-transparent flex items-center">
+              <img
                 src="/Artwork.png"
                 alt="Parker Case Logo"
                 className="inline-block h-15 w-24 mr-2"
@@ -241,7 +271,7 @@ description:
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-red-200 to-blue-200 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-100 bg-clip-text text-transparent">
             Parker Case
           </h1>
 
@@ -327,7 +357,7 @@ description:
 
               <a
                 href="/Resume.pdf"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-400 to-blue-400 px-6 py-3 rounded-lg hover:scale-105 transition-transform"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-500 px-6 py-3 rounded-lg hover:scale-105 transition-transform"
                 download="Parker_Case_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
@@ -365,7 +395,9 @@ description:
               <div className="text-gray-300">Patent-Pending Innovations</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-100 mb-2">100+</div>
+              <div className="text-4xl font-bold text-orange-100 mb-2">
+                100+
+              </div>
               <div className="text-gray-300">Platform Users</div>
             </div>
             <div className="text-center">
@@ -603,7 +635,7 @@ description:
 
                 <button
                   onClick={handleFormSubmit}
-                  className="w-full bg-gradient-to-r from-blue-400 to-blue-400 py-3 rounded-lg font-semibold hover:scale-105 transition-transform"
+                  className="w-full bg-gradient-to-r from-blue-500 to-blue-500 py-3 rounded-lg font-semibold hover:scale-105 transition-transform"
                 >
                   Send Message
                 </button>
@@ -624,7 +656,7 @@ description:
                   href="https://calendly.com/parkere-case/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-400 to-blue-400 px-6 py-3 rounded-lg hover:scale-105 transition-transform"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-500 px-6 py-3 rounded-lg hover:scale-105 transition-transform"
                 >
                   <Calendar className="w-5 h-5" />
                   Schedule on Calendly

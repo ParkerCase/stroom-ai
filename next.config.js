@@ -2,11 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    logging: {
-      level: "verbose",
-    },
-  },
   images: {
     domains: ["parkercase.co"],
   },
