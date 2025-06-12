@@ -391,7 +391,7 @@ const AIEngineerWebsite = () => {
 
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-100 mb-2">2+</div>
+              <div className="text-4xl font-bold text-orange-100 mb-2">6+</div>
               <div className="text-gray-300">Patent-Pending Innovations</div>
             </div>
             <div className="text-center">
