@@ -66,7 +66,7 @@ const AIEngineerWebsite = () => {
       gradient: "from-green-500 to-blue-600",
     },
     {
-      title: "AI Knowledge Dashboard",
+      title: "MERIDIAN",
       status: "Potentially Patentable",
       description:
         "Intelligent chatbot dashboard that leverages natural language processing to provide contextual knowledge management and automated responses across multiple domains including storage providers, CRM's, and more! Features multi-domain expertise with a very high query resolution rate and integrates with many enterprise systems.",
@@ -78,7 +78,7 @@ const AIEngineerWebsite = () => {
       title: "Conservatron 12000",
       status: "Production Ready",
       description:
-        "Advanced wildlife crime monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, Poshmark, and other online marketplaces. Utilizes machine learning to identify suspicious listings, generates automated reports for law enforcement, and supports anti-poaching organizations with real-time marketplace surveillance.",
+        "Advanced wildlife crime monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, MercadoLibre, OLX, and other online marketplaces. Utilizes machine learning to identify suspicious listings, generates automated reports for law enforcement, and supports anti-poaching organizations with real-time marketplace surveillance.",
       tech: [
         "Python",
         "Selenium",
@@ -484,10 +484,13 @@ const AIEngineerWebsite = () => {
                   ))}
                 </div>
 
-                <button className="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors">
+                <a
+                  href="#contact"
+                  className="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors"
+                >
                   <ExternalLink className="w-4 h-4" />
-                  View Demo
-                </button>
+                  Book Demo
+                </a>
               </div>
             ))}
           </div>
@@ -509,9 +512,9 @@ const AIEngineerWebsite = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                &quot;Parker&apos;s AI knowledge dashboard revolutionized our
-                data management. The patent-pending technology is truly
-                innovative and brought all insight to our fingertips.&quot;
+                &quot;Parker&apos;s MERIDIAN revolutionized our data management.
+                The patent-pending technology is truly innovative and brought
+                all insight to our fingertips.&quot;
               </p>
               <div className="font-semibold text-slate-400">
                 - Rejuvatek Medical Marketing Director
@@ -610,10 +613,8 @@ const AIEngineerWebsite = () => {
                   >
                     <option value="">Select Project of Interest</option>
                     <option value="ai-stylist">AI Personal Stylist</option>
-                    <option value="knowledge-dashboard">
-                      AI Knowledge Dashboard
-                    </option>
-                    <option value="eco-scraper">EcoScraper Pro</option>
+                    <option value="knowledge-dashboard">MERIDIAN</option>
+                    <option value="eco-scraper">Conservatron 12000</option>
                     <option value="mental-space">MentalSpace Platform</option>
                     <option value="custom">Custom AI Solution</option>
                     <option value="consultation">General Consultation</option>
