@@ -1,6 +1,8 @@
 // pages/index.js - Fixed Red/Blue Theme Version
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link"; // Add this import at the top of your file
+
 import {
   ChevronDown,
   Github,
@@ -210,20 +212,86 @@ const AIEngineerWebsite = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {["Home", "About", "Projects", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className={`transition-colors hover:text-red-400 ${
-                    activeSection === item.toLowerCase()
-                      ? "text-red-400"
-                      : "text-white"
-                  }`}
-                >
-                  {item}
-                </a>
-              ))}
+              <a
+                href="#home"
+                className={`transition-colors hover:text-red-400 ${
+                  activeSection === "home" ? "text-red-400" : "text-white"
+                }`}
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                className={`transition-colors hover:text-red-400 ${
+                  activeSection === "about" ? "text-red-400" : "text-white"
+                }`}
+              >
+                About
+              </a>
+              <Link
+                href="/about"
+                className="transition-colors hover:text-red-400 text-white"
+              >
+                Full Story
+              </Link>
+              <a
+                href="#projects"
+                className={`transition-colors hover:text-red-400 ${
+                  activeSection === "projects" ? "text-red-400" : "text-white"
+                }`}
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className={`transition-colors hover:text-red-400 ${
+                  activeSection === "contact" ? "text-red-400" : "text-white"
+                }`}
+              >
+                Contact
+              </a>
             </div>
+
+            {/* Mobile Navigation - also update this section */}
+            {isMenuOpen && (
+              <div className="md:hidden py-4 border-t border-white/10">
+                <a
+                  href="#home"
+                  className="block py-2 text-white hover:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </a>
+                <a
+                  href="#about"
+                  className="block py-2 text-white hover:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </a>
+                <Link
+                  href="/about"
+                  className="block py-2 text-white hover:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Full Story
+                </Link>
+                <a
+                  href="#projects"
+                  className="block py-2 text-white hover:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Projects
+                </a>
+                <a
+                  href="#contact"
+                  className="block py-2 text-white hover:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </a>
+              </div>
+            )}
 
             {/* Mobile menu button */}
             <button
@@ -363,6 +431,15 @@ const AIEngineerWebsite = () => {
                 <Download className="w-5 h-5" />
                 Download Resume
               </a>
+              <div className="mt-8">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 border border-white/30 px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  Read My Full Story
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
 
             <div>
