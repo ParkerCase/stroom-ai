@@ -76,7 +76,7 @@ const AboutPage = () => {
               The Inventor Behind the Innovation
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              I`&apos;`m Parker Case, an AI Software Engineer and inventor based
+              I&apos;m Parker Case, an AI Software Engineer and inventor based
               in New York City, driven by a singular mission: transforming
               complex real-world challenges into elegant AI solutions that make
               a meaningful impact.
@@ -121,7 +121,7 @@ const AboutPage = () => {
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Today, I apply that same creative vision to AI development, but
-                instead of telling stories on screen, I`&apos;`m building
+                instead of telling stories on screen, I&apos;m building
                 intelligent systems that write the future. Each project combines
                 technical excellence with human-centered design.
               </p>
@@ -145,8 +145,8 @@ const AboutPage = () => {
                 Patent-Pending Innovation
               </h3>
               <p className="text-gray-300 text-sm">
-                6+ patent applications in progress. I don`&apos;`t just build
-                AI—I pioneer new approaches that push boundaries.
+                6+ patent applications in progress. I don&apos;t just build AI—I
+                pioneer new approaches that push boundaries.
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
@@ -281,7 +281,7 @@ const AboutPage = () => {
                 For Non-Profits
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                I`&apos;`m passionate about using AI for social good. My
+                I&apos;m passionate about using AI for social good. My
                 conservation and mental health projects demonstrate my
                 commitment to creating positive impact.
               </p>
@@ -313,14 +313,14 @@ const AboutPage = () => {
       <section className="py-20 px-4 bg-black/20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-white">
-            Let`&apos;`s Build the Future Together
+            Let&apos;s Build the Future Together
           </h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Whether you`&apos;`re looking to transform your business with custom
+            Whether you&apos;re looking to transform your business with custom
             AI solutions, license cutting-edge technology, or explore
-            partnership opportunities, I`&apos;`m ready to bring the same
-            passion and precision that earned me patent recognition to your next
-            AI challenge.
+            partnership opportunities, I&apos;m ready to bring the same passion
+            and precision that earned me patent recognition to your next AI
+            challenge.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -344,10 +344,10 @@ const AboutPage = () => {
 
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <blockquote className="text-xl italic text-gray-300 mb-4">
-              `&quot;`The best AI solutions don`&apos;`t just process data—they
+              &quot;The best AI solutions don&apos;t just process data—they
               understand context, respect privacy, and enhance human potential.
-              That`&apos;`s the standard I hold myself to with every
-              project.`&quot;`
+              That&apos;s the standard I hold myself to with every
+              project.&quot;
             </blockquote>
             <cite className="text-red-400 font-semibold">— Parker Case</cite>
           </div>
