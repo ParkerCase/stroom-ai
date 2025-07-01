@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-200 via-blue-800 to-orange-400 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,9 +77,9 @@ const AboutPage = () => {
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               I&apos;m Parker Case, an AI Software Engineer and inventor based
-              in New York City, driven by a singular mission: transforming
-              complex real-world challenges into elegant AI solutions that make
-              a meaningful impact.
+              in New York City, driven by the mission of transforming complex
+              real-world challenges into elegant AI solutions that make a
+              meaningful impact.
             </p>
           </div>
         </div>
@@ -145,8 +145,8 @@ const AboutPage = () => {
                 Patent-Pending Innovation
               </h3>
               <p className="text-gray-300 text-sm">
-                6+ patent applications in progress. I don&apos;t just build AI—I
-                pioneer new approaches that push boundaries.
+                6+ patent applications in progress. I&apos;m not just building
+                AI - I invent new approaches in an effort to push boundaries.
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
