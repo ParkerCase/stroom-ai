@@ -10,9 +10,7 @@ import {
   Calendar,
   Mail,
   Shield,
-  Zap,
   CheckCircle,
-  ArrowRight,
   Film,
 } from "lucide-react";
 import Image from "next/image";
@@ -87,8 +85,10 @@ const AboutPage = () => {
             About Stroom AI
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We're pioneering the future of enterprise AI with patent-pending innovations that transform how businesses operate, 
-            making intelligent automation accessible, reliable, and impactful across industries.
+            We&apos;re pioneering the future of enterprise AI with
+            patent-pending innovations that transform how businesses operate,
+            making intelligent automation accessible, reliable, and impactful
+            across industries.
           </p>
         </div>
       </section>
@@ -102,12 +102,16 @@ const AboutPage = () => {
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-gray-900">
+                  Our Mission
+                </h2>
               </div>
               <p className="text-gray-600 text-lg leading-relaxed">
-                To democratize artificial intelligence for enterprises by building patent-pending innovations 
-                that are not just powerful, but practical, secure, and transformative. We believe AI should 
-                enhance human potential while delivering measurable business value.
+                To democratize artificial intelligence for enterprises by
+                building patent-pending innovations that are not just powerful,
+                but practical, secure, and transformative. We believe AI should
+                enhance human potential while delivering measurable business
+                value.
               </p>
             </div>
 
@@ -119,9 +123,11 @@ const AboutPage = () => {
                 <h2 className="text-3xl font-bold text-gray-900">Our Vision</h2>
               </div>
               <p className="text-gray-600 text-lg leading-relaxed">
-                A world where breakthrough AI innovations solve humanity's most pressing challenges—from healthcare 
-                and conservation to personalized experiences and knowledge management—while maintaining the highest 
-                standards of privacy and ethical responsibility.
+                A world where breakthrough AI innovations solve humanity&apos;s
+                most pressing challenges—from healthcare and conservation to
+                personalized experiences and knowledge management—while
+                maintaining the highest standards of privacy and ethical
+                responsibility.
               </p>
             </div>
           </div>
@@ -132,10 +138,14 @@ const AboutPage = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-gray-900">Our Approach</h2>
+            <h2 className="text-5xl font-bold mb-6 text-gray-900">
+              Our Approach
+            </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We combine cutting-edge AI research with practical business expertise to deliver patent-pending solutions 
-              that don't just work—they excel in real-world environments and deliver measurable impact.
+              We combine cutting-edge AI research with practical business
+              expertise to deliver patent-pending solutions that don&apos;t just
+              work—they excel in real-world environments and deliver measurable
+              impact.
             </p>
           </div>
 
@@ -144,10 +154,13 @@ const AboutPage = () => {
               <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 w-fit mx-auto mb-6 shadow-lg">
                 <Code className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Innovation First</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Innovation First
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                We don't just implement existing solutions—we pioneer new approaches with 6+ patent-pending 
-                innovations that push the boundaries of what's possible in AI.
+                We don&apos;t just implement existing solutions—we pioneer new
+                approaches with 6+ patent-pending innovations that push the
+                boundaries of what&apos;s possible in AI.
               </p>
             </div>
 
@@ -155,10 +168,13 @@ const AboutPage = () => {
               <div className="p-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 w-fit mx-auto mb-6 shadow-lg">
                 <Shield className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Privacy & Security</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Privacy & Security
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                Every solution is built with privacy-first design principles and enterprise-grade security 
-                standards from day one, ensuring your data remains protected and compliant.
+                Every solution is built with privacy-first design principles and
+                enterprise-grade security standards from day one, ensuring your
+                data remains protected and compliant.
               </p>
             </div>
 
@@ -166,10 +182,13 @@ const AboutPage = () => {
               <div className="p-4 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 w-fit mx-auto mb-6 shadow-lg">
                 <Users className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Partnership Focus</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Partnership Focus
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                We work as an extension of your team, understanding your unique challenges and building 
-                solutions that integrate seamlessly with your existing workflows and deliver real results.
+                We work as an extension of your team, understanding your unique
+                challenges and building solutions that integrate seamlessly with
+                your existing workflows and deliver real results.
               </p>
             </div>
           </div>
@@ -180,9 +199,12 @@ const AboutPage = () => {
       <section className="py-20 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-gray-900">Leadership</h2>
+            <h2 className="text-5xl font-bold mb-6 text-gray-900">
+              Leadership
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Meet the award-winning inventor behind Stroom AI's breakthrough approach to enterprise artificial intelligence.
+              Meet the award-winning inventor behind Stroom AI&apos;s
+              breakthrough approach to enterprise artificial intelligence.
             </p>
           </div>
 
@@ -196,13 +218,21 @@ const AboutPage = () => {
                 </div>
 
                 <div className="flex-1 text-center lg:text-left">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">Parker Case</h3>
-                  <p className="text-xl text-blue-700 mb-6 font-bold">Founder & Chief Technology Officer</p>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                    Parker Case
+                  </h3>
+                  <p className="text-xl text-blue-700 mb-6 font-bold">
+                    Founder & Chief Technology Officer
+                  </p>
                   <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                    With 6+ patent-pending AI innovations and a proven track record of building production-ready systems 
-                    serving real users, Parker leads Stroom AI with a vision of making breakthrough artificial intelligence 
-                    accessible to enterprises worldwide. His unique combination of technical expertise, creative storytelling 
-                    (3+ film festival awards), and business acumen drives the company's mission to transform how businesses leverage AI.
+                    With 6+ patent-pending AI innovations and a proven track
+                    record of building production-ready systems serving real
+                    users, Parker leads Stroom AI with a vision of making
+                    breakthrough artificial intelligence accessible to
+                    enterprises worldwide. His unique combination of technical
+                    expertise, creative storytelling (3+ film festival awards),
+                    and business acumen drives the company's mission to
+                    transform how businesses leverage AI.
                   </p>
 
                   <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
@@ -230,10 +260,13 @@ const AboutPage = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-gray-900">Why Choose Stroom AI?</h2>
+            <h2 className="text-5xl font-bold mb-6 text-gray-900">
+              Why Choose Stroom AI?
+            </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We're not just another AI company—we're proven inventors with breakthrough technologies 
-              and a track record of transforming complex challenges into production-ready solutions.
+              We're not just another AI company—we're proven inventors with
+              breakthrough technologies and a track record of transforming
+              complex challenges into production-ready solutions.
             </p>
           </div>
 
@@ -244,10 +277,13 @@ const AboutPage = () => {
                   <Award className="w-7 h-7 text-blue-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Innovation</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Proven Innovation
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    6+ patent-pending technologies and production systems serving real users demonstrate 
-                    our commitment to breakthrough solutions that deliver measurable results.
+                    6+ patent-pending technologies and production systems
+                    serving real users demonstrate our commitment to
+                    breakthrough solutions that deliver measurable results.
                   </p>
                 </div>
               </div>
@@ -257,10 +293,13 @@ const AboutPage = () => {
                   <Target className="w-7 h-7 text-orange-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Enterprise-Grade Performance</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Enterprise-Grade Performance
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    MERIDIAN reduces research time from hours to 45 minutes maximum. Our systems deliver 
-                    quantifiable efficiency gains and ROI for enterprise clients.
+                    MERIDIAN reduces research time from hours to 45 minutes
+                    maximum. Our systems deliver quantifiable efficiency gains
+                    and ROI for enterprise clients.
                   </p>
                 </div>
               </div>
@@ -270,10 +309,13 @@ const AboutPage = () => {
                   <CheckCircle className="w-7 h-7 text-green-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Rapid Implementation</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Rapid Implementation
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Get from concept to production quickly with our streamlined development process 
-                    and proven integration methodologies across multiple industries.
+                    Get from concept to production quickly with our streamlined
+                    development process and proven integration methodologies
+                    across multiple industries.
                   </p>
                 </div>
               </div>
@@ -285,10 +327,13 @@ const AboutPage = () => {
                   <Code className="w-7 h-7 text-purple-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Full-Stack Expertise</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Full-Stack Expertise
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    From AI research to production deployment, we handle every aspect of your intelligent 
-                    system with comprehensive technical and business expertise.
+                    From AI research to production deployment, we handle every
+                    aspect of your intelligent system with comprehensive
+                    technical and business expertise.
                   </p>
                 </div>
               </div>
@@ -298,10 +343,13 @@ const AboutPage = () => {
                   <Heart className="w-7 h-7 text-pink-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Cross-Industry Impact</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Cross-Industry Impact
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Our solutions span healthcare, e-commerce, conservation, and knowledge management, 
-                    with proven results and satisfied clients across multiple verticals.
+                    Our solutions span healthcare, e-commerce, conservation, and
+                    knowledge management, with proven results and satisfied
+                    clients across multiple verticals.
                   </p>
                 </div>
               </div>
@@ -311,10 +359,13 @@ const AboutPage = () => {
                   <Film className="w-7 h-7 text-indigo-700" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Creative Excellence</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Creative Excellence
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    3+ film festival awards demonstrate our ability to combine technical innovation 
-                    with compelling user experiences and creative problem-solving.
+                    3+ film festival awards demonstrate our ability to combine
+                    technical innovation with compelling user experiences and
+                    creative problem-solving.
                   </p>
                 </div>
               </div>
@@ -326,10 +377,14 @@ const AboutPage = () => {
       {/* Call to Action */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-8 text-gray-900">Ready to Transform Your Business?</h2>
+          <h2 className="text-5xl font-bold mb-8 text-gray-900">
+            Ready to Transform Your Business?
+          </h2>
           <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-            Join the growing number of enterprises that trust Stroom AI to deliver breakthrough innovations 
-            that drive real business value. Let's discuss how our patent-pending technologies can help you achieve your goals.
+            Join the growing number of enterprises that trust Stroom AI to
+            deliver breakthrough innovations that drive real business value.
+            Let's discuss how our patent-pending technologies can help you
+            achieve your goals.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -371,7 +426,8 @@ const AboutPage = () => {
             </div>
           </div>
           <p className="text-gray-300 text-lg">
-            © 2025 Stroom AI. All rights reserved. | 6+ Patents Pending | Building intelligent solutions for tomorrow.
+            © 2025 Stroom AI. All rights reserved. | 6+ Patents Pending |
+            Building intelligent solutions for tomorrow.
           </p>
         </div>
       </footer>
