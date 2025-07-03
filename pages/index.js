@@ -86,7 +86,7 @@ const StroomAI = () => {
       title: "Conservatron 12000",
       status: "Production Ready",
       description:
-        "Advanced wildlife crime monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, MercadoLibre, OLX, and other online marketplaces. Utilizes machine learning to identify suspicious listings and generates automated reports for law enforcement.",
+        "Advanced monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, MercadoLibre, OLX, and other online marketplaces. Utilizes machine learning to identify suspicious listings and generates automated reports for law enforcement.",
       tech: [
         "Python",
         "Selenium",
