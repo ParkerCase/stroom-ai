@@ -74,7 +74,7 @@ const StroomAI = () => {
     },
     {
       title: "MERIDIAN",
-      status: "Potentially Patentable",
+      status: "Production Ready",
       description:
         "Intelligent chatbot dashboard that leverages natural language processing to provide contextual knowledge management and automated responses across multiple domains including storage providers, CRMs, and more. Features multi-domain expertise with very high query resolution rate and integrates with many enterprise systems. Reduces deep research time from hours to 45 minutes maximum.",
       tech: ["NLP", "OpenAI GPT", "Node.js", "MongoDB", "React"],
