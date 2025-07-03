@@ -2,9 +2,9 @@
 import Head from "next/head";
 
 const SEO = ({
-  title = "Parker Case - AI Software Engineer",
-  description = "AI Software Engineer specializing in patent-pending machine learning solutions",
-  url = "https://parkercase.co",
+  title = "Stroom AI",
+  description = "Patent-Pending AI Innovations for the Future of Work",
+  url = "https://stroomai.com",
   image = "https://parkercase.co/parker-og-image.jpg",
 }) => {
   return (

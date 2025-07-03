@@ -893,7 +893,7 @@ const StroomAI = () => {
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-300 text-lg">
               © 2025 Stroom AI. All rights reserved. | 6+ Patents Pending |
-              Founded by Award-Winning AI Inventor Parker Case
+              Founded by AI Inventor Parker Case
             </p>
           </div>
         </div>

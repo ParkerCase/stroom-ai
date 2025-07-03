@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       window.gtag = gtag;
       gtag("js", new Date());
       gtag("config", GA_MEASUREMENT_ID, {
-        page_title: "Parker Case - AI Software Engineer",
+        page_title: "Stroom AI",
         page_location: window.location.href,
       });
 
@@ -45,9 +45,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>
-          Parker Case - AI Software Engineer | Machine Learning Innovator
-        </title>
+        <title>Stroom AI</title>
         <meta
           name="description"
           content="AI Software Engineer specializing in patent-pending machine learning solutions, computer vision, and full-stack AI development. Based in NYC, building the future with artificial intelligence."
@@ -56,17 +54,14 @@ function MyApp({ Component, pageProps }) {
           name="keywords"
           content="AI, Machine Learning, Software Engineer, Python, TensorFlow, Computer Vision, NLP, New York, Patent Pending, Innovation"
         />
-        <meta name="author" content="Parker Case" />
+        <meta name="author" content="Stroom AI" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://parkercase.co/" />
-        <meta
-          property="og:title"
-          content="Parker Case - AI Software Engineer"
-        />
+        <meta property="og:title" content="Stroom AI" />
         <meta
           property="og:description"
           content="AI Software Engineer specializing in patent-pending machine learning solutions and full-stack AI development."
@@ -79,10 +74,7 @@ function MyApp({ Component, pageProps }) {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://parkercase.co/" />
-        <meta
-          property="twitter:title"
-          content="Parker Case - AI Software Engineer"
-        />
+        <meta property="twitter:title" content="Stroom AI" />
         <meta
           property="twitter:description"
           content="AI Software Engineer specializing in patent-pending machine learning solutions and full-stack AI development."
@@ -122,8 +114,8 @@ function MyApp({ Component, pageProps }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Parker Case",
-              jobTitle: "AI Software Engineer",
+              name: "Stroom AI",
+              jobTitle: "Patent-Pending AI Innovations",
               description:
                 "AI Software Engineer specializing in patent-pending machine learning solutions",
               url: "https://parkercase.co",
