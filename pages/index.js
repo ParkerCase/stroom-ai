@@ -249,7 +249,7 @@ const StroomAI = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-blue-200">
+              <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-orange-400">
                 <Image
                   src="/Artwork.JPG"
                   alt="Stroom AI Logo"
@@ -284,7 +284,7 @@ const StroomAI = () => {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded-lg bg-blue-50 border border-blue-200"
+              className="md:hidden p-2 rounded-lg bg-blue-50 border border-orange-400"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -320,7 +320,7 @@ const StroomAI = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center pt-20 pb-16">
             <div className="mb-8">
-              <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-blue-200 shadow-xl">
+              <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-orange-400 shadow-xl">
                 <Image
                   src="/Artwork.JPG"
                   alt="Stroom AI Logo"
@@ -434,7 +434,7 @@ const StroomAI = () => {
                   {solution.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium border border-blue-200"
+                      className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium border border-orange-400"
                     >
                       {tech}
                     </span>
@@ -510,7 +510,7 @@ const StroomAI = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-blue-100 border-2 border-blue-200">
+                  <div className="p-3 rounded-xl bg-blue-100 border-2 border-orange-400">
                     <Award className="w-7 h-7 text-blue-700" />
                   </div>
                   <div>
