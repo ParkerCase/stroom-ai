@@ -251,7 +251,7 @@ const StroomAI = () => {
             <div className="flex items-center">
               <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-blue-200">
                 <Image
-                  src="/stroom.JPG"
+                  src="/Artwork.JPG"
                   alt="Stroom AI Logo"
                   width={40}
                   height={40}
@@ -322,7 +322,7 @@ const StroomAI = () => {
             <div className="mb-8">
               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-blue-200 shadow-xl">
                 <Image
-                  src="/stroom.JPG"
+                  src="/Artwork.JPG"
                   alt="Stroom AI Logo"
                   width={96}
                   height={96}
@@ -759,7 +759,7 @@ const StroomAI = () => {
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
                   <Image
-                    src="/stroom.JPG"
+                    src="/Artwork.JPG"
                     alt="Stroom AI Logo"
                     width={32}
                     height={32}
