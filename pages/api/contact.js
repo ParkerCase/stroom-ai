@@ -17,13 +17,13 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Methods", "POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  const { name, email, subject, projectInterest, message } = req.body;
+  const { name, email, company, subject, projectInterest, message } = req.body;
 
   // Validation
-  if (!name || !email || !subject || !message) {
+  if (!name || !email || !company || !message) {
     return res.status(400).json({
       error: "Missing required fields",
-      required: ["name", "email", "subject", "message"],
+      required: ["name", "email", "company", "message"],
     });
   }
 
@@ -42,7 +42,8 @@ export default async function handler(req, res) {
   const cleanData = {
     name: sanitize(name.trim()),
     email: sanitize(email.trim().toLowerCase()),
-    subject: sanitize(subject.trim()),
+    company: sanitize(company.trim()),
+    subject: subject ? sanitize(subject.trim()) : "New Business Inquiry",
     projectInterest: projectInterest
       ? sanitize(projectInterest.trim())
       : "Not specified",
@@ -52,56 +53,69 @@ export default async function handler(req, res) {
   try {
     // Send email using Resend
     const emailData = await resend.emails.send({
-      from: "contact@parkercase.co", // Must be your verified domain
-      to: ["parker@parkercase.co"], // Your email
-      subject: `🚀 New Contact: ${cleanData.subject}`,
+      from: "hello@stroomai.com", // Must be your verified domain
+      to: ["hello@stroomai.com"], // Your email
+      subject: `🚀 New Enterprise Inquiry: ${cleanData.company}`,
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
-          <title>New Contact Form Submission</title>
+          <title>New Enterprise Inquiry - Stroom AI</title>
           <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #FF6900, #006BB6); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
-            .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; }
-            .field { margin-bottom: 15px; }
-            .label { font-weight: bold; color: #006BB6; }
-            .value { margin-top: 5px; padding: 10px; background: white; border-radius: 4px; border-left: 4px solid #FF6900; }
-            .footer { margin-top: 20px; padding: 15px; background: #006BB6; color: white; text-align: center; border-radius: 8px; }
+            .header { background: linear-gradient(135deg, #2563eb, #ea580c); color: white; padding: 30px; border-radius: 12px 12px 0 0; text-align: center; }
+            .logo { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+            .content { background: #f8fafc; padding: 30px; border-radius: 0 0 12px 12px; }
+            .field { margin-bottom: 20px; }
+            .label { font-weight: 600; color: #2563eb; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+            .value { margin-top: 8px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #ea580c; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+            .priority { background: #fef3c7; border-left-color: #f59e0b; }
+            .footer { margin-top: 30px; padding: 20px; background: #1e293b; color: white; text-align: center; border-radius: 12px; font-size: 14px; }
+            .cta { background: #2563eb; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 10px; font-weight: 600; }
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">
-              <h1>🚀 New Contact Form Submission</h1>
-              <p>Someone is interested in your AI services!</p>
+              <div class="logo">Stroom AI</div>
+              <h1>🚀 New Enterprise Inquiry</h1>
+              <p>A potential client is interested in our AI solutions!</p>
             </div>
             <div class="content">
               <div class="field">
-                <div class="label">👤 Name:</div>
+                <div class="label">👤 Contact Person</div>
                 <div class="value">${cleanData.name}</div>
               </div>
               <div class="field">
-                <div class="label">📧 Email:</div>
-                <div class="value"><a href="mailto:${cleanData.email}">${cleanData.email}</a></div>
+                <div class="label">🏢 Company</div>
+                <div class="value priority"><strong>${cleanData.company}</strong></div>
               </div>
               <div class="field">
-                <div class="label">📋 Subject:</div>
+                <div class="label">📧 Email</div>
+                <div class="value"><a href="mailto:${cleanData.email}" style="color: #2563eb; text-decoration: none;">${cleanData.email}</a></div>
+              </div>
+              <div class="field">
+                <div class="label">📋 Subject</div>
                 <div class="value">${cleanData.subject}</div>
               </div>
               <div class="field">
-                <div class="label">🎯 Project Interest:</div>
+                <div class="label">🎯 Solution Interest</div>
                 <div class="value">${cleanData.projectInterest}</div>
               </div>
               <div class="field">
-                <div class="label">💬 Message:</div>
+                <div class="label">💬 Message</div>
                 <div class="value">${cleanData.message.replace(/\n/g, "<br>")}</div>
+              </div>
+              
+              <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:${cleanData.email}" class="cta">📧 Reply to ${cleanData.name}</a>
+                <a href="https://calendly.com/stroomai/consultation" class="cta">📅 Schedule Follow-up</a>
               </div>
             </div>
             <div class="footer">
-              <p>📅 Received: ${new Date().toLocaleString("en-US", {
+              <p><strong>📅 Received:</strong> ${new Date().toLocaleString("en-US", {
                 timeZone: "America/New_York",
                 weekday: "long",
                 year: "numeric",
@@ -110,7 +124,11 @@ export default async function handler(req, res) {
                 hour: "2-digit",
                 minute: "2-digit",
               })} EST</p>
-              <p>🌐 From: parkercase.co</p>
+              <p><strong>🌐 Source:</strong> Stroom AI Website</p>
+              <p style="margin-top: 15px; font-size: 12px; opacity: 0.8;">
+                This inquiry was generated from the Stroom AI enterprise contact form.<br>
+                Follow up within 24 hours for optimal conversion rates.
+              </p>
             </div>
           </div>
         </body>
@@ -118,59 +136,115 @@ export default async function handler(req, res) {
       `,
       // Also send a plain text version
       text: `
-New Contact Form Submission
+New Enterprise Inquiry - Stroom AI
 
-Name: ${cleanData.name}
+Contact: ${cleanData.name}
+Company: ${cleanData.company}
 Email: ${cleanData.email}
 Subject: ${cleanData.subject}
-Project Interest: ${cleanData.projectInterest}
+Solution Interest: ${cleanData.projectInterest}
 
 Message:
 ${cleanData.message}
 
 Received: ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} EST
-From: parkercase.co
+Source: Stroom AI Website
       `.trim(),
     });
 
-    // Optional: Send auto-reply to the person who contacted you
+    // Send auto-reply to the potential client
     await resend.emails.send({
-      from: "parker@parkercase.co",
+      from: "hello@stroomai.com",
       to: [cleanData.email],
-      subject: `Thanks for reaching out! - Parker Case`,
+      subject: `Thank you for your interest in Stroom AI - Enterprise Solutions`,
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
-          <title>Thanks for contacting Parker Case</title>
+          <title>Thank you for contacting Stroom AI</title>
           <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #FF6900, #006BB6); color: white; padding: 20px; border-radius: 8px; text-align: center; }
-            .content { padding: 20px; }
+            .header { background: linear-gradient(135deg, #2563eb, #ea580c); color: white; padding: 30px; border-radius: 12px; text-align: center; }
+            .logo { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+            .content { padding: 30px 20px; }
+            .cta-button { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 15px 10px; font-weight: 600; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+            .feature { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ea580c; }
+            .stats { text-align: center; margin: 30px 0; }
+            .stat { display: inline-block; margin: 0 20px; text-align: center; }
+            .stat-number { font-size: 24px; font-weight: bold; color: #2563eb; }
+            .stat-label { font-size: 14px; color: #6b7280; }
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">
-              <h1>🤖 Thanks for reaching out!</h1>
+              <div class="logo">Stroom AI</div>
+              <h1>🤖 Thank You for Your Interest!</h1>
+              <p>Enterprise AI Solutions That Drive Results</p>
             </div>
             <div class="content">
-              <p>Hi ${cleanData.name},</p>
-              <p>Thanks for your interest in my AI services! I've received your message about "${cleanData.subject}" and will get back to you within 24 hours.</p>
-              <p>In the meantime, feel free to:</p>
-              <ul>
-                <li>📅 <a href="https://calendly.com/parkere-case/30min">Schedule a consultation</a></li>
-                <li>💼 <a href="https://parkercase.co">Check out my portfolio</a></li>
-                <li>💡 <a href="https://www.linkedin.com/in/parker-c-582854106/">Connect on LinkedIn</a></li>
-              </ul>
-              <p>Looking forward to discussing your project!</p>
+              <p>Dear ${cleanData.name},</p>
+              
+              <p>Thank you for reaching out to <strong>Stroom AI</strong> regarding AI solutions for <strong>${cleanData.company}</strong>. We're excited about the opportunity to help transform your business with intelligent automation.</p>
+              
+              <div class="stats">
+                <div class="stat">
+                  <div class="stat-number">99.7%</div>
+                  <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">40%</div>
+                  <div class="stat-label">Efficiency Gain</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">AI Availability</div>
+                </div>
+              </div>
+
+              <div class="feature">
+                <h3>🚀 What Happens Next?</h3>
+                <p>Our team will review your inquiry and contact you within <strong>24 hours</strong> to discuss:</p>
+                <ul>
+                  <li>Your specific AI requirements and goals</li>
+                  <li>Custom solution recommendations</li>
+                  <li>Implementation timeline and investment</li>
+                  <li>ROI projections and success metrics</li>
+                </ul>
+              </div>
+
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="https://calendly.com/stroomai/consultation" class="cta-button">📅 Schedule Immediate Consultation</a>
+                <br>
+                <small style="color: #6b7280;">Or we'll contact you within 24 hours</small>
+              </div>
+
+              <div class="feature">
+                <h3>🏆 Why Leading Enterprises Choose Stroom AI</h3>
+                <ul>
+                  <li><strong>Patent-Pending Technology:</strong> Cutting-edge innovations that give you competitive advantage</li>
+                  <li><strong>Rapid Deployment:</strong> From concept to production in 2-12 weeks</li>
+                  <li><strong>Enterprise Security:</strong> Privacy-first design with enterprise-grade compliance</li>
+                  <li><strong>Proven ROI:</strong> Average 40% efficiency improvement within 3-6 months</li>
+                </ul>
+              </div>
+
+              <p>We're looking forward to partnering with ${cleanData.company} to build intelligent solutions that drive measurable business value.</p>
+              
               <p>Best regards,<br>
-              <strong>Parker Case</strong><br>
-              AI Software Engineer<br>
-              📧 parker@parkercase.co<br>
-              📱 (929) 707-9902</p>
+              <strong>The Stroom AI Team</strong><br>
+              Enterprise AI Solutions<br>
+              📧 hello@stroomai.com<br>
+              📱 +1 (929) 707-9902<br>
+              🌐 <a href="https://stroomai.com" style="color: #2563eb;">stroomai.com</a></p>
+
+              <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
+              <p style="font-size: 12px; color: #6b7280; text-align: center;">
+                This email was sent in response to your inquiry on our website.<br>
+                Stroom AI - Building Intelligent Solutions for Enterprise
+              </p>
             </div>
           </div>
         </body>
@@ -179,10 +253,11 @@ From: parkercase.co
     });
 
     // Log successful submission (for analytics)
-    console.log("✅ Contact form submission successful:", {
+    console.log("✅ Enterprise inquiry submitted successfully:", {
       timestamp: new Date().toISOString(),
       name: cleanData.name,
       email: cleanData.email,
+      company: cleanData.company,
       subject: cleanData.subject,
       projectInterest: cleanData.projectInterest,
       emailId: emailData.data?.id,
@@ -190,7 +265,7 @@ From: parkercase.co
 
     return res.status(200).json({
       success: true,
-      message: "Message sent successfully!",
+      message: "Thank you for your inquiry! Our team will contact you within 24 hours.",
       emailId: emailData.data?.id,
     });
   } catch (error) {
@@ -199,7 +274,7 @@ From: parkercase.co
     return res.status(500).json({
       error: "Failed to send message",
       message:
-        "There was an error processing your request. Please try again or contact parker@parkercase.co directly.",
+        "There was an error processing your request. Please try again or contact hello@stroomai.com directly.",
       details:
         process.env.NODE_ENV === "development" ? error.message : undefined,
     });

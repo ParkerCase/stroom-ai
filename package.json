@@ -1,10 +1,10 @@
 {
-  "name": "parker-case-ai-website",
+  "name": "stroom-ai-website",
   "version": "1.0.0",
-  "description": "AI Software Engineer Portfolio Website",
+  "description": "Stroom AI - Enterprise AI Solutions Platform",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -32,15 +32,17 @@
   "keywords": [
     "ai",
     "machine-learning",
-    "portfolio",
+    "enterprise",
+    "stroom-ai",
     "react",
     "nextjs",
-    "parker-case"
+    "artificial-intelligence",
+    "business-solutions"
   ],
   "author": {
-    "name": "Parker Case",
-    "email": "parker@parkercase.co",
-    "url": "https://parkercase.co"
+    "name": "Stroom AI",
+    "email": "hello@stroomai.com",
+    "url": "https://stroomai.com"
   },
   "license": "MIT"
 }

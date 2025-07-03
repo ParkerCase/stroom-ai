@@ -4,14 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables */
+/* Custom CSS Variables - Updated for Stroom AI */
 :root {
-  --knicks-orange: #ff6900;
-  --knicks-blue: #006bb6;
+  --stroom-blue: #2563eb;
+  --stroom-orange: #ea580c;
+  --stroom-light-blue: #3b82f6;
+  --stroom-light-orange: #f97316;
   --gradient-primary: linear-gradient(
     135deg,
-    var(--knicks-blue),
-    var(--knicks-orange)
+    var(--stroom-blue),
+    var(--stroom-orange)
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--stroom-light-blue),
+    var(--stroom-light-orange)
   );
 }
 
@@ -33,26 +40,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #333;
+  color: #1f2937;
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
-/* Custom Scrollbar */
+
+
+/* Custom Scrollbar - Updated for light theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a5568;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #718096;
+  background: #94a3b8;
 }
 
 /* Focus styles for accessibility */
@@ -61,39 +71,71 @@ a:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--knicks-orange);
+  outline: 2px solid var(--stroom-orange);
   outline-offset: 2px;
 }
 
-/* Custom utility classes */
+/* Custom utility classes - Updated for Stroom AI */
 @layer utilities {
-  .text-gradient-orange-blue {
-    @apply bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent;
+  .text-gradient-stroom {
+    @apply bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent;
   }
 
-  .bg-gradient-orange-blue {
-    @apply bg-gradient-to-r from-orange-500 to-blue-500;
+  .bg-gradient-stroom {
+    @apply bg-gradient-to-r from-blue-600 to-orange-500;
   }
 
-  .border-gradient-orange-blue {
+  .bg-gradient-stroom-light {
+    @apply bg-gradient-to-r from-blue-500 to-orange-400;
+  }
+
+  .border-gradient-stroom {
     border-image: linear-gradient(
         135deg,
-        var(--knicks-orange),
-        var(--knicks-blue)
+        var(--stroom-blue),
+        var(--stroom-orange)
       )
       1;
   }
 
-  .glass-morphism {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  .glass-morphism-light {
+    @apply bg-white/80 backdrop-blur-sm border border-gray-200;
+  }
+
+  .glass-morphism-dark {
+    @apply bg-gray-900/80 backdrop-blur-sm border border-gray-700;
   }
 
   .hover-lift {
     @apply hover:scale-105 transition-transform duration-300;
   }
 
-  .hover-glow {
+  .hover-glow-blue {
+    @apply hover:shadow-lg hover:shadow-blue-500/25 transition-shadow duration-300;
+  }
+
+  .hover-glow-orange {
     @apply hover:shadow-lg hover:shadow-orange-500/25 transition-shadow duration-300;
+  }
+
+  .apple-button {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform shadow-lg;
+  }
+
+  .apple-button-secondary {
+    @apply border border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-colors;
+  }
+
+  .apple-card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow;
+  }
+
+  .apple-section {
+    @apply py-20 px-4;
+  }
+
+  .apple-container {
+    @apply max-w-7xl mx-auto;
   }
 }
 
@@ -131,13 +173,32 @@ select:focus {
   }
 }
 
-@keyframes pulse-glow {
+@keyframes pulse-glow-blue {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 105, 0, 0.3);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 105, 0, 0.6);
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+  }
+}
+
+@keyframes pulse-glow-orange {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(234, 88, 12, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(234, 88, 12, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
@@ -154,8 +215,29 @@ select:focus {
   animation: fadeInRight 0.6s ease-out;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+.animate-pulse-glow-blue {
+  animation: pulse-glow-blue 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow-orange {
+  animation: pulse-glow-orange 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Apple-style text effects */
+.text-hero {
+  @apply text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent;
+}
+
+.text-subhero {
+  @apply text-3xl md:text-4xl font-semibold text-gray-800;
+}
+
+.text-body-large {
+  @apply text-xl md:text-2xl text-gray-600 leading-relaxed;
 }
 
 /* Responsive typography */
@@ -185,12 +267,12 @@ select:focus {
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .text-gray-300 {
-    @apply text-gray-100;
+  .text-gray-600 {
+    @apply text-gray-800;
   }
 
-  .text-gray-400 {
-    @apply text-gray-200;
+  .text-gray-500 {
+    @apply text-gray-700;
   }
 }
 
@@ -204,11 +286,6 @@ select:focus {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Dark mode support (if needed in future) */
-@media (prefers-color-scheme: dark) {
-  /* Already using dark theme, but ready for toggles */
 }
 
 /* Loading states */
@@ -227,7 +304,7 @@ select:focus {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(37, 99, 235, 0.1),
     transparent
   );
   animation: loading-shimmer 1.5s infinite;
@@ -242,13 +319,30 @@ select:focus {
   }
 }
 
-/* Custom form styles */
+/* Custom form styles - Light theme */
 .form-input {
-  @apply w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-orange-400 focus:outline-none transition-colors duration-200;
+  @apply w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-blue-600 focus:outline-none transition-colors duration-200;
 }
 
 .form-button {
-  @apply bg-gradient-to-r from-orange-500 to-blue-500 py-3 px-6 rounded-lg font-semibold hover:scale-105 transition-transform duration-200 focus:scale-105;
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:scale-105 transition-transform duration-200 focus:scale-105 shadow-lg;
+}
+
+.form-button-secondary {
+  @apply border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200;
+}
+
+/* Apple-style cards and sections */
+.apple-hero-section {
+  @apply pt-20 pb-16 px-4 text-center;
+}
+
+.apple-feature-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.apple-testimonial-card {
+  @apply bg-white rounded-2xl p-8 shadow-lg border border-gray-200;
 }
 
 /* Accessibility improvements */
@@ -266,9 +360,35 @@ select:focus {
 
 /* Skip to content link */
 .skip-to-content {
-  @apply absolute -top-40 left-6 bg-orange-500 text-white px-4 py-2 rounded-lg z-50 transition-all duration-200;
+  @apply absolute -top-40 left-6 bg-blue-600 text-white px-4 py-2 rounded-lg z-50 transition-all duration-200;
 }
 
 .skip-to-content:focus {
   @apply top-6;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply transition-colors hover:text-blue-600;
+}
+
+.nav-link-active {
+  @apply text-blue-600;
+}
+
+/* Custom shadows for depth */
+.shadow-stroom {
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-stroom-orange {
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient text utilities */
+.gradient-text-stroom {
+  background: linear-gradient(135deg, #2563eb, #ea580c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
