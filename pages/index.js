@@ -161,7 +161,7 @@ const StroomAI = () => {
     {
       value: "3+",
       label: "Film Festival Awards",
-      description: "Founder has creative & technical recognition",
+      description: "Founded on creative & technical expertise",
     },
   ];
 
