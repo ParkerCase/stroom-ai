@@ -231,7 +231,7 @@ const AboutPage = () => {
                     breakthrough artificial intelligence accessible to
                     enterprises worldwide. His unique combination of technical
                     expertise, creative storytelling (3+ film festival awards),
-                    and business acumen drives the company's mission to
+                    and business acumen drives the company&apos;s mission to
                     transform how businesses leverage AI.
                   </p>
 
@@ -264,9 +264,9 @@ const AboutPage = () => {
               Why Choose Stroom AI?
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We're not just another AI company—we're proven inventors with
-              breakthrough technologies and a track record of transforming
-              complex challenges into production-ready solutions.
+              We&apos;re not just another AI company — we&apos;re proven
+              inventors with breakthrough technologies and a track record of
+              transforming complex challenges into production-ready solutions.
             </p>
           </div>
 
@@ -383,18 +383,18 @@ const AboutPage = () => {
           <p className="text-xl text-gray-600 mb-12 leading-relaxed">
             Join the growing number of enterprises that trust Stroom AI to
             deliver breakthrough innovations that drive real business value.
-            Let's discuss how our patent-pending technologies can help you
+            Let&apos;s discuss how our patent-pending technologies can help you
             achieve your goals.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
+            <Link
               href="/#contact"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl flex items-center gap-3"
             >
               <Mail className="w-6 h-6" />
               Get Started Today
-            </a>
+            </Link>
             <a
               href="https://calendly.com/parkere-case/30min"
               target="_blank"
