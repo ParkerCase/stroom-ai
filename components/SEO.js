@@ -2,7 +2,7 @@
 import Head from "next/head";
 
 const SEO = ({
-  title = "Stroom AI",
+  title = "StroomAI",
   description = "Patent-Pending AI Innovations for the Future of Work",
   url = "https://stroomai.com",
   image = "https://parkercase.co/parker-og-image.jpg",

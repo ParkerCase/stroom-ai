@@ -61,7 +61,7 @@ export default async function handler(req, res) {
         <html>
         <head>
           <meta charset="utf-8">
-          <title>New Enterprise Inquiry - Stroom AI</title>
+          <title>New Enterprise Inquiry - StroomAI</title>
           <style>
             body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">Stroom AI</div>
+              <div class="logo">StroomAI</div>
               <h1>🚀 New Enterprise Inquiry</h1>
               <p>A potential client is interested in our AI solutions!</p>
             </div>
@@ -90,11 +90,17 @@ export default async function handler(req, res) {
               </div>
               <div class="field">
                 <div class="label">🏢 Company</div>
-                <div class="value priority"><strong>${cleanData.company}</strong></div>
+                <div class="value priority"><strong>${
+                  cleanData.company
+                }</strong></div>
               </div>
               <div class="field">
                 <div class="label">📧 Email</div>
-                <div class="value"><a href="mailto:${cleanData.email}" style="color: #2563eb; text-decoration: none;">${cleanData.email}</a></div>
+                <div class="value"><a href="mailto:${
+                  cleanData.email
+                }" style="color: #2563eb; text-decoration: none;">${
+        cleanData.email
+      }</a></div>
               </div>
               <div class="field">
                 <div class="label">📋 Subject</div>
@@ -106,27 +112,35 @@ export default async function handler(req, res) {
               </div>
               <div class="field">
                 <div class="label">💬 Message</div>
-                <div class="value">${cleanData.message.replace(/\n/g, "<br>")}</div>
+                <div class="value">${cleanData.message.replace(
+                  /\n/g,
+                  "<br>"
+                )}</div>
               </div>
               
               <div style="text-align: center; margin-top: 30px;">
-                <a href="mailto:${cleanData.email}" class="cta">📧 Reply to ${cleanData.name}</a>
+                <a href="mailto:${cleanData.email}" class="cta">📧 Reply to ${
+        cleanData.name
+      }</a>
                 <a href="https://calendly.com/stroomai/consultation" class="cta">📅 Schedule Follow-up</a>
               </div>
             </div>
             <div class="footer">
-              <p><strong>📅 Received:</strong> ${new Date().toLocaleString("en-US", {
-                timeZone: "America/New_York",
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-              })} EST</p>
-              <p><strong>🌐 Source:</strong> Stroom AI Website</p>
+              <p><strong>📅 Received:</strong> ${new Date().toLocaleString(
+                "en-US",
+                {
+                  timeZone: "America/New_York",
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }
+              )} EST</p>
+              <p><strong>🌐 Source:</strong> StroomAI Website</p>
               <p style="margin-top: 15px; font-size: 12px; opacity: 0.8;">
-                This inquiry was generated from the Stroom AI enterprise contact form.<br>
+                This inquiry was generated from the StroomAI enterprise contact form.<br>
                 Follow up within 24 hours for optimal conversion rates.
               </p>
             </div>
@@ -136,7 +150,7 @@ export default async function handler(req, res) {
       `,
       // Also send a plain text version
       text: `
-New Enterprise Inquiry - Stroom AI
+New Enterprise Inquiry - StroomAI
 
 Contact: ${cleanData.name}
 Company: ${cleanData.company}
@@ -147,8 +161,10 @@ Solution Interest: ${cleanData.projectInterest}
 Message:
 ${cleanData.message}
 
-Received: ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} EST
-Source: Stroom AI Website
+Received: ${new Date().toLocaleString("en-US", {
+        timeZone: "America/New_York",
+      })} EST
+Source: StroomAI Website
       `.trim(),
     });
 
@@ -156,13 +172,13 @@ Source: Stroom AI Website
     await resend.emails.send({
       from: "hello@stroomai.com",
       to: [cleanData.email],
-      subject: `Thank you for your interest in Stroom AI - Enterprise Solutions`,
+      subject: `Thank you for your interest in StroomAI - Enterprise Solutions`,
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
-          <title>Thank you for contacting Stroom AI</title>
+          <title>Thank you for contacting StroomAI</title>
           <style>
             body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -180,14 +196,14 @@ Source: Stroom AI Website
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">Stroom AI</div>
+              <div class="logo">StroomAI</div>
               <h1>🤖 Thank You for Your Interest!</h1>
               <p>Enterprise AI Solutions That Drive Results</p>
             </div>
             <div class="content">
               <p>Dear ${cleanData.name},</p>
               
-              <p>Thank you for reaching out to <strong>Stroom AI</strong> regarding AI solutions for <strong>${cleanData.company}</strong>. We're excited about the opportunity to help transform your business with intelligent automation.</p>
+              <p>Thank you for reaching out to <strong>StroomAI</strong> regarding AI solutions for <strong>${cleanData.company}</strong>. We're excited about the opportunity to help transform your business with intelligent automation.</p>
               
               <div class="stats">
                 <div class="stat">
@@ -222,7 +238,7 @@ Source: Stroom AI Website
               </div>
 
               <div class="feature">
-                <h3>🏆 Why Leading Enterprises Choose Stroom AI</h3>
+                <h3>🏆 Why Leading Enterprises Choose StroomAI</h3>
                 <ul>
                   <li><strong>Patent-Pending Technology:</strong> Cutting-edge innovations that give you competitive advantage</li>
                   <li><strong>Rapid Deployment:</strong> From concept to production in 2-12 weeks</li>
@@ -234,7 +250,7 @@ Source: Stroom AI Website
               <p>We're looking forward to partnering with ${cleanData.company} to build intelligent solutions that drive measurable business value.</p>
               
               <p>Best regards,<br>
-              <strong>The Stroom AI Team</strong><br>
+              <strong>The StroomAI Team</strong><br>
               Enterprise AI Solutions<br>
               📧 hello@stroomai.com<br>
               📱 +1 (929) 707-9902<br>
@@ -243,7 +259,7 @@ Source: Stroom AI Website
               <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
               <p style="font-size: 12px; color: #6b7280; text-align: center;">
                 This email was sent in response to your inquiry on our website.<br>
-                Stroom AI - Building Intelligent Solutions for Enterprise
+                StroomAI - Building Intelligent Solutions for Enterprise
               </p>
             </div>
           </div>
@@ -265,7 +281,8 @@ Source: Stroom AI Website
 
     return res.status(200).json({
       success: true,
-      message: "Thank you for your inquiry! Our team will contact you within 24 hours.",
+      message:
+        "Thank you for your inquiry! Our team will contact you within 24 hours.",
       emailId: emailData.data?.id,
     });
   } catch (error) {

@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables - Updated for Stroom AI */
+/* Custom CSS Variables - Updated for StroomAI */
 :root {
   --stroom-blue: #2563eb;
   --stroom-orange: #ea580c;
@@ -45,8 +45,6 @@ body {
   background-color: #ffffff;
 }
 
-
-
 /* Custom Scrollbar - Updated for light theme */
 ::-webkit-scrollbar {
   width: 8px;
@@ -75,7 +73,7 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* Custom utility classes - Updated for Stroom AI */
+/* Custom utility classes - Updated for StroomAI */
 @layer utilities {
   .text-gradient-stroom {
     @apply bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent;
@@ -194,7 +192,8 @@ select:focus {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {

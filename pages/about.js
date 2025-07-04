@@ -27,14 +27,14 @@ const AboutPage = () => {
               <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-blue-200">
                 <Image
                   src="/Artwork.JPG"
-                  alt="Stroom AI Logo"
+                  alt="StroomAI Logo"
                   width={40}
                   height={40}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-orange-600 bg-clip-text text-transparent">
-                Stroom AI
+                StroomAI
               </div>
             </Link>
 
@@ -75,14 +75,14 @@ const AboutPage = () => {
           <div className="w-24 h-24 mx-auto mb-8 rounded-2xl overflow-hidden border-4 border-blue-200 shadow-xl">
             <Image
               src="/Artwork.JPG"
-              alt="Stroom AI Logo"
+              alt="StroomAI Logo"
               width={96}
               height={96}
               className="w-full h-full object-cover"
             />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-purple-600 to-orange-600 bg-clip-text text-transparent">
-            About Stroom AI
+            About StroomAI
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             We&apos;re pioneering the future of enterprise AI with
@@ -203,7 +203,7 @@ const AboutPage = () => {
               Leadership
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Meet the award-winning inventor behind Stroom AI&apos;s
+              Meet the award-winning inventor behind StroomAI&apos;s
               breakthrough approach to enterprise artificial intelligence.
             </p>
           </div>
@@ -227,7 +227,7 @@ const AboutPage = () => {
                   <p className="text-gray-600 leading-relaxed mb-6 text-lg">
                     With 6+ patent-pending AI innovations and a proven track
                     record of building production-ready systems serving real
-                    users, Parker leads Stroom AI with a vision of making
+                    users, Parker leads StroomAI with a vision of making
                     breakthrough artificial intelligence accessible to
                     enterprises worldwide. His unique combination of technical
                     expertise, creative storytelling (3+ film festival awards),
@@ -261,7 +261,7 @@ const AboutPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 text-gray-900">
-              Why Choose Stroom AI?
+              Why Choose StroomAI?
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               We&apos;re not just another AI company — we&apos;re proven
@@ -381,7 +381,7 @@ const AboutPage = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-            Join the growing number of enterprises that trust Stroom AI to
+            Join the growing number of enterprises that trust StroomAI to
             deliver breakthrough innovations that drive real business value.
             Let&apos;s discuss how our patent-pending technologies can help you
             achieve your goals.
@@ -415,18 +415,18 @@ const AboutPage = () => {
             <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
               <Image
                 src="/Artwork.JPG"
-                alt="Stroom AI Logo"
+                alt="StroomAI Logo"
                 width={32}
                 height={32}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
-              Stroom AI
+              StroomAI
             </div>
           </div>
           <p className="text-gray-300 text-lg">
-            © 2025 Stroom AI. All rights reserved. | 6+ Patents Pending |
+            © 2025 StroomAI. All rights reserved. | 6+ Patents Pending |
             Building intelligent solutions for tomorrow.
           </p>
         </div>

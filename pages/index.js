@@ -1,4 +1,4 @@
-// pages/index.js - Stroom AI Professional Landing Page (Real Content & Unique Design)
+// pages/index.js - StroomAI Professional Landing Page (Real Content & Unique Design)
 
 import React, { useState, useEffect } from "react";
 // import Link from "next/link";
@@ -252,14 +252,14 @@ const StroomAI = () => {
               <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-orange-400">
                 <Image
                   src="/Artwork.JPG"
-                  alt="Stroom AI Logo"
+                  alt="StroomAI Logo"
                   width={40}
                   height={40}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-orange-600 bg-clip-text text-transparent">
-                Stroom AI
+                StroomAI
               </div>
             </div>
 
@@ -323,7 +323,7 @@ const StroomAI = () => {
               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-orange-400 shadow-xl">
                 <Image
                   src="/Artwork.JPG"
-                  alt="Stroom AI Logo"
+                  alt="StroomAI Logo"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
@@ -332,7 +332,7 @@ const StroomAI = () => {
             </div>
 
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-purple-600 to-orange-600 bg-clip-text text-transparent leading-tight">
-              Stroom AI
+              StroomAI
             </h1>
 
             <h2 className="text-3xl md:text-5xl font-semibold mb-6 text-gray-800 leading-snug">
@@ -499,7 +499,7 @@ const StroomAI = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-5xl font-bold mb-6 text-gray-900">
-                Why Choose Stroom AI?
+                Why Choose StroomAI?
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 We&apos;re not just another AI company. We&apos;re proven
@@ -760,14 +760,14 @@ const StroomAI = () => {
                 <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
                   <Image
                     src="/Artwork.JPG"
-                    alt="Stroom AI Logo"
+                    alt="StroomAI Logo"
                     width={32}
                     height={32}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
-                  Stroom AI
+                  StroomAI
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed">
@@ -892,7 +892,7 @@ const StroomAI = () => {
 
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-300 text-lg">
-              © 2025 Stroom AI. All rights reserved. | 6+ Patents Pending |
+              © 2025 StroomAI. All rights reserved. | 6+ Patents Pending |
               Founded by AI Inventor Parker Case
             </p>
           </div>

@@ -1,7 +1,7 @@
 {
   "name": "stroom-ai-website",
   "version": "1.0.0",
-  "description": "Stroom AI - Enterprise AI Solutions Platform",
+  "description": "StroomAI - Enterprise AI Solutions Platform",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3002",
@@ -40,7 +40,7 @@
     "business-solutions"
   ],
   "author": {
-    "name": "Stroom AI",
+    "name": "StroomAI",
     "email": "hello@stroomai.com",
     "url": "https://stroomai.com"
   },
