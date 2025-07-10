@@ -180,4 +180,4 @@ StroomAI employs enterprise-grade security measures and industry-leading data pr
 
 **This security overview demonstrates StroomAI's commitment to maintaining the highest standards of data protection while enabling innovative AI solutions. Our enterprise-grade security measures ensure that your sensitive data remains protected without compromising the performance and functionality of our AI services.**
 
-_For specific security questions or to discuss custom security requirements, please contact our security team at security@stroomai.com_
+_For specific security questions or to discuss custom security requirements, please contact our security team at info@stroomai.com_

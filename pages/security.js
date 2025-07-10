@@ -7,13 +7,10 @@ import {
   Shield,
   Lock,
   Database,
-  Users,
   Globe,
   Mail,
   Phone,
-  AlertTriangle,
   CheckCircle,
-  Clock,
   Server,
   Key,
   Eye,
@@ -633,7 +630,7 @@ const Security = () => {
                   <h3 className="text-lg font-bold mb-2 text-gray-900">
                     Security Questions
                   </h3>
-                  <p className="text-gray-700">security@stroomai.com</p>
+                  <p className="text-gray-700">info@stroomai.com</p>
                 </div>
                 <div className="text-center">
                   <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
@@ -651,7 +648,7 @@ const Security = () => {
           {/* Footer Note */}
           <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-200">
             <p className="text-center text-gray-600 italic">
-              This security overview demonstrates StroomAI's commitment to
+              This security overview demonstrates StroomAI&apos;s commitment to
               maintaining the highest standards of data protection while
               enabling innovative AI solutions. Our enterprise-grade security
               measures ensure that your sensitive data remains protected without

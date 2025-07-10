@@ -305,12 +305,12 @@ For questions about these Terms of Service:
 
 **Legal Department**  
 StroomAI  
-Email: legal@stroomai.com  
+Email: info@stroomai.com  
 Phone: [Insert Phone Number]  
 Address: [Insert Address]
 
 **Customer Support**  
-Email: support@stroomai.com  
+Email: info@stroomai.com  
 Phone: [Insert Support Number]
 
 **Security Issues**  

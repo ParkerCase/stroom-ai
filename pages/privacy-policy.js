@@ -345,9 +345,9 @@ const PrivacyPolicy = () => {
                       <p>
                         <strong>StroomAI</strong>
                       </p>
-                      <p>Email: privacy@stroomai.com</p>
-                      <p>Phone: [Insert Phone Number]</p>
-                      <p>Address: [Insert Address]</p>
+                      <p>Email: info@stroomai.com</p>
+                      <p>Phone: +1 (929) 707-9902</p>
+                      <p>Address: New York, NY</p>
                     </div>
                   </div>
 
@@ -359,7 +359,7 @@ const PrivacyPolicy = () => {
                       <p>
                         <strong>For EU Residents</strong>
                       </p>
-                      <p>Email: dpo@stroomai.com</p>
+                      <p>Email: info@stroomai.com</p>
                       <p className="text-sm text-gray-600">
                         You may also file a complaint with your local data
                         protection authority.

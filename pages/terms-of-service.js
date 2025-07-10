@@ -61,7 +61,7 @@ const TermsOfService = () => {
               Terms of Service
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Fair, transparent, and secure use of StroomAI's innovative AI
+              Fair, transparent, and secure use of StroomAI&apos;s innovative AI
               technologies while protecting both user rights and our
               intellectual property.
             </p>
@@ -77,11 +77,11 @@ const TermsOfService = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                 <p className="mb-6">
-                  These Terms of Service ("Terms") govern your use of StroomAI's
-                  AI-powered services, platforms, and technologies
-                  (collectively, the "Services"). By accessing or using our
-                  Services, you agree to be bound by these Terms and our Privacy
-                  Policy.
+                  These Terms of Service (&quot;Terms&quot;) govern your use of
+                  StroomAI&apos;s AI-powered services, platforms, and
+                  technologies (collectively, the &quot;Services&quot;). By
+                  accessing or using our Services, you agree to be bound by
+                  these Terms and our Privacy Policy.
                 </p>
 
                 <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-blue-500">
@@ -561,8 +561,8 @@ const TermsOfService = () => {
                   </h3>
                   <ul className="space-y-2 text-yellow-800">
                     <li>
-                      • Services are provided "as is" without warranties of any
-                      kind
+                      • Services are provided &quot;as is&quot; without
+                      warranties of any kind
                     </li>
                     <li>• We do not guarantee specific outcomes or results</li>
                     <li>
@@ -668,9 +668,9 @@ const TermsOfService = () => {
                       <p>
                         <strong>StroomAI</strong>
                       </p>
-                      <p>Email: legal@stroomai.com</p>
-                      <p>Phone: [Insert Phone Number]</p>
-                      <p>Address: [Insert Address]</p>
+                      <p>Email: info@stroomai.com</p>
+                      <p>Phone: +1 (929) 707-9902</p>
+                      <p>Address: New York, NY</p>
                     </div>
                   </div>
 
@@ -679,8 +679,8 @@ const TermsOfService = () => {
                       Customer Support
                     </h3>
                     <div className="space-y-3 text-gray-700">
-                      <p>Email: support@stroomai.com</p>
-                      <p>Phone: [Insert Support Number]</p>
+                      <p>Email: info@stroomai.com</p>
+                      <p>Phone: +1 (929) 707-9902</p>
                     </div>
                   </div>
 
@@ -689,7 +689,7 @@ const TermsOfService = () => {
                       Security Issues
                     </h3>
                     <div className="space-y-3 text-gray-700">
-                      <p>Email: security@stroomai.com</p>
+                      <p>Email: info@stroomai.com</p>
                       <p className="text-sm text-gray-600">
                         For urgent security concerns or data breaches.
                       </p>
@@ -704,7 +704,7 @@ const TermsOfService = () => {
           <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-200">
             <p className="text-center text-gray-600 italic">
               These Terms of Service are designed to ensure fair, transparent,
-              and secure use of StroomAI's innovative AI technologies while
+              and secure use of StroomAI&apos;s innovative AI technologies while
               protecting both user rights and our intellectual property.
             </p>
           </div>

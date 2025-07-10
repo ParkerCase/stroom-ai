@@ -252,7 +252,7 @@ Source: StroomAI Website
               <p>Best regards,<br>
               <strong>The StroomAI Team</strong><br>
               Enterprise AI Solutions<br>
-              📧 hello@stroomai.com<br>
+              📧 info@stroomai.com<br>
               📱 +1 (929) 707-9902<br>
               🌐 <a href="https://stroomai.com" style="color: #2563eb;">stroomai.com</a></p>
 
@@ -291,7 +291,7 @@ Source: StroomAI Website
     return res.status(500).json({
       error: "Failed to send message",
       message:
-        "There was an error processing your request. Please try again or contact hello@stroomai.com directly.",
+        "There was an error processing your request. Please try again or contact info@stroomai.com directly.",
       details:
         process.env.NODE_ENV === "development" ? error.message : undefined,
     });

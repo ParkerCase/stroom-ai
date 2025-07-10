@@ -10,8 +10,8 @@ async function testResend() {
 
     // Test sending a simple email
     const result = await resend.emails.send({
-      from: "hello@stroomai.com",
-      to: ["hello@stroomai.com"],
+      from: "info@stroomai.com",
+      to: ["info@stroomai.com"],
       subject: "Test Email from StroomAI Contact Form",
       html: "<p>This is a test email to verify Resend configuration.</p>",
     });
