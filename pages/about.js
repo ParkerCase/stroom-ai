@@ -297,7 +297,7 @@ const AboutPage = () => {
                     Enterprise-Grade Performance
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    MERIDIAN reduces research time from hours to 45 minutes
+                    MeridianAI reduces research time from hours to 45 minutes
                     maximum. Our systems deliver quantifiable efficiency gains
                     and ROI for enterprise clients.
                   </p>

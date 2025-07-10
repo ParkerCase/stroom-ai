@@ -477,7 +477,7 @@ const PrivacyPolicy = () => {
                     href="/#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    Mode AI Stylist
+                    ModeAI Stylist
                   </Link>
                 </li>
                 <li>
@@ -485,7 +485,7 @@ const PrivacyPolicy = () => {
                     href="/#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    Hygeia AI
+                    HygeiaAI
                   </Link>
                 </li>
                 <li>
@@ -493,7 +493,7 @@ const PrivacyPolicy = () => {
                     href="/#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    MERIDIAN
+                    MeridianAI
                   </Link>
                 </li>
                 <li>
@@ -501,7 +501,7 @@ const PrivacyPolicy = () => {
                     href="/#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    Conservatron 12000
+                    TraffickJam Intelligence System
                   </Link>
                 </li>
               </ul>

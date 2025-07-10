@@ -41,7 +41,7 @@ const StroomAI = () => {
   // Real projects from Parker Case's original site
   const solutions = [
     {
-      title: "Mode AI Stylist",
+      title: "ModeAI Stylist",
       status: "Patent Pending",
       description:
         "Revolutionary cross-site personalization system deployed as browser extension and injectable widget. Features computer vision wardrobe analysis, celebrity styling database integration, real-time trend ingestion, and modular virtual try-on capabilities. Commission-based retailer model enables seamless partnerships while maintaining user privacy through encrypted profile synchronization across domains.",
@@ -57,7 +57,7 @@ const StroomAI = () => {
       metrics: "Patent Pending",
     },
     {
-      title: "Hygeia AI",
+      title: "HygeiaAI",
       status: "5 Patents Pending",
       description:
         "Breakthrough medical nutrition therapy system combining multi-criteria optimization (health + budget + convenience) with conversational meal planning and cross-retailer integration. Features adaptive learning algorithms, health condition-specific recipe modification, drug-food interaction monitoring, family history-based disease prevention, and intelligent ingredient substitution.",
@@ -73,7 +73,7 @@ const StroomAI = () => {
       metrics: "5 Patents Pending",
     },
     {
-      title: "MERIDIAN",
+      title: "MeridianAI",
       status: "Production Ready",
       description:
         "Intelligent chatbot dashboard that leverages natural language processing to provide contextual knowledge management and automated responses across multiple domains including storage providers, CRMs, and more. Features multi-domain expertise with very high query resolution rate and integrates with many enterprise systems. Reduces deep research time from hours to 45 minutes maximum.",
@@ -534,7 +534,7 @@ const StroomAI = () => {
                       Proven Performance
                     </h3>
                     <p className="text-gray-600">
-                      MERIDIAN reduces research time from hours to 45 minutes
+                      MeridianAI reduces research time from hours to 45 minutes
                       maximum. Our systems deliver measurable efficiency gains.
                     </p>
                   </div>
@@ -567,7 +567,7 @@ const StroomAI = () => {
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6 py-4 bg-blue-50/50 rounded-r-xl">
                   <p className="text-gray-600 italic mb-3 text-lg">
-                    &quot;MERIDIAN revolutionized our data management. The
+                    &quot;MeridianAI revolutionized our data management. The
                     patent-pending technology is truly innovative and brought
                     all insight to our fingertips.&quot;
                   </p>
@@ -578,9 +578,9 @@ const StroomAI = () => {
 
                 <div className="border-l-4 border-orange-500 pl-6 py-4 bg-orange-50/50 rounded-r-xl">
                   <p className="text-gray-600 italic mb-3 text-lg">
-                    &quot;The Mode AI Stylist tool touches on all things that
-                    you might expect from an in-person shopping experience and
-                    more! This could be a game changer.&quot;
+                    &quot;The ModeAI Stylist tool touches on all things that you
+                    might expect from an in-person shopping experience and more!
+                    This could be a game changer.&quot;
                   </p>
                   <p className="text-sm font-bold text-orange-700">
                     — Former Nordstrom Employee of 20+ years
@@ -667,9 +667,9 @@ const StroomAI = () => {
                     className="w-full bg-white/70 border-2 border-blue-200 rounded-xl px-6 py-4 text-gray-900 focus:border-blue-600 focus:outline-none appearance-none text-lg"
                   >
                     <option value="">Select Innovation Interest</option>
-                    <option value="ai-stylist">Mode AI Stylist</option>
-                    <option value="grocery-assistant">Hygeia AI</option>
-                    <option value="meridian">MERIDIAN Dashboard</option>
+                    <option value="ai-stylist">ModeAI Stylist</option>
+                    <option value="grocery-assistant">HygeiaAI</option>
+                    <option value="MeridianAI">MeridianAI Dashboard</option>
                     <option value="conservatron">TraffickJam</option>
                     <option value="mental-space">MentalSpace Platform</option>
                     <option value="custom-solution">Custom AI Solution</option>
@@ -790,7 +790,7 @@ const StroomAI = () => {
                     href="#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    Mode AI Stylist
+                    ModeAI Stylist
                   </a>
                 </li>
                 <li>
@@ -798,7 +798,7 @@ const StroomAI = () => {
                     href="#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    Hygeia AI
+                    HygeiaAI
                   </a>
                 </li>
                 <li>
@@ -806,7 +806,7 @@ const StroomAI = () => {
                     href="#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    MERIDIAN
+                    MeridianAI
                   </a>
                 </li>
                 <li>
@@ -814,7 +814,7 @@ const StroomAI = () => {
                     href="#solutions"
                     className="hover:text-white transition-colors"
                   >
-                    Conservatron 12000
+                    TraffickJam Intelligence System
                   </a>
                 </li>
               </ul>
