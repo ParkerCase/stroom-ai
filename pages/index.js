@@ -1,7 +1,7 @@
 // pages/index.js - StroomAI Professional Landing Page (Real Content & Unique Design)
 
-import React, { useState, useEffect, Link } from "react";
-// import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   ChevronDown,
   Mail,
