@@ -877,13 +877,27 @@ const StroomAI = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a
+                    href="/privacy-policy"
+                    className="hover:text-white transition-colors"
+                  >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a
+                    href="/terms-of-service"
+                    className="hover:text-white transition-colors"
+                  >
                     Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/security"
+                    className="hover:text-white transition-colors"
+                  >
+                    Security
                   </a>
                 </li>
               </ul>
