@@ -10,9 +10,7 @@ import {
   Users,
   Globe,
   Mail,
-  Phone,
   AlertTriangle,
-  CheckCircle,
   Clock,
   DollarSign,
 } from "lucide-react";
@@ -41,7 +39,7 @@ const TermsOfService = () => {
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg"
           >
             <ArrowLeft className="w-5 h-5" />
             Back to Home
@@ -55,7 +53,7 @@ const TermsOfService = () => {
           {/* Header Section */}
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
                 <FileText className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -86,7 +84,7 @@ const TermsOfService = () => {
                   Policy.
                 </p>
 
-                <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-6 rounded-2xl border-l-4 border-blue-500">
+                <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-blue-500">
                   <h3 className="text-xl font-bold mb-4 text-gray-900">
                     Service Categories Covered:
                   </h3>
@@ -515,7 +513,7 @@ const TermsOfService = () => {
                   </h3>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-2">
-                      99.9%
+                      High
                     </div>
                     <p className="text-blue-800">Uptime Commitment</p>
                   </div>
@@ -527,7 +525,7 @@ const TermsOfService = () => {
                   </h3>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-green-600 mb-2">
-                      99.95%
+                      Premium
                     </div>
                     <p className="text-green-800">Uptime with SLAs</p>
                   </div>
@@ -539,7 +537,7 @@ const TermsOfService = () => {
                   </h3>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-red-600 mb-2">
-                      99.99%
+                      Critical
                     </div>
                     <p className="text-red-800">
                       Mental Health Crisis Detection

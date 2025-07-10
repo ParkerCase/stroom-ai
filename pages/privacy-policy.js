@@ -2,16 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  Shield,
-  Lock,
-  Eye,
-  Users,
-  Globe,
-  Mail,
-  Phone,
-} from "lucide-react";
+import { ArrowLeft, Shield, Lock, Eye, Users, Globe, Mail } from "lucide-react";
 import Image from "next/image";
 
 const PrivacyPolicy = () => {
@@ -37,7 +28,7 @@ const PrivacyPolicy = () => {
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg"
           >
             <ArrowLeft className="w-5 h-5" />
             Back to Home
@@ -51,7 +42,7 @@ const PrivacyPolicy = () => {
           {/* Header Section */}
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -84,7 +75,7 @@ const PrivacyPolicy = () => {
                   support platforms.
                 </p>
 
-                <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-6 rounded-2xl border-l-4 border-blue-500">
+                <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-blue-500">
                   <h3 className="text-xl font-bold mb-4 text-gray-900">
                     Our Privacy Principles:
                   </h3>

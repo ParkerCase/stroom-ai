@@ -45,7 +45,7 @@ const Security = () => {
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg"
           >
             <ArrowLeft className="w-5 h-5" />
             Back to Home
@@ -59,7 +59,7 @@ const Security = () => {
           {/* Header Section */}
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -75,7 +75,7 @@ const Security = () => {
 
           {/* Executive Summary */}
           <section className="mb-12">
-            <div className="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-2xl border-l-4 border-blue-500">
+            <div className="bg-gray-50 p-8 rounded-2xl border-l-4 border-blue-500">
               <h2 className="text-2xl font-bold mb-4 text-gray-900">
                 Executive Summary
               </h2>
