@@ -345,8 +345,24 @@ const PrivacyPolicy = () => {
                       <p>
                         <strong>StroomAI</strong>
                       </p>
-                      <p>Email: info@stroomai.com</p>
-                      <p>Phone: +1 (929) 707-9902</p>
+                      <p>
+                        Email:{" "}
+                        <a
+                          href="mailto:info@stroomai.com"
+                          className="text-blue-600 hover:text-blue-800 underline"
+                        >
+                          info@stroomai.com
+                        </a>
+                      </p>
+                      <p>
+                        Phone:{" "}
+                        <a
+                          href="tel:+19297079902"
+                          className="text-blue-600 hover:text-blue-800 underline"
+                        >
+                          +1 (929) 707-9902
+                        </a>
+                      </p>
                       <p>Address: New York, NY</p>
                     </div>
                   </div>
@@ -359,7 +375,15 @@ const PrivacyPolicy = () => {
                       <p>
                         <strong>For EU Residents</strong>
                       </p>
-                      <p>Email: info@stroomai.com</p>
+                      <p>
+                        Email:{" "}
+                        <a
+                          href="mailto:info@stroomai.com"
+                          className="text-blue-600 hover:text-blue-800 underline"
+                        >
+                          info@stroomai.com
+                        </a>
+                      </p>
                       <p className="text-sm text-gray-600">
                         You may also file a complaint with your local data
                         protection authority.
@@ -561,8 +585,7 @@ const PrivacyPolicy = () => {
 
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-300 text-lg">
-              © 2025 StroomAI. All rights reserved. | 6+ Patents Pending |
-              Founded by AI Inventor Parker Case
+              © 2025 Stroom AI LLC. All rights reserved.
             </p>
           </div>
         </div>

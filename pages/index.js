@@ -1,6 +1,6 @@
 // pages/index.js - StroomAI Professional Landing Page (Real Content & Unique Design)
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Link } from "react";
 // import Link from "next/link";
 import {
   ChevronDown,
@@ -714,9 +714,12 @@ const StroomAI = () => {
                   </div>
                   <div className="flex items-center gap-4">
                     <Phone className="w-6 h-6 text-blue-600" />
-                    <span className="text-gray-700 text-lg">
+                    <a
+                      href="tel:+19297079902"
+                      className="text-gray-700 text-lg hover:text-blue-600 transition-colors"
+                    >
                       +1 (929) 707-9902
-                    </span>
+                    </a>
                   </div>
                   <div className="flex items-center gap-4">
                     <Globe className="w-6 h-6 text-blue-600" />
@@ -877,28 +880,28 @@ const StroomAI = () => {
                   </a>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/privacy-policy"
                     className="hover:text-white transition-colors"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/terms-of-service"
                     className="hover:text-white transition-colors"
                   >
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/security"
                     className="hover:text-white transition-colors"
                   >
                     Security
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -906,8 +909,7 @@ const StroomAI = () => {
 
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-300 text-lg">
-              © 2025 StroomAI. All rights reserved. | 6+ Patents Pending |
-              Founded by AI Inventor Parker Case
+              © 2025 Stroom AI LLC. All rights reserved.
             </p>
           </div>
         </div>

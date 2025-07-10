@@ -190,12 +190,12 @@ For privacy-related questions or to exercise your rights:
 
 **Privacy Officer**  
 StroomAI  
-Email: info@stroomai.com  
+Email: [info@stroomai.com](mailto:info@stroomai.com)  
 Phone: [Insert Phone Number]  
 Address: [Insert Address]
 
 **Data Protection Officer (for EU residents)**  
-Email: info@stroomai.com
+Email: [info@stroomai.com](mailto:info@stroomai.com)
 
 ## 12. Regional Specific Rights
 

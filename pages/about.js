@@ -426,8 +426,8 @@ const AboutPage = () => {
             </div>
           </div>
           <p className="text-gray-300 text-lg">
-            © 2025 StroomAI. All rights reserved. | 6+ Patents Pending |
-            Building intelligent solutions for tomorrow.
+            © 2025 StroomAI LLC. All rights reserved. | Building intelligent
+            solutions for tomorrow.
           </p>
         </div>
       </footer>

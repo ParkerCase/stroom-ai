@@ -252,8 +252,8 @@ Source: StroomAI Website
               <p>Best regards,<br>
               <strong>The StroomAI Team</strong><br>
               Enterprise AI Solutions<br>
-              📧 info@stroomai.com<br>
-              📱 +1 (929) 707-9902<br>
+              📧 <a href="mailto:info@stroomai.com" style="color: #2563eb; text-decoration: none;">info@stroomai.com</a><br>
+              📱 <a href="tel:+19297079902" style="color: #2563eb; text-decoration: none;">+1 (929) 707-9902</a><br>
               🌐 <a href="https://stroomai.com" style="color: #2563eb;">stroomai.com</a></p>
 
               <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
@@ -291,7 +291,7 @@ Source: StroomAI Website
     return res.status(500).json({
       error: "Failed to send message",
       message:
-        "There was an error processing your request. Please try again or contact info@stroomai.com directly.",
+        'There was an error processing your request. Please try again or contact <a href="mailto:info@stroomai.com" style="color: #2563eb; text-decoration: none;">info@stroomai.com</a> directly.',
       details:
         process.env.NODE_ENV === "development" ? error.message : undefined,
     });

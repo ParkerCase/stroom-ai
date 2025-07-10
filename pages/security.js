@@ -630,7 +630,14 @@ const Security = () => {
                   <h3 className="text-lg font-bold mb-2 text-gray-900">
                     Security Questions
                   </h3>
-                  <p className="text-gray-700">info@stroomai.com</p>
+                  <p className="text-gray-700">
+                    <a
+                      href="mailto:info@stroomai.com"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      info@stroomai.com
+                    </a>
+                  </p>
                 </div>
                 <div className="text-center">
                   <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
@@ -805,8 +812,7 @@ const Security = () => {
 
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-300 text-lg">
-              © 2025 StroomAI. All rights reserved. | 6+ Patents Pending |
-              Founded by AI Inventor Parker Case
+              © 2025 Stroom AI LLC. All rights reserved.
             </p>
           </div>
         </div>
