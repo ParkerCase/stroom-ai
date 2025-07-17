@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
       <header className="py-6 px-4 bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden">
+            <div className="w-8 h-8 mr-3 rounded-lg">
               <Image
                 src="/StroomAI.png"
                 alt="StroomAI Logo"
@@ -447,7 +447,7 @@ const PrivacyPolicy = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden">
+                <div className="w-8 h-8 mr-3 rounded-lg">
                   <Image
                     src="/StroomAI.png"
                     alt="StroomAI Logo"
