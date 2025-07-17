@@ -91,8 +91,8 @@ function MyApp({ Component, pageProps }) {
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
-        <link rel="icon" type="image/png" sizes="32x32" href="/Artwork.JPG" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/Artwork.JPG" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/StroomAI.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/StroomAI.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* Theme */}

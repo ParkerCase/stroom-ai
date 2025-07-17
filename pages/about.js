@@ -26,7 +26,7 @@ const AboutPage = () => {
             <Link href="/" className="flex items-center">
               <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-blue-200">
                 <Image
-                  src="/Artwork.JPG"
+                  src="/StroomAI.png"
                   alt="StroomAI Logo"
                   width={40}
                   height={40}
@@ -74,7 +74,7 @@ const AboutPage = () => {
         <div className="max-w-6xl mx-auto text-center">
           <div className="w-24 h-24 mx-auto mb-8 rounded-2xl overflow-hidden border-4 border-blue-200 shadow-xl">
             <Image
-              src="/Artwork.JPG"
+              src="/StroomAI.png"
               alt="StroomAI Logo"
               width={96}
               height={96}
@@ -414,7 +414,7 @@ const AboutPage = () => {
           <div className="flex items-center justify-center mb-4">
             <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
               <Image
-                src="/Artwork.JPG"
+                src="/StroomAI.png"
                 alt="StroomAI Logo"
                 width={32}
                 height={32}

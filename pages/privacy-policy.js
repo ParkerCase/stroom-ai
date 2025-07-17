@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
           <Link href="/" className="flex items-center">
             <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
               <Image
-                src="/Artwork.JPG"
+                src="/StroomAI.png"
                 alt="StroomAI Logo"
                 width={32}
                 height={32}
@@ -449,7 +449,7 @@ const PrivacyPolicy = () => {
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
                   <Image
-                    src="/Artwork.JPG"
+                    src="/StroomAI.png"
                     alt="StroomAI Logo"
                     width={32}
                     height={32}
