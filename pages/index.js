@@ -249,7 +249,7 @@ const StroomAI = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden border-2 border-orange-400">
+              <div className="w-10 h-10 mr-3 rounded-lg overflow-hidden">
                 <Image
                   src="/StroomAI.png"
                   alt="StroomAI Logo"
@@ -320,7 +320,7 @@ const StroomAI = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center pt-20 pb-16">
             <div className="mb-8">
-              <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-orange-400 shadow-xl">
+              <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/StroomAI.png"
                   alt="StroomAI Logo"
@@ -760,7 +760,7 @@ const StroomAI = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden border border-blue-400">
+                <div className="w-8 h-8 mr-3 rounded-lg overflow-hidden">
                   <Image
                     src="/StroomAI.png"
                     alt="StroomAI Logo"
