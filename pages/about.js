@@ -237,7 +237,7 @@ const AboutPage = () => {
 
                   <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                     <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold border-2 border-blue-200">
-                      6+ Patents Pending
+                      9+ Patents Pending
                     </span>
                     <span className="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold border-2 border-orange-200">
                       Production AI Systems

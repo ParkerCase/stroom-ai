@@ -144,7 +144,7 @@ const StroomAI = () => {
   // Real achievements and industry statistics
   const stats = [
     {
-      value: "6+",
+      value: "9+",
       label: "Patents Pending",
       description: "Breakthrough AI innovations",
     },
