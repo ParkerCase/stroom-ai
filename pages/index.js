@@ -468,7 +468,8 @@ const StroomAI = () => {
       title: "MuseAI Production Intelligence",
       status: "Coming Soon - 3 Patents Pending",
       description:
-"The industry's first ethical AI production intelligence platform. Designed to enhance and amplify content generation technologies, MuseAI provides the complete intelligence layer for filmmaking - from script analysis and production optimization to real-time collaboration and ethical compliance monitoring. Built by filmmakers, for filmmakers, with complete transparency and artist empowerment at its core."      tech: [
+        "The industry's first ethical AI production intelligence platform. While content generation AI transforms what we create, MuseAI transforms how we create it - providing script intelligence, production optimization, real-time collaboration, and ethical compliance monitoring. Built by filmmakers, for filmmakers, with complete transparency and artist empowerment at its core.",
+      tech: [
         "Ethical AI Framework",
         "Production Intelligence",
         "Real-time Collaboration",
