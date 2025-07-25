@@ -53,8 +53,8 @@ export default async function handler(req, res) {
   try {
     // Send email using Resend
     const emailData = await resend.emails.send({
-      from: "parker@parkercase.co",
-      to: ["parker@parkercase.co"],
+      from: "sales@stroomai.com",
+      to: ["sales@stroomai.com"],
       subject: `🚀 New Enterprise Inquiry: ${cleanData.company}`,
       html: `
         <!DOCTYPE html>
@@ -170,7 +170,7 @@ Source: StroomAI Website
 
     // Send auto-reply to the potential client
     await resend.emails.send({
-      from: "parker@parkercase.co",
+      from: "sales@stroomai.com",
       to: [cleanData.email],
       subject: `Thank you for your interest in StroomAI - Enterprise Solutions`,
       html: `

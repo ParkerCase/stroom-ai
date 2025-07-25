@@ -456,7 +456,7 @@ const PrivacyPolicy = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                   StroomAI
                 </div>
               </div>

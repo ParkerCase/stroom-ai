@@ -15,12 +15,13 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "../components/ThemeToggle";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 text-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b-2 border-blue-100 z-50 shadow-sm">
+      <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b-2 border-blue-100 dark:border-gray-700 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center">
@@ -33,37 +34,38 @@ const AboutPage = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-orange-600 bg-clip-text text-transparent">
+              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                 StroomAI
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="/"
-                className="transition-all duration-200 hover:text-blue-700 font-medium text-gray-700 hover:border-b-2 hover:border-blue-300 pb-1"
+                className="transition-all duration-200 hover:text-blue-700 dark:hover:text-blue-400 font-medium text-gray-700 dark:text-gray-300 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-600 pb-1"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-blue-700 border-b-2 border-blue-700 pb-1 font-medium"
+                className="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 font-medium"
               >
                 About
               </Link>
               <Link
                 href="/#solutions"
-                className="transition-all duration-200 hover:text-blue-700 font-medium text-gray-700 hover:border-b-2 hover:border-blue-300 pb-1"
+                className="transition-all duration-200 hover:text-blue-700 dark:hover:text-blue-400 font-medium text-gray-700 dark:text-gray-300 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-600 pb-1"
               >
                 Solutions
               </Link>
               <Link
                 href="/#contact"
-                className="transition-all duration-200 hover:text-blue-700 font-medium text-gray-700 hover:border-b-2 hover:border-blue-300 pb-1"
+                className="transition-all duration-200 hover:text-blue-700 dark:hover:text-blue-400 font-medium text-gray-700 dark:text-gray-300 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-600 pb-1"
               >
                 Contact
               </Link>
+              <ThemeToggle />
             </div>
           </div>
         </div>
@@ -84,7 +86,7 @@ const AboutPage = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-purple-600 to-orange-600 bg-clip-text text-transparent">
             About StroomAI
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
             We&apos;re pioneering the future of enterprise AI with
             patent-pending innovations that transform how businesses operate,
             making intelligent automation accessible, reliable, and impactful
@@ -94,19 +96,19 @@ const AboutPage = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50 dark:border-gray-700/50">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
                   Our Mission
                 </h2>
               </div>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                 To democratize artificial intelligence for enterprises by
                 building patent-pending innovations that are not just powerful,
                 but practical, secure, and transformative. We believe AI should
@@ -115,14 +117,16 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50 dark:border-gray-700/50">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 shadow-lg">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+                  Our Vision
+                </h2>
               </div>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                 A world where breakthrough AI innovations solve humanity&apos;s
                 most pressing challenges—from healthcare and conservation to
                 personalized experiences and knowledge management—while
@@ -138,10 +142,10 @@ const AboutPage = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-gray-900">
+            <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
               Our Approach
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
               We combine cutting-edge AI research with practical business
               expertise to deliver patent-pending solutions that don&apos;t just
               work—they excel in real-world environments and deliver measurable
@@ -150,28 +154,28 @@ const AboutPage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-3xl bg-white/80 backdrop-blur-sm shadow-xl border-2 border-white/50">
+            <div className="text-center p-8 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl border-2 border-white/50 dark:border-gray-700/50">
               <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 w-fit mx-auto mb-6 shadow-lg">
                 <Code className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                 Innovation First
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 We don&apos;t just implement existing solutions—we pioneer new
                 approaches with 6+ patent-pending innovations that push the
                 boundaries of what&apos;s possible in AI.
               </p>
             </div>
 
-            <div className="text-center p-8 rounded-3xl bg-white/80 backdrop-blur-sm shadow-xl border-2 border-white/50">
+            <div className="text-center p-8 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl border-2 border-white/50 dark:border-gray-700/50">
               <div className="p-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 w-fit mx-auto mb-6 shadow-lg">
                 <Shield className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                 Privacy & Security
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Every solution is built with privacy-first design principles and
                 enterprise-grade security standards from day one, ensuring your
                 data remains protected and compliant.
@@ -421,7 +425,7 @@ const AboutPage = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
               StroomAI
             </div>
           </div>

@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import "../styles/globals.css";
+import { ThemeProvider } from "../components/ThemeContext";
 
 // Google Analytics Measurement ID
 const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-BS9W00BBL2";
@@ -43,7 +44,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <title>StroomAI</title>
         <meta
@@ -119,7 +120,7 @@ function MyApp({ Component, pageProps }) {
               description:
                 "AI Software Engineer specializing in patent-pending machine learning solutions",
               url: "https://parkercase.co",
-              email: "parker@parkercase.co",
+              email: "sales@stroomai.com",
               telephone: "+1-929-707-9902",
               address: {
                 "@type": "PostalAddress",
@@ -145,7 +146,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }
 
