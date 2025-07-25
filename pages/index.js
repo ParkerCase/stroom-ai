@@ -896,7 +896,19 @@ const StroomAI = () => {
                 </div>
 
                 <a
-                  href="#contact"
+                  href={
+                    solution.title === "MeridianAI"
+                      ? "https://meridian.stroomai.com"
+                      : "#contact"
+                  }
+                  target={
+                    solution.title === "MeridianAI" ? "_blank" : undefined
+                  }
+                  rel={
+                    solution.title === "MeridianAI"
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="flex items-center gap-2 text-blue-700 dark:text-blue-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-bold text-lg"
                 >
                   <ExternalLink className="w-5 h-5" />
