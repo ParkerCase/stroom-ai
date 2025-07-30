@@ -28,16 +28,6 @@ export default function Document() {
         <link rel="dns-prefetch" href="//linkedin.com" />
         <link rel="dns-prefetch" href="//github.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="//js-na2.hs-scripts.com" />
-
-        {/* HubSpot Tracking Code */}
-        <script
-          type="text/javascript"
-          id="hs-script-loader"
-          async
-          defer
-          src="//js-na2.hs-scripts.com/243220998.js"
-        />
       </Head>
       <body className="antialiased">
         <Main />

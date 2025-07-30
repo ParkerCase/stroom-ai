@@ -1,6 +1,7 @@
 // pages/_app.js
 import { useEffect } from "react";
 import Head from "next/head";
+import Script from "next/script";
 import "../styles/globals.css";
 import { ThemeProvider } from "../components/ThemeContext";
 
@@ -145,6 +146,14 @@ function MyApp({ Component, pageProps }) {
           }}
         />
       </Head>
+
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hubspot-script"
+        strategy="afterInteractive"
+        src="//js-na2.hs-scripts.com/243220998.js"
+      />
+
       <Component {...pageProps} />
     </ThemeProvider>
   );

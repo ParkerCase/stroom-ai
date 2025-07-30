@@ -217,9 +217,9 @@ const MeridianAISection = () => {
                       Client Success
                     </h5>
                     <blockquote className="text-gray-700 dark:text-gray-300 text-sm italic leading-relaxed mb-3">
-                      "MeridianAI revolutionized our data management. The
+                      &quot;MeridianAI revolutionized our data management. The
                       patent-pending technology is truly innovative and brought
-                      all insight to our fingertips."
+                      all insight to our fingertips.&quot;
                     </blockquote>
                     <cite className="text-blue-700 dark:text-blue-400 font-bold text-sm">
                       — Rejuvatek Medical Marketing Director
