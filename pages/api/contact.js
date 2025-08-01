@@ -197,31 +197,17 @@ Source: StroomAI Website
           <div class="container">
             <div class="header">
               <div class="logo">StroomAI</div>
-              <h1>🤖 Thank You for Your Interest!</h1>
+              <h1>Thank You for Your Interest!</h1>
               <p>Enterprise AI Solutions That Drive Results</p>
             </div>
             <div class="content">
               <p>Dear ${cleanData.name},</p>
               
-              <p>Thank you for reaching out to <strong>StroomAI</strong> regarding AI solutions for <strong>${cleanData.company}</strong>. We're excited about the opportunity to help transform your business with intelligent automation.</p>
+              <p>Thank you for reaching out to <strong>StroomAI</strong> regarding AI solutions for <strong>${cleanData.company}</strong>. We're excited about the opportunity to help transform your business!</p>
               
-              <div class="stats">
-                <div class="stat">
-                  <div class="stat-number">99.7%</div>
-                  <div class="stat-label">Uptime</div>
-                </div>
-                <div class="stat">
-                  <div class="stat-number">40%</div>
-                  <div class="stat-label">Efficiency Gain</div>
-                </div>
-                <div class="stat">
-                  <div class="stat-number">24/7</div>
-                  <div class="stat-label">AI Availability</div>
-                </div>
-              </div>
 
               <div class="feature">
-                <h3>🚀 What Happens Next?</h3>
+                <h3>Next Steps</h3>
                 <p>Our team will review your inquiry and contact you within <strong>24 hours</strong> to discuss:</p>
                 <ul>
                   <li>Your specific AI requirements and goals</li>
@@ -232,13 +218,13 @@ Source: StroomAI Website
               </div>
 
               <div style="text-align: center; margin: 30px 0;">
-                <a href="https://calendly.com/stroomai/consultation" class="cta-button">📅 Schedule Immediate Consultation</a>
+                <a href="https://calendly.com/parkere-case/30min" class="cta-button">Schedule Immediate Consultation</a>
                 <br>
                 <small style="color: #6b7280;">Or we'll contact you within 24 hours</small>
               </div>
 
               <div class="feature">
-                <h3>🏆 Why Leading Enterprises Choose StroomAI</h3>
+                <h3>Why Leading Enterprises Choose StroomAI</h3>
                 <ul>
                   <li><strong>Patent-Pending Technology:</strong> Cutting-edge innovations that give you competitive advantage</li>
                   <li><strong>Rapid Deployment:</strong> From concept to production in 2-12 weeks</li>
@@ -252,9 +238,9 @@ Source: StroomAI Website
               <p>Best regards,<br>
               <strong>The StroomAI Team</strong><br>
               Enterprise AI Solutions<br>
-              📧 <a href="mailto:info@stroomai.com" style="color: #2563eb; text-decoration: none;">info@stroomai.com</a><br>
-              📱 <a href="tel:+19297079902" style="color: #2563eb; text-decoration: none;">+1 (929) 707-9902</a><br>
-              🌐 <a href="https://stroomai.com" style="color: #2563eb;">stroomai.com</a></p>
+             <a href="mailto:info@stroomai.com" style="color: #2563eb; text-decoration: none;">info@stroomai.com</a><br>
+             <a href="tel:+19297079902" style="color: #2563eb; text-decoration: none;">+1 (929) 707-9902</a><br>
+              <a href="https://stroomai.com" style="color: #2563eb;">stroomai.com</a></p>
 
               <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
               <p style="font-size: 12px; color: #6b7280; text-align: center;">
