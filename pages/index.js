@@ -799,6 +799,13 @@ const StroomAI = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+              <Link
+                href="/beta"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
+              >
+                <Star className="w-6 h-6" />
+                Join Beta Access
+              </Link>
               <a
                 href="#contact"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
@@ -1079,10 +1086,21 @@ const StroomAI = () => {
             <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
               Let&apos;s discuss how our patent-pending AI innovations can
               deliver measurable results for your organization.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/beta"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl flex items-center gap-3"
+              >
+                <Star className="w-5 h-5" />
+                Request Beta Access
+              </Link>
+              <span className="text-gray-400 dark:text-gray-500">or</span>
+              <span className="text-lg text-gray-700 dark:text-gray-300">Contact us for enterprise solutions:</span>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
