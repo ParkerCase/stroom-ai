@@ -60,6 +60,12 @@ const AboutPage = () => {
                 Solutions
               </Link>
               <Link
+                href="/blog"
+                className="transition-all duration-200 hover:text-blue-700 dark:hover:text-blue-400 font-medium text-gray-700 dark:text-gray-300 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-600 pb-1"
+              >
+                Blog
+              </Link>
+              <Link
                 href="/#contact"
                 className="transition-all duration-200 hover:text-blue-700 dark:hover:text-blue-400 font-medium text-gray-700 dark:text-gray-300 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-600 pb-1"
               >
