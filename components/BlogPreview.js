@@ -17,7 +17,7 @@ const BlogPreview = ({ featured = false, showAll = false }) => {
       category: "Enterprise AI",
       tags: ["Knowledge Management", "Decision Velocity", "AI Strategy"],
       featured: true,
-      image: "/StroomAI.png",
+      image: "/new-logo-logo-only.png",
     },
     {
       id: "future-enterprise-ai",
@@ -30,7 +30,7 @@ const BlogPreview = ({ featured = false, showAll = false }) => {
       category: "AI Strategy",
       tags: ["Enterprise AI", "Integration", "Digital Transformation"],
       featured: false,
-      image: "/StroomAI.png",
+      image: "/new-logo-logo-only.png",
     },
     {
       id: "team-collaboration-ai",
@@ -43,7 +43,7 @@ const BlogPreview = ({ featured = false, showAll = false }) => {
       category: "Productivity",
       tags: ["Team Collaboration", "AI Tools", "Workflow Optimization"],
       featured: false,
-      image: "/StroomAI.png",
+      image: "/new-logo-logo-only.png",
     },
   ];
 

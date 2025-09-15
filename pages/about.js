@@ -25,17 +25,14 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center">
-              <div className="w-10 h-10 mr-3 rounded-lg">
+              <div className="h-20">
                 <Image
-                  src="/StroomAI.png"
+                  src="/wormhole-full-logo.png"
                   alt="StroomAI Logo"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
+                  width={350}
+                  height={80}
+                  className="h-full w-auto object-contain"
                 />
-              </div>
-              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                StroomAI
               </div>
             </Link>
 

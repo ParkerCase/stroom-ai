@@ -10,7 +10,6 @@ import {
   Users,
   Search,
   Star,
-  Sparkles,
   Calendar,
 } from "lucide-react";
 import Image from "next/image";
@@ -148,17 +147,14 @@ const BetaPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <Link href="/" className="flex items-center">
-                <div className="w-10 h-10 mr-3 rounded-lg">
+                <div className="h-20">
                   <Image
-                    src="/StroomAI.png"
+                    src="/wormhole-full-logo.png"
                     alt="StroomAI Logo"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
+                    width={350}
+                    height={80}
+                    className="h-full w-auto object-contain"
                   />
-                </div>
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                  StroomAI
                 </div>
               </Link>
               <ThemeToggle />
@@ -211,17 +207,14 @@ const BetaPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center">
-              <div className="w-10 h-10 mr-3 rounded-lg">
+              <div className="h-12">
                 <Image
-                  src="/StroomAI.png"
+                  src="/wormhole-full-logo.png"
                   alt="StroomAI Logo"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
+                  width={200}
+                  height={48}
+                  className="h-full w-auto object-contain"
                 />
-              </div>
-              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                StroomAI
               </div>
             </Link>
             <ThemeToggle />
@@ -253,8 +246,8 @@ const BetaPage = () => {
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get early access to our breakthrough AI innovations. Select the
-              platforms you're interested in and our team will reach out within
-              48 hours to discuss pricing, features, and implementation
+              platforms you&apos;re interested in and our team will reach out
+              within 48 hours to discuss pricing, features, and implementation
               timeline.
             </p>
           </div>
@@ -267,8 +260,8 @@ const BetaPage = () => {
                   Select Platforms
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">
-                  Choose the AI platforms you'd like to explore during our beta
-                  program:
+                  Choose the AI platforms you&apos;d like to explore during our
+                  beta program:
                 </p>
 
                 <div className="space-y-4">

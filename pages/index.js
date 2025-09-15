@@ -24,424 +24,10 @@ import {
   Award,
   Target,
   Film,
-  Sparkles,
   BookOpen,
-  Clock,
 } from "lucide-react";
 import Image from "next/image";
 import ThemeToggle from "../components/ThemeToggle";
-
-const MeridianAISection = () => {
-  return (
-    <>
-      {/* Featured MeridianAI Section */}
-      <div className="mb-20">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 px-6 py-3 rounded-full border-2 border-green-200 dark:border-green-700 mb-6">
-            <Shield className="w-5 h-5 text-green-600 dark:text-green-400" />
-            <span className="text-green-800 dark:text-green-300 font-bold text-lg">
-              Production Ready
-            </span>
-          </div>
-          <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-green-600 to-cyan-600 bg-clip-text text-transparent">
-            MeridianAI Enterprise
-          </h3>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            From silos to signals - the enterprise-grade AI platform unifying
-            200+ business integrations.
-            <span className="font-semibold text-blue-700 dark:text-blue-400">
-              {" "}
-              Trusted by organizations to revolutionize their business
-              intelligence.
-            </span>
-          </p>
-        </div>
-
-        {/* Main MeridianAI Card */}
-        <div className="relative max-w-6xl mx-auto">
-          {/* Production Ready Badge */}
-          <div className="absolute -top-4 -right-4 z-10">
-            <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg transform -rotate-12">
-              Enterprise Ready
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-white/90 to-green-50/90 dark:from-gray-800/90 dark:to-green-900/20 backdrop-blur-sm rounded-3xl p-10 shadow-2xl border-3 border-green-100 dark:border-green-800/50 relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-green-600"></div>
-            </div>
-
-            <div className="relative z-10">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Column - Description */}
-                <div>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-600 via-green-600 to-cyan-600 shadow-xl">
-                      <Brain className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-                        MeridianAI
-                      </h4>
-                      <p className="text-lg text-blue-700 dark:text-blue-400 font-bold">
-                        Enterprise Intelligence Platform
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                    Transform your business intelligence with our
-                    production-ready AI platform. MeridianAI seamlessly
-                    integrates 200+ business tools, delivers lightning-fast RAG
-                    knowledge bases, and provides enterprise-grade security with
-                    SOC 2 certification.{" "}
-                    <span className="font-semibold text-blue-700 dark:text-blue-400">
-                      Reduce research time from hours to 45 minutes maximum.
-                    </span>
-                  </p>
-
-                  {/* Key Features Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-center gap-3">
-                      <Zap className="w-5 h-5 text-blue-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        200+ Integrations
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Shield className="w-5 h-5 text-green-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        SOC 2 Certified
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Brain className="w-5 h-5 text-cyan-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        RAG Knowledge Base
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <TrendingUp className="w-5 h-5 text-blue-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        Predictive Analytics
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="https://meridian.stroomai.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl flex items-center gap-3 justify-center"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      Launch Platform
-                    </a>
-                    <a
-                      href="#contact"
-                      className="border-2 border-blue-600 dark:border-blue-400 text-blue-700 dark:text-blue-400 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all flex items-center gap-3 justify-center"
-                    >
-                      <Calendar className="w-5 h-5" />
-                      Schedule Demo
-                    </a>
-                  </div>
-                </div>
-
-                {/* Right Column - Enterprise Stats & Features */}
-                <div className="space-y-8">
-                  {/* Enterprise Stats */}
-                  <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-blue-200 dark:border-blue-700">
-                    <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                      Enterprise Performance
-                    </h5>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                          200+
-                        </div>
-                        <div className="text-sm text-gray-700 dark:text-gray-300">
-                          Business Integrations
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                          45min
-                        </div>
-                        <div className="text-sm text-gray-700 dark:text-gray-300">
-                          Max Research Time
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
-                          75%
-                        </div>
-                        <div className="text-sm text-gray-700 dark:text-gray-300">
-                          Task Automation
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                          Real-time
-                        </div>
-                        <div className="text-sm text-gray-700 dark:text-gray-300">
-                          Data Sync
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Security Features */}
-                  <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-green-200 dark:border-green-700">
-                    <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                      Enterprise Security
-                    </h5>
-                    <div className="space-y-3">
-                      {[
-                        { feature: "SOC 2 Type II Certified", icon: "🔒" },
-                        { feature: "AES-256 Encryption", icon: "🛡️" },
-                        { feature: "GDPR Compliant", icon: "🌍" },
-                        { feature: "Zero Data Mining", icon: "🚫" },
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center gap-3">
-                          <span className="text-lg">{item.icon}</span>
-                          <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                            {item.feature}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Client Testimonial */}
-                  <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-2xl p-6 border border-cyan-200 dark:border-cyan-700">
-                    <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-                      Client Success
-                    </h5>
-                    <blockquote className="text-gray-700 dark:text-gray-300 text-sm italic leading-relaxed mb-3">
-                      &quot;MeridianAI revolutionized our data management. The
-                      patent-pending technology is truly innovative and brought
-                      all insight to our fingertips.&quot;
-                    </blockquote>
-                    <cite className="text-blue-700 dark:text-blue-400 font-bold text-sm">
-                      — Rejuvatek Medical Marketing Director
-                    </cite>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Separator */}
-      <div className="text-center mb-16">
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto rounded-full"></div>
-      </div>
-    </>
-  );
-};
-
-const MuseAISection = () => {
-  return (
-    <>
-      {/* Featured MuseAI Section */}
-      <div className="mb-20">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 px-6 py-3 rounded-full border-2 border-purple-200 dark:border-purple-700 mb-6">
-            <Sparkles className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-            <span className="text-purple-800 dark:text-purple-300 font-bold text-lg">
-              Coming Soon
-            </span>
-          </div>
-          <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
-            MuseAI Production Intelligence
-          </h3>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            The industry&apos;s first ethical AI production intelligence
-            platform.
-            <span className="font-semibold text-purple-700 dark:text-purple-400">
-              {" "}
-              Empowering every aspect of filmmaking beyond content creation
-              itself.
-            </span>
-          </p>
-        </div>
-
-        {/* Main MuseAI Card */}
-        <div className="relative max-w-6xl mx-auto">
-          {/* Coming Soon Badge */}
-          <div className="absolute -top-4 -right-4 z-10">
-            <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg transform rotate-12">
-              3 Patents Pending
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-white/90 to-purple-50/90 dark:from-gray-800/90 dark:to-purple-900/20 backdrop-blur-sm rounded-3xl p-10 shadow-2xl border-3 border-purple-100 dark:border-purple-800/50 relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-600"></div>
-            </div>
-
-            <div className="relative z-10">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Column - Description */}
-                <div>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="p-4 rounded-2xl bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 shadow-xl">
-                      <Film className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-                        MuseAI
-                      </h4>
-                      <p className="text-lg text-purple-700 dark:text-purple-400 font-bold">
-                        Production Intelligence Platform
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                    Built by filmmakers, for filmmakers. MuseAI handles the
-                    intelligence layer of production - from semantic script
-                    analysis and ethical compliance monitoring to real-time
-                    collaboration and weather-aware scheduling.{" "}
-                    <span className="font-semibold text-purple-700 dark:text-purple-400">
-                      We empower creativity, never replace it.
-                    </span>
-                  </p>
-
-                  {/* Key Features Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-center gap-3">
-                      <Brain className="w-5 h-5 text-purple-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        Script Intelligence
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Shield className="w-5 h-5 text-blue-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        Ethical Compliance
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Users className="w-5 h-5 text-indigo-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        Real-time Collaboration
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-purple-600" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        Production Optimization
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#contact"
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl flex items-center gap-3 justify-center"
-                    >
-                      <Calendar className="w-5 h-5" />
-                      Request Early Access
-                    </a>
-                    <a
-                      href="#contact"
-                      className="border-2 border-purple-600 dark:border-purple-400 text-purple-700 dark:text-purple-400 px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all flex items-center gap-3 justify-center"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      Learn More
-                    </a>
-                  </div>
-                </div>
-
-                {/* Right Column - Tech Stack & Benefits */}
-                <div className="space-y-8">
-                  {/* Tech Stack */}
-                  <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-200 dark:border-purple-700">
-                    <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                      Patent-Pending Innovations
-                    </h5>
-                    <div className="flex flex-wrap gap-3">
-                      {[
-                        "Ethical AI Framework",
-                        "Semantic Script Analysis",
-                        "Production Intelligence",
-                        "Real-time Collaboration",
-                        "Compliance Monitoring",
-                        "Multi-constraint Optimization",
-                      ].map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-medium border border-purple-200 dark:border-purple-700"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Industry Applications */}
-                  <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-blue-200 dark:border-blue-700">
-                    <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                      Built for Every Production
-                    </h5>
-                    <div className="grid grid-cols-2 gap-3">
-                      {[
-                        "Feature Films",
-                        "Television",
-                        "Documentaries",
-                        "Commercials",
-                        "Independent Films",
-                        "Streaming Content",
-                      ].map((industry, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                          <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                            {industry}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Value Proposition */}
-                  <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-6 border border-indigo-200 dark:border-indigo-700">
-                    <h5 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-                      The Ethical AI Difference
-                    </h5>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                      <span className="font-semibold">Transparency first.</span>{" "}
-                      Every AI decision is explainable.
-                      <span className="font-semibold">
-                        {" "}
-                        Artist empowerment.
-                      </span>{" "}
-                      Technology serves creativity, not the other way around.
-                      <span className="font-semibold">
-                        {" "}
-                        Industry-built.
-                      </span>{" "}
-                      Created by film professionals who understand the craft.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Separator */}
-      <div className="text-center mb-16">
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto rounded-full"></div>
-      </div>
-    </>
-  );
-};
 
 const StroomAI = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -723,7 +309,10 @@ const StroomAI = () => {
         />
         <meta property="og:url" content="https://stroomai.com" />
         <meta property="og:site_name" content="StroomAI" />
-        <meta property="og:image" content="https://stroomai.com/StroomAI.png" />
+        <meta
+          property="og:image"
+          content="https://stroomai.com/new-logo-logo-only.png"
+        />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -737,7 +326,7 @@ const StroomAI = () => {
         />
         <meta
           name="twitter:image"
-          content="https://stroomai.com/StroomAI.png"
+          content="https://stroomai.com/new-logo-logo-only.png"
         />
 
         {/* Structured Data for AI tools */}
@@ -749,7 +338,7 @@ const StroomAI = () => {
               "@type": "Organization",
               name: "StroomAI",
               url: "https://stroomai.com",
-              logo: "https://stroomai.com/StroomAI.png",
+              logo: "https://stroomai.com/new-logo-logo-only.png",
               description:
                 "Enterprise AI solutions for knowledge management and digital transformation",
               foundingDate: "2024",
@@ -801,17 +390,14 @@ const StroomAI = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
-                <div className="w-10 h-10 mr-3 rounded-lg">
+                <div className="h-20">
                   <Image
-                    src="/StroomAI.png"
+                    src="/wormhole-full-logo.png"
                     alt="StroomAI Logo"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
+                    width={350}
+                    height={80}
+                    className="h-full w-auto object-contain"
                   />
-                </div>
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                  StroomAI
                 </div>
               </div>
 
@@ -900,18 +486,21 @@ const StroomAI = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center pt-20 pb-16">
               <div className="mb-8">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-2xl shadow-xl">
+                <div className="w-40 h-40 mx-auto mb-6 rounded-2xl shadow-xl">
                   <Image
-                    src="/StroomAI.png"
+                    src="/new-logo-logo-only.png?v=2"
                     alt="StroomAI Logo"
-                    width={96}
-                    height={96}
-                    className="w-full h-full object-cover"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
 
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 text-blue-600 dark:text-blue-400 leading-tight">
+              <h1
+                className="text-6xl md:text-8xl font-bold mb-6 leading-tight"
+                style={{ color: "#5C92B2" }}
+              >
                 StroomAI
               </h1>
 
@@ -929,21 +518,28 @@ const StroomAI = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Link
                   href="/beta"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
+                  className="text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
+                  style={{ backgroundColor: "#5C92B2" }}
                 >
                   <Star className="w-6 h-6" />
                   Join Beta Access
                 </Link>
                 <a
                   href="#contact"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
+                  className="text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
+                  style={{ backgroundColor: "#5C92B2" }}
                 >
                   <Calendar className="w-6 h-6" />
                   Schedule Consultation
                 </a>
                 <a
                   href="#solutions"
-                  className="border-2 border-blue-600 dark:border-blue-400 text-blue-700 dark:text-blue-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 dark:hover:bg-gray-800 transition-all flex items-center gap-3"
+                  className="border-2 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all flex items-center gap-3"
+                  style={{
+                    borderColor: "#5C92B2",
+                    backgroundColor: "#5C92B2",
+                    color: "white",
+                  }}
                 >
                   View Innovations
                   <ArrowRight className="w-6 h-6" />
@@ -957,7 +553,10 @@ const StroomAI = () => {
                     key={index}
                     className="text-center p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-blue-100 dark:border-gray-700 shadow-lg"
                   >
-                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                    <div
+                      className="text-4xl md:text-5xl font-bold mb-2"
+                      style={{ color: "#DC7131" }}
+                    >
                       {stat.value}
                     </div>
                     <div className="text-gray-800 dark:text-gray-200 font-bold mb-1">
@@ -1232,7 +831,8 @@ const StroomAI = () => {
 
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 hover:scale-105 transition-all shadow-lg text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 text-white rounded-xl font-medium hover:scale-105 transition-all shadow-lg text-lg"
+                style={{ backgroundColor: "#5C92B2" }}
               >
                 View Articles
                 <ArrowRight className="w-5 h-5" />
@@ -1255,7 +855,8 @@ const StroomAI = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   href="/beta"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl flex items-center gap-3"
+                  className="text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl flex items-center gap-3"
+                  style={{ backgroundColor: "#5C92B2" }}
                 >
                   <Star className="w-5 h-5" />
                   Request Beta Access
@@ -1353,7 +954,8 @@ const StroomAI = () => {
 
                   <button
                     onClick={handleFormSubmit}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl"
+                    className="w-full text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl"
+                    style={{ backgroundColor: "#5C92B2" }}
                   >
                     Send Message
                   </button>
@@ -1404,7 +1006,8 @@ const StroomAI = () => {
                     href="https://calendly.com/parkere-case/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl"
+                    className="inline-flex items-center gap-3 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl"
+                    style={{ backgroundColor: "#5C92B2" }}
                   >
                     <Calendar className="w-6 h-6" />
                     Book Consultation
@@ -1421,17 +1024,14 @@ const StroomAI = () => {
             <div className="grid md:grid-cols-4 gap-8 mb-8">
               <div>
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 mr-3 rounded-lg">
+                  <div className="h-14">
                     <Image
-                      src="/StroomAI.png"
+                      src="/wormhole-full-logo.png"
                       alt="StroomAI Logo"
-                      width={32}
-                      height={32}
-                      className="w-full h-full object-cover"
+                      width={240}
+                      height={56}
+                      className="h-full w-auto object-contain"
                     />
-                  </div>
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                    StroomAI
                   </div>
                 </div>
                 <p className="text-gray-300 leading-relaxed">

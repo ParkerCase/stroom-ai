@@ -708,13 +708,13 @@ const StroomAI = () => {
         <meta property="og:description" content="Transform enterprise knowledge management with AI-powered platforms. Break down silos, accelerate decisions, unify intelligence across 200+ integrations." />
         <meta property="og:url" content="https://stroomai.com" />
         <meta property="og:site_name" content="StroomAI" />
-        <meta property="og:image" content="https://stroomai.com/StroomAI.png" />
+        <meta property="og:image" content="https://stroomai.com/new-logo-logo-only.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="StroomAI - Enterprise Knowledge Management & AI Platform" />
         <meta name="twitter:description" content="Transform enterprise knowledge management with AI-powered platforms. Break down silos, accelerate decisions, unify intelligence across 200+ integrations." />
-        <meta name="twitter:image" content="https://stroomai.com/StroomAI.png" />
+        <meta name="twitter:image" content="https://stroomai.com/new-logo-logo-only.png" />
         
         {/* Structured Data for AI tools */}
         <script
@@ -726,7 +726,7 @@ const StroomAI = () => {
               "name": "StroomAI",
               "description": "Enterprise Knowledge Management & AI Platform",
               "url": "https://stroomai.com",
-              "logo": "https://stroomai.com/StroomAI.png",
+              "logo": "https://stroomai.com/new-logo-logo-only.png",
               "sameAs": [
                 "https://stroomai.com"
               ],
@@ -788,7 +788,7 @@ const StroomAI = () => {
             <div className="flex items-center">
               <div className="w-10 h-10 mr-3 rounded-lg">
                 <Image
-                  src="/StroomAI.png"
+                  src="/new-logo-logo-only.png"
                   alt="StroomAI Logo"
                   width={40}
                   height={40}
@@ -887,7 +887,7 @@ const StroomAI = () => {
             <div className="mb-8">
               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl shadow-xl">
                 <Image
-                  src="/StroomAI.png"
+                  src="/new-logo-logo-only.png"
                   alt="StroomAI Logo"
                   width={96}
                   height={96}
@@ -1403,7 +1403,7 @@ const StroomAI = () => {
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 rounded-lg">
                   <Image
-                    src="/StroomAI.png"
+                    src="/new-logo-logo-only.png"
                     alt="StroomAI Logo"
                     width={32}
                     height={32}

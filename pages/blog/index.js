@@ -29,7 +29,7 @@ const BlogIndexPage = () => {
       category: "Enterprise AI",
       tags: ["Knowledge Management", "Decision Velocity", "AI Strategy"],
       featured: true,
-      image: "/MeridianAI_Logo_Square_HD.png",
+      image: "/new-logo-logo-only.png",
     },
   ];
 
@@ -86,7 +86,10 @@ const BlogIndexPage = () => {
         />
         <meta property="og:url" content="https://stroomai.com/blog" />
         <meta property="og:site_name" content="StroomAI" />
-        <meta property="og:image" content="https://stroomai.com/StroomAI.png" />
+        <meta
+          property="og:image"
+          content="https://stroomai.com/new-logo-logo-only.png"
+        />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -100,7 +103,7 @@ const BlogIndexPage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://stroomai.com/StroomAI.png"
+          content="https://stroomai.com/new-logo-logo-only.png"
         />
 
         {/* Structured Data for AI tools */}
@@ -119,7 +122,7 @@ const BlogIndexPage = () => {
                 name: "StroomAI",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://stroomai.com/StroomAI.png",
+                  url: "https://stroomai.com/new-logo-logo-only.png",
                 },
               },
               blogPost: [
@@ -151,17 +154,14 @@ const BlogIndexPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
-                <div className="w-10 h-10 mr-3 rounded-lg">
+                <div className="h-20">
                   <Image
-                    src="/StroomAI.png"
+                    src="/wormhole-full-logo.png"
                     alt="StroomAI Logo"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
+                    width={350}
+                    height={80}
+                    className="h-full w-auto object-contain"
                   />
-                </div>
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                  StroomAI
                 </div>
               </div>
 
@@ -220,8 +220,8 @@ const BlogIndexPage = () => {
             </div>
 
             <h1
-              style={{ paddingBottom: "5px" }}
-              className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent"
+              style={{ paddingBottom: "5px", color: "#DC7131" }}
+              className="text-5xl md:text-6xl font-bold mb-6"
             >
               Insights & Intelligence
             </h1>
@@ -258,9 +258,14 @@ const BlogIndexPage = () => {
                   onClick={() => setSelectedCategory(category.name)}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
                     selectedCategory === category.name
-                      ? "bg-blue-600 text-white shadow-lg"
+                      ? "text-white shadow-lg"
                       : "bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700/80 border border-gray-200 dark:border-gray-700"
                   }`}
+                  style={
+                    selectedCategory === category.name
+                      ? { backgroundColor: "#5C92B2" }
+                      : {}
+                  }
                 >
                   {category.name}
                   <span className="ml-2 text-sm opacity-75">
@@ -333,7 +338,8 @@ const BlogIndexPage = () => {
 
                       <Link
                         href={`/blog/${post.id}`}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors font-medium"
+                        className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-xl hover:scale-105 transition-all font-medium shadow-lg"
+                        style={{ backgroundColor: "#5C92B2" }}
                       >
                         Read Full Article
                         <ArrowRight className="w-4 h-4" />
@@ -374,7 +380,8 @@ const BlogIndexPage = () => {
                     setSearchTerm("");
                     setSelectedCategory("All");
                   }}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                  className="px-6 py-3 text-white rounded-xl font-medium hover:scale-105 transition-all shadow-lg"
+                  style={{ backgroundColor: "#5C92B2" }}
                 >
                   Clear Filters
                 </button>

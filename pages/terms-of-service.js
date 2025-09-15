@@ -23,23 +23,21 @@ const TermsOfService = () => {
       <header className="py-6 px-4 bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="w-8 h-8 mr-3 rounded-lg">
+            <div className="h-14">
               <Image
-                src="/StroomAI.png"
+                src="/wormhole-full-logo.png"
                 alt="StroomAI Logo"
-                width={32}
-                height={32}
-                className="w-full h-full object-cover"
+                width={240}
+                height={56}
+                className="h-full w-auto object-contain"
               />
-            </div>
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
-              StroomAI
             </div>
           </Link>
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all shadow-lg"
+            style={{ backgroundColor: "#5C92B2" }}
           >
             <ArrowLeft className="w-5 h-5" />
             Back to Home
@@ -57,7 +55,10 @@ const TermsOfService = () => {
                 <FileText className="w-8 h-8 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent">
+            <h1
+              className="text-4xl md:text-5xl font-bold mb-6"
+              style={{ color: "#5C92B2" }}
+            >
               Terms of Service
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -759,7 +760,7 @@ const TermsOfService = () => {
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 rounded-lg">
                   <Image
-                    src="/StroomAI.png"
+                    src="/new-logo-logo-only.png"
                     alt="StroomAI Logo"
                     width={32}
                     height={32}

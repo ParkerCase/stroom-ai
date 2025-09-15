@@ -107,7 +107,10 @@ const BreakingDownSilosPost = () => {
           content="https://stroomai.com/blog/breaking-down-silos"
         />
         <meta property="og:site_name" content="StroomAI" />
-        <meta property="og:image" content="https://stroomai.com/StroomAI.png" />
+        <meta
+          property="og:image"
+          content="https://stroomai.com/new-logo-logo-only.png"
+        />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -121,7 +124,7 @@ const BreakingDownSilosPost = () => {
         />
         <meta
           name="twitter:image"
-          content="https://stroomai.com/StroomAI.png"
+          content="https://stroomai.com/new-logo-logo-only.png"
         />
 
         {/* Article specific meta */}
@@ -150,7 +153,7 @@ const BreakingDownSilosPost = () => {
               headline: "Breaking Down Silos to Accelerate Decision Velocity",
               description:
                 "Learn how organizational silos impact decision velocity and discover how Enterprise Knowledge Management with AI can accelerate your business intelligence.",
-              image: "https://stroomai.com/StroomAI.png",
+              image: "https://stroomai.com/new-logo-logo-only.png",
               author: {
                 "@type": "Organization",
                 name: "StroomAI",
@@ -161,7 +164,7 @@ const BreakingDownSilosPost = () => {
                 name: "StroomAI",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://stroomai.com/StroomAI.png",
+                  url: "https://stroomai.com/new-logo-logo-only.png",
                 },
               },
               datePublished: "2025-01-01T00:00:00.000Z",
@@ -206,17 +209,14 @@ const BreakingDownSilosPost = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
-                <div className="w-10 h-10 mr-3 rounded-lg">
+                <div className="h-20">
                   <Image
-                    src="/StroomAI.png"
+                    src="/wormhole-full-logo.png"
                     alt="StroomAI Logo"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
+                    width={350}
+                    height={80}
+                    className="h-full w-auto object-contain"
                   />
-                </div>
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                  StroomAI
                 </div>
               </div>
 
@@ -641,7 +641,10 @@ const BreakingDownSilosPost = () => {
         {/* Call to Action */}
         <section className="px-4 pb-16">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-center text-white">
+            <div
+              className="rounded-3xl p-8 text-center text-white"
+              style={{ backgroundColor: "#5C92B2" }}
+            >
               <Brain className="w-16 h-16 mx-auto mb-6 text-blue-200" />
               <h3 className="text-3xl font-bold mb-4">
                 Ready to Break Down Your Silos?
