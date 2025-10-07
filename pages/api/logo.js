@@ -4,7 +4,7 @@ import path from "path";
 
 export default function handler(req, res) {
   if (req.method !== "GET") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).end("Method not allowed");
   }
 
   try {
@@ -16,7 +16,7 @@ export default function handler(req, res) {
 
     // Check if file exists
     if (!fs.existsSync(logoPath)) {
-      return res.status(404).json({ error: "Logo not found" });
+      return res.status(404).end("Logo not found");
     }
 
     // Read the file
@@ -28,9 +28,9 @@ export default function handler(req, res) {
     res.setHeader("Cache-Control", "public, max-age=31536000, immutable"); // Cache for 1 year
 
     // Send the image
-    res.status(200).send(logoBuffer);
+    res.status(200).end(logoBuffer);
   } catch (error) {
     console.error("Error serving logo:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).end("Internal server error");
   }
 }
