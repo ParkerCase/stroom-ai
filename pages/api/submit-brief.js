@@ -254,15 +254,20 @@ Otherwise flag for manual review.`;
 export default async function handler(req, res) {
   // Set CORS headers first for all requests
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  const method = req.method?.toUpperCase() || "UNKNOWN";
+  const method = (req.method || "").toUpperCase();
 
-  console.log("[submit-brief] Request received:", {
-    method,
+  // Log everything for debugging
+  console.log("[submit-brief] Request details:", {
+    method: method || "UNDEFINED",
+    originalMethod: req.method,
     url: req.url,
-    headers: req.headers["content-type"],
+    path: req.url,
+    contentType: req.headers["content-type"],
+    bodyExists: !!req.body,
+    bodyKeys: req.body ? Object.keys(req.body) : [],
   });
 
   // Handle CORS preflight requests
@@ -270,13 +275,28 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
+  // Handle GET requests (for testing)
+  if (method === "GET") {
+    return res.status(200).json({
+      message: "API is working",
+      method: method,
+      timestamp: new Date().toISOString(),
+    });
+  }
+
   // Only allow POST requests
   if (method !== "POST") {
-    console.error("[submit-brief] Invalid method:", method);
+    console.error("[submit-brief] Invalid method:", {
+      received: method,
+      original: req.method,
+      allowed: "POST",
+    });
     return res.status(405).json({
       error: "Method not allowed",
-      received: method,
+      received: method || "undefined",
+      original: req.method,
       allowed: "POST",
+      hint: "Make sure you're sending a POST request with Content-Type: application/json",
     });
   }
 
