@@ -7,13 +7,13 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700"
+      className="p-2 rounded-full transition-all duration-200 border border-[rgba(47,42,40,0.18)] bg-white/70 hover:bg-white/90 dark:border-[rgba(245,240,235,0.2)] dark:bg-[rgba(35,31,29,0.7)] dark:hover:bg-[rgba(35,31,29,0.9)]"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? (
-        // Sun icon for dark mode
+        // Sun icon for dark mode (showing sun means you can switch to light)
         <svg
-          className="w-5 h-5 text-yellow-400"
+          className="w-5 h-5 text-[#f3c988]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -27,9 +27,9 @@ const ThemeToggle = () => {
           />
         </svg>
       ) : (
-        // Moon icon for light mode
+        // Moon icon for light mode (showing moon means you can switch to dark)
         <svg
-          className="w-5 h-5 text-gray-700"
+          className="w-5 h-5 text-[rgba(47,42,40,0.72)]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

@@ -4,27 +4,18 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import {
-  ChevronDown,
   Mail,
   Phone,
   Calendar,
   ExternalLink,
   Brain,
   Search,
-  Users,
-  Star,
-  ArrowRight,
   Heart,
   Menu,
   X,
   Shield,
-  Zap,
   Globe,
-  TrendingUp,
-  Award,
   Target,
-  Film,
-  BookOpen,
 } from "lucide-react";
 import Image from "next/image";
 import ThemeToggle from "../components/ThemeToggle";
@@ -37,170 +28,139 @@ const StroomAI = () => {
     email: "",
     company: "",
     subject: "",
-    projectInterest: "",
     message: "",
   });
 
-  // Real projects from Parker Case's original site
+  // Active Research & Applications
   const solutions = [
     {
-      title: "MeridianAI",
-      status: "Production Ready",
+      title: "Performance Nutrition Optimization",
+      status: "Active Consulting",
       description:
-        "Intelligent chatbot dashboard that leverages natural language processing to provide contextual knowledge management and automated responses across multiple domains including storage providers, CRMs, and more. Features multi-domain expertise with very high query resolution rate and integrates with many enterprise systems. Reduces deep research time from hours to 45 minutes maximum.",
-      tech: ["NLP", "OpenAI GPT", "Node.js", "MongoDB", "React"],
-      icon: <Brain className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-500",
-      metrics: "45 min max research time",
-    },
-    {
-      title: "MuseAI Production Intelligence",
-      status: "Coming Soon - 3 Patents Pending",
-      description:
-        "The industry's first ethical AI production intelligence platform. While content generation AI transforms what we create, MuseAI transforms how we create it - providing script intelligence, production optimization, real-time collaboration, and ethical compliance monitoring. Built by filmmakers, for filmmakers, with complete transparency and artist empowerment at its core.",
+        "Biochemical interaction platforms that translate wearable biometric data into personalized nutrition protocols for elite athletes. Real-time optimization based on training load and recovery metrics.",
       tech: [
-        "Ethical AI Framework",
-        "Production Intelligence",
-        "Real-time Collaboration",
-        "Script Semantic Analysis",
-        "Compliance Monitoring",
-        "Weather Integration",
-      ],
-      icon: <Film className="w-6 h-6" />,
-      gradient: "from-purple-600 via-blue-600 to-indigo-700",
-      metrics: "3 Patents Pending",
-      comingSoon: true,
-      industries: ["Film & TV", "Documentary", "Commercial", "Independent"],
-      features: [
-        "Semantic script intelligence with version control",
-        "Multi-constraint production optimization",
-        "Real-time bias detection and diversity monitoring",
-        "Collaborative production workflows",
-        "Weather-aware scheduling intelligence",
-        "Industry-first ethical AI compliance",
-      ],
-    },
-    {
-      title: "HygeiaAI",
-      status: "Production Ready - 5 Patents Pending",
-      description:
-        "Breakthrough medical nutrition therapy system combining multi-criteria optimization (health + budget + convenience) with conversational meal planning and cross-retailer integration. Features adaptive learning algorithms, health condition-specific recipe modification, drug-food interaction monitoring, family history-based disease prevention, and intelligent ingredient substitution.",
-      tech: [
-        "Medical AI",
-        "Multi-Criteria Optimization",
-        "Natural Language Processing",
-        "Cross-Retailer APIs",
-        "Clinical Integration",
+        "Wearable Integration",
+        "Biomarker Tracking",
+        "Real-time Optimization",
+        "Training Load Analysis",
       ],
       icon: <Heart className="w-6 h-6" />,
       gradient: "from-green-500 to-blue-600",
-      metrics: "5 Patents Pending",
-    },
-    {
-      title: "ModeAI Stylist",
-      status: "Patent Pending",
-      description:
-        "Revolutionary cross-site personalization system deployed as browser extension and injectable widget. Features computer vision wardrobe analysis, celebrity styling database integration, real-time trend ingestion, and modular virtual try-on capabilities. Commission-based retailer model enables seamless partnerships while maintaining user privacy through encrypted profile synchronization across domains.",
-      tech: [
-        "TensorFlow.js",
-        "Computer Vision",
-        "WebSockets",
-        "Browser Extensions",
-        "Privacy Architecture",
+      features: [
+        "Wearable integration (Whoop, Oura, Garmin)",
+        "Biomarker tracking and optimization",
+        "Professional teams in consultation",
       ],
-      icon: <Star className="w-6 h-6" />,
-      gradient: "from-purple-500 to-pink-500",
-      metrics: "Patent Pending",
     },
     {
-      title: "TraffickJam",
+      title: "Cannabis Biochemical Recommendations",
+      status: "Production Platform",
+      description:
+        "Comprehensive platform modeling terpene-cannabinoid-physiology interactions for personalized cannabis recommendations. Integrates health screening, genetic considerations, and experience optimization.",
+      tech: [
+        "Biochemical Modeling",
+        "Health Screening",
+        "Genetic Analysis",
+        "Experience Optimization",
+      ],
+      icon: <Heart className="w-6 h-6" />,
+      gradient: "from-green-500 to-emerald-600",
+      features: [
+        "90+ active users validating recommendations",
+        "Terpene-food synergy prediction algorithms",
+        "Real-time safety screening for contraindications",
+      ],
+    },
+    {
+      title: "Psychedelic Harm Reduction",
       status: "Production Ready",
       description:
-        "Advanced monitoring system that tracks illegal trade of endangered species products, stolen cultural artifacts, and protected materials across eBay, Craigslist, MercadoLibre, OLX, and other online marketplaces. Utilizes machine learning to identify suspicious listings and generates automated reports for law enforcement.",
+        "Applying biochemical interactions modeling to psychedelic therapeautic selections. Incorporates set/setting assessment, dosage optimization, medication screening, and species-specific effect profiling.",
       tech: [
-        "Python",
-        "Selenium",
-        "NLP",
-        "Image Recognition",
-        "Legal Compliance APIs",
+        "Biochemical Modeling",
+        "Medication Screening",
+        "Dosage Optimization",
+        "Psychedelic Profiling",
+      ],
+      icon: <Brain className="w-6 h-6" />,
+      gradient: "from-purple-600 via-blue-600 to-indigo-700",
+      features: [
+        "8 truffle species with distinct biochemical profiles",
+        "Medical contraindication screening system",
+        "Smart shop integration ready",
+      ],
+    },
+    {
+      title: "Drug Discovery Analytics",
+      status: "Research Collaboration",
+      description:
+        "AI-driven analysis systems for identifying therapeutic applications of medications. Computational approaches combining databases, multi-dimensional analysis, and correlation.",
+      tech: [
+        "AI Analysis",
+        "Computational Biology",
+        "Multi-Dimensional Analysis",
+        " Statistical Correlation",
       ],
       icon: <Search className="w-6 h-6" />,
-      gradient: "from-emerald-700 to-blue-300",
-      metrics: "Production Ready",
-    },
-    {
-      title: "ADM Platform",
-      status: "Production Ready",
-      description:
-        "Safe, supportive social media platform specifically designed for men's mental health, featuring an AI mental health bot for discussion, assistance in finding support groups, and overall mental wellness tips and techniques. Built complete infrastructure with increasing beta users and 24/7 AI crisis detection and intervention capabilities.",
-      tech: ["Next.js", "Supabase", "Railway", "OpenAI API", "WebRTC"],
-      icon: <Users className="w-6 h-6" />,
-      gradient: "from-orange-500 to-red-500",
-      metrics: "Live",
+      gradient: "from-blue-500 to-cyan-500",
+      features: [
+        "University research collaboration",
+        "Multi-target analysis framework",
+        "Patient stratification insights",
+      ],
     },
   ];
 
-  const industries = [
-    {
-      name: "Knowledge Management",
-      description:
-        "Intelligent dashboards, contextual knowledge management, multi-domain query resolution, and enterprise system integration.",
-      icon: <Zap className="w-8 h-8" />,
-      color: "text-orange-500",
+  const solutionStyles = {
+    "Performance Nutrition Optimization": {
+      iconBackground:
+        "linear-gradient(135deg, rgba(157, 181, 168, 0.85), rgba(139, 165, 184, 0.75))",
+      iconColor: "#ffffff",
+      badgeColor: "rgba(157, 181, 168, 0.85)",
     },
-    {
-      name: "Film & Entertainment",
-      description:
-        "Ethical AI production intelligence, script analysis, compliance monitoring, and collaborative workflows for film, TV, and streaming content.",
-      icon: <Film className="w-8 h-8" />,
-      color: "text-purple-500",
+    "Cannabis Biochemical Recommendations": {
+      iconBackground:
+        "linear-gradient(135deg, rgba(157, 181, 168, 0.85), rgba(139, 165, 184, 0.75))",
+      iconColor: "#ffffff",
+      badgeColor: "rgba(157, 181, 168, 0.85)",
     },
-    {
-      name: "Healthcare",
-      description:
-        "Medical nutrition therapy, patient care optimization, and clinical decision support systems with drug-food interaction monitoring.",
-      icon: <Heart className="w-8 h-8" />,
-      color: "text-red-500",
+    "Psychedelic Harm Reduction": {
+      iconBackground:
+        "linear-gradient(135deg, rgba(228, 168, 138, 0.85), rgba(229, 115, 77, 0.75))",
+      iconColor: "#ffffff",
+      badgeColor: "rgba(228, 168, 138, 0.85)",
     },
-    {
-      name: "E-commerce & Retail",
-      description:
-        "Cross-site personalization, wardrobe analysis, virtual try-ons, and commission-based retailer partnerships.",
-      icon: <TrendingUp className="w-8 h-8" />,
-      color: "text-blue-500",
+    "Drug Discovery Analytics": {
+      iconBackground:
+        "linear-gradient(135deg, rgba(229, 115, 77, 0.85), rgba(139, 165, 184, 0.75))",
+      iconColor: "#ffffff",
+      badgeColor: "rgba(229, 115, 77, 0.9)",
     },
-    {
-      name: "Conservation & Legal",
-      description:
-        "Wildlife crime monitoring, illegal trade detection, automated law enforcement reporting, and anti-poaching support.",
-      icon: <Shield className="w-8 h-8" />,
-      color: "text-green-500",
-    },
-  ];
+  };
 
   // Real achievements and industry statistics
-  const stats = [
-    {
-      value: "9+",
-      label: "Patents Pending",
-      description: "Breakthrough AI innovations",
-    },
-    {
-      value: "100+",
-      label: "Platform Users",
-      description: "Active on production systems",
-    },
-    {
-      value: "5",
-      label: "Production AI Systems",
-      description: "Live and in development",
-    },
-    {
-      value: "3+",
-      label: "Film Festival Awards",
-      description: "Founded on creative & technical expertise",
-    },
-  ];
+  // const stats = [
+  //   {
+  //     value: "9+",
+  //     label: "Patents Pending",
+  //     description: "Breakthrough AI innovations",
+  //   },
+  //   {
+  //     value: "100+",
+  //     label: "Platform Users",
+  //     description: "Active on production systems",
+  //   },
+  //   {
+  //     value: "5",
+  //     label: "Production AI Systems",
+  //     description: "Live and in development",
+  //   },
+  //   {
+  //     value: "3+",
+  //     label: "Film Festival Awards",
+  //     description: "Founded on creative & technical expertise",
+  //   },
+  // ];
 
   const handleFormSubmit = async () => {
     if (
@@ -224,7 +184,6 @@ const StroomAI = () => {
           email: formData.email,
           company: formData.company,
           subject: formData.subject,
-          projectInterest: formData.projectInterest,
           message: formData.message,
         }),
       });
@@ -240,7 +199,6 @@ const StroomAI = () => {
           email: "",
           company: "",
           subject: "",
-          projectInterest: "",
           message: "",
         });
       } else {
@@ -263,7 +221,7 @@ const StroomAI = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "solutions", "industries", "about", "contact"];
+      const sections = ["home", "solutions", "about", "contact"];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -384,498 +342,541 @@ const StroomAI = () => {
         />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
-        {/* Navigation */}
-        <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b-2 border-blue-100 dark:border-gray-700 z-50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-4">
-              <div className="flex items-center">
-                <div className="h-20">
-                  <Image
-                    src="/wormhole-full-logo.png"
-                    alt="StroomAI Logo"
-                    width={350}
-                    height={80}
-                    className="h-full w-auto object-contain"
-                  />
-                </div>
+      <div className="site-shell">
+        <nav className="site-nav">
+          <div className="nav-inner">
+            <div
+              className="flex items-center gap-3"
+              style={{ marginLeft: "-0.5rem" }}
+            >
+              <div className="hidden sm:block w-20">
+                <Image
+                  src="/new-logo-logo-only.png"
+                  alt="StroomAI Logo"
+                  width={80}
+                  height={80}
+                  className="w-full h-auto object-contain"
+                />
               </div>
-
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                {[
-                  "Home",
-                  "Solutions",
-                  "Industries",
-                  "About",
-                  "Blog",
-                  "Contact",
-                ].map((item) => (
-                  <a
-                    key={item}
-                    href={
-                      item === "Home"
-                        ? "#home"
-                        : item === "Blog"
-                        ? "/blog"
-                        : `#${item.toLowerCase()}`
-                    }
-                    className={`transition-all duration-200 hover:text-blue-700 dark:hover:text-blue-400 font-medium ${
-                      item === "Blog"
-                        ? "text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1"
-                        : activeSection === item.toLowerCase()
-                        ? "text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1"
-                        : "text-gray-700 dark:text-gray-300 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-600 pb-1"
-                    }`}
-                  >
-                    {item}
-                  </a>
-                ))}
-                <ThemeToggle />
-              </div>
-
-              {/* Mobile menu button */}
-              <div className="md:hidden flex items-center space-x-2">
-                <ThemeToggle />
-                <button
-                  className="p-2 rounded-lg bg-blue-50 dark:bg-gray-800 border border-orange-400 dark:border-gray-600"
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                >
-                  {isMenuOpen ? (
-                    <X className="w-5 h-5 text-blue-700 dark:text-blue-400" />
-                  ) : (
-                    <Menu className="w-5 h-5 text-blue-700 dark:text-blue-400" />
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* Mobile Navigation */}
-            {isMenuOpen && (
-              <div className="md:hidden py-4 border-t border-blue-100 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md">
-                {[
-                  "Home",
-                  "Solutions",
-                  "Industries",
-                  "About",
-                  "Blog",
-                  "Contact",
-                ].map((item) => (
-                  <a
-                    key={item}
-                    href={
-                      item === "Home"
-                        ? "#home"
-                        : item === "Blog"
-                        ? "/blog"
-                        : `#${item.toLowerCase()}`
-                    }
-                    className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors rounded-lg mx-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        </nav>
-
-        {/* Hero Section */}
-        <section id="home" className="pt-20 pb-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center pt-20 pb-16">
-              <div className="mb-8">
-                <div className="w-40 h-40 mx-auto mb-6 rounded-2xl shadow-xl">
-                  <Image
-                    src="/new-logo-logo-only.png?v=2"
-                    alt="StroomAI Logo"
-                    width={160}
-                    height={160}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
-
-              <h1
-                className="text-6xl md:text-8xl font-bold mb-6 leading-tight"
-                style={{ color: "#5C92B2" }}
+              <Link
+                href="/"
+                className="nav-brand"
+                style={{
+                  color: "var(--accent-clay)",
+                  fontWeight: "800",
+                  fontSize: "1.5rem",
+                }}
               >
                 StroomAI
-              </h1>
+              </Link>
+            </div>
 
-              <h2 className="text-3xl md:text-5xl font-semibold mb-6 text-gray-800 dark:text-gray-200 leading-snug">
-                Patent-Pending AI Innovations
-              </h2>
+            <div className="hidden md:flex items-center gap-8">
+              <div className="nav-links">
+                {["Home", "Solutions", "About", "Contact"].map((item) => {
+                  const href =
+                    item === "Home" ? "#home" : `#${item.toLowerCase()}`;
+                  const isActive = activeSection === item.toLowerCase();
 
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed max-w-5xl mx-auto">
-                Transform your business with 6+ breakthrough AI innovations from
-                a proven inventor. From medical nutrition therapy to wildlife
-                conservation, we build intelligent systems that deliver
-                real-world impact.
-              </p>
+                  return (
+                    <a
+                      key={item}
+                      href={href}
+                      className={`nav-link-modern ${
+                        isActive ? "nav-link-modern--active" : ""
+                      }`}
+                      style={{ color: "var(--accent-clay)" }}
+                    >
+                      {item}
+                    </a>
+                  );
+                })}
+              </div>
+              <a
+                href="#contact"
+                className="cta-button-condesa"
+                style={{
+                  padding: "0.65rem 1.5rem",
+                  borderRadius: "6px",
+                  border: "1px solid var(--accent-clay)",
+                  background: "transparent",
+                  color: "var(--accent-clay)",
+                  fontSize: "0.9rem",
+                  fontWeight: "400",
+                  textTransform: "none",
+                  letterSpacing: "0",
+                }}
+              >
+                Inquire Now
+              </a>
+              <ThemeToggle />
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Link
-                  href="/beta"
-                  className="text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
-                  style={{ backgroundColor: "#5C92B2" }}
-                >
-                  <Star className="w-6 h-6" />
-                  Join Beta Access
-                </Link>
+            <div className="md:hidden flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                className="p-2 rounded-full border border-[rgba(47,42,40,0.2)] bg-white/70"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle navigation"
+              >
+                {isMenuOpen ? (
+                  <X className="w-5 h-5 text-[rgba(47,42,40,0.72)]" />
+                ) : (
+                  <Menu className="w-5 h-5 text-[rgba(47,42,40,0.72)]" />
+                )}
+              </button>
+            </div>
+          </div>
+
+          {isMenuOpen && (
+            <div className="md:hidden px-6 py-4 space-y-2 bg-[#fdf8f3]/95 border-t border-[rgba(47,42,40,0.12)]">
+              {["Home", "Solutions", "About", "Contact"].map((item) => (
                 <a
-                  href="#contact"
-                  className="text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3"
-                  style={{ backgroundColor: "#5C92B2" }}
+                  key={item}
+                  href={item === "Home" ? "#home" : `#${item.toLowerCase()}`}
+                  className="block py-2 text-[0.82rem] uppercase tracking-[0.28em] text-[rgba(47,42,40,0.72)]"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  <Calendar className="w-6 h-6" />
-                  Schedule Consultation
+                  {item}
                 </a>
-                <a
-                  href="#solutions"
-                  className="border-2 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all flex items-center gap-3"
+              ))}
+              <a
+                href="#contact"
+                className="block text-center py-3 mt-2 rounded-full border border-[rgba(47,42,40,0.18)] text-[0.82rem] uppercase tracking-[0.28em]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Inquire Now
+              </a>
+            </div>
+          )}
+        </nav>
+
+        <main>
+          <section id="home" className="section-shell hero-section">
+            <div
+              className="section-inner hero-grid"
+              style={{
+                maxWidth: "1400px",
+              }}
+            >
+              <div>
+                <h1
+                  className="hero-title-condesa"
                   style={{
-                    borderColor: "#5C92B2",
-                    backgroundColor: "#5C92B2",
-                    color: "white",
+                    fontSize: "clamp(5.5rem, 15vw, 11rem)",
+                    lineHeight: "0.95",
+                    fontWeight: "800",
+                    color: "var(--accent-clay)",
+                    marginBottom: "1.5rem",
+                    letterSpacing: "-0.04em",
                   }}
                 >
-                  View Innovations
-                  <ArrowRight className="w-6 h-6" />
-                </a>
+                  StroomAI
+                </h1>
+                <p
+                  className="hero-text-condesa"
+                  style={{
+                    fontSize: "clamp(1.25rem, 2.8vw, 1.75rem)",
+                    lineHeight: "1.7",
+                    color: "var(--accent-clay)",
+                    maxWidth: "750px",
+                    marginBottom: "0",
+                  }}
+                >
+                  Developing AI-powered systems to help teams predict how
+                  biological compounds interact with individual physiology, so
+                  that breakthroughs in precision medicine, performance
+                  optimization, and environmental restoration don&apos;t feel
+                  like climbing Everest.{" "}
+                </p>
               </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    maxWidth: "600px",
+                    borderRadius: "24px",
+                    border: "6px solid #d85a3a",
+                    overflow: "hidden",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  <Image
+                    src="/everest.png"
+                    alt="Climbing Everest - Achieving breakthroughs"
+                    width={600}
+                    height={600}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "cover",
+                      display: "block",
+                      transform: "scale(1.15) translateY(4%)",
+                      transformOrigin: "center center",
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
 
-              {/* Real Achievement Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
+            {/* <div className="section-inner" style={{ marginTop: "4.5rem" }}>
+              <div className="stats-grid">
                 {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-blue-100 dark:border-gray-700 shadow-lg"
-                  >
-                    <div
-                      className="text-4xl md:text-5xl font-bold mb-2"
-                      style={{ color: "#DC7131" }}
-                    >
-                      {stat.value}
-                    </div>
-                    <div className="text-gray-800 dark:text-gray-200 font-bold mb-1">
-                      {stat.label}
-                    </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-300">
-                      {stat.description}
-                    </div>
+                  <div key={index} className="stat-card">
+                    <div className="stat-value">{stat.value}</div>
+                    <div className="stat-label">{stat.label}</div>
+                    <div className="stat-description">{stat.description}</div>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
+            </div> */}
+          </section>
 
-        {/* Solutions Section - Real Projects */}
-        <section
-          id="solutions"
-          className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900"
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                Breakthrough AI Innovations
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Our patent-pending AI solutions span healthcare, e-commerce,
-                conservation, film production, and knowledge management. Each
-                innovation addresses complex real-world challenges with
-                measurable impact and production-ready implementation.
-              </p>
-            </div>
-
-            {/* <MuseAISection /> */}
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              {solutions.map((solution, index) => (
-                <div
-                  key={index}
-                  className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border-2 border-white/50 dark:border-gray-700/50 hover:border-blue-200 dark:hover:border-blue-600"
-                >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div
-                      className={`p-4 rounded-2xl bg-gradient-to-r ${solution.gradient} shadow-lg`}
-                    >
-                      {solution.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                        {solution.title}
-                      </h3>
-                      <span className="text-lg text-blue-700 dark:text-blue-400 font-bold">
-                        {solution.status}
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-lg">
-                    {solution.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    {solution.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-400 dark:border-orange-500"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href={
-                      solution.title === "MeridianAI"
-                        ? "https://meridian.stroomai.com"
-                        : "#contact"
-                    }
-                    target={
-                      solution.title === "MeridianAI" ? "_blank" : undefined
-                    }
-                    rel={
-                      solution.title === "MeridianAI"
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="flex items-center gap-2 text-blue-700 dark:text-blue-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-bold text-lg"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    Learn More
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Industries Section */}
-        <section
-          id="industries"
-          className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900"
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                Industries We Transform
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Our AI solutions address critical challenges across healthcare,
-                retail, conservation, and enterprise knowledge management, with
-                proven production systems and patent-pending innovations driving
-                real change.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {industries.map((industry, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl border-2 border-white/50 dark:border-gray-700/50 hover:border-blue-200 dark:hover:border-blue-600 transition-all"
-                >
-                  <div className={`${industry.color} mb-4 flex justify-center`}>
-                    {industry.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
-                    {industry.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {industry.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* About Section with Real Achievements */}
-        <section
-          id="about"
-          className="py-20 px-4 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                  Why Choose StroomAI?
+          <section
+            id="solutions"
+            className="section-shell"
+            style={{ paddingTop: "clamp(6rem, 8vw, 8rem)" }}
+          >
+            <div className="section-inner">
+              <div className="section-heading">
+                <span className="section-label">Some of Our Work</span>
+                <h2 className="hero-subtitle">
+                  {" "}
+                  Active Research & Applications
                 </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                  We&apos;re not just another AI company. We&apos;re proven
-                  inventors with 6+ patent-pending innovations, production
-                  systems serving real users, and a track record of transforming
-                  complex challenges into breakthrough solutions.
-                </p>
+              </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-900/50 border-2 border-orange-400 dark:border-orange-500">
-                      <Award className="w-7 h-7 text-blue-700 dark:text-blue-400" />
+              <div className="grid gap-8 lg:grid-cols-2">
+                {solutions.map((solution, index) => {
+                  const accent = solutionStyles[solution.title] || {};
+
+                  return (
+                    <div key={index} className="story-card">
+                      <div className="story-card__header">
+                        <div
+                          className="story-icon"
+                          style={{
+                            background: accent.iconBackground,
+                            color: accent.iconColor || "var(--ink)",
+                            boxShadow:
+                              accent.iconShadow ||
+                              "0 18px 30px -24px rgba(47, 42, 40, 0.55)",
+                          }}
+                        >
+                          {solution.icon}
+                        </div>
+                        <div>
+                          <h3 className="story-title">{solution.title}</h3>
+                          <div
+                            className="story-status"
+                            style={{
+                              color:
+                                accent.badgeColor || "rgba(47, 42, 40, 0.55)",
+                            }}
+                          >
+                            {solution.status}
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="detail-text">{solution.description}</p>
+
+                      <div className="flex flex-wrap gap-3">
+                        {solution.tech.map((tech, techIndex) => (
+                          <span key={techIndex} className="tech-chip">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        {solution.metrics && (
+                          <div
+                            className="story-metric"
+                            style={{
+                              color:
+                                accent.badgeColor || "rgba(47, 42, 40, 0.5)",
+                            }}
+                          >
+                            {solution.metrics}
+                          </div>
+                        )}
+                        <a href="#contact" className="solution-footer">
+                          <ExternalLink className="w-4 h-4" />
+                          Learn More
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          <section id="about" className="section-shell">
+            <div className="section-inner">
+              <div className="section-heading">
+                <span className="section-label">About</span>
+                <h2 className="hero-subtitle">Our Approach</h2>
+              </div>
+
+              <div className="section-columns approach-grid">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      maxWidth: "500px",
+                      borderRadius: "24px",
+                      border: "6px solid #d85a3a",
+                      overflow: "hidden",
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    <Image
+                      src="/bio.png"
+                      alt="Biological and scientific concepts"
+                      width={500}
+                      height={500}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        objectFit: "cover",
+                        display: "block",
+                        transform: "scale(1.1) translateY(1%)",
+                        transformOrigin: "center center",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="detail-item approach-card">
+                    <div className="detail-icon">
+                      <Heart className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                        Patent-Pending Portfolio
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        6+ breakthrough AI innovations currently under patent
-                        review, with production systems serving real users
-                        across multiple industries.
+                      <div className="detail-title">Individual-First</div>
+                      <p className="detail-text">
+                        We account for genetic differences, metabolic rates,
+                        lifestyle factors, and real-time biological states - not
+                        population averages.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-orange-100 dark:bg-orange-900/50 border-2 border-orange-200 dark:border-orange-500">
-                      <Target className="w-7 h-7 text-orange-700 dark:text-orange-400" />
+                  <div className="detail-item approach-card">
+                    <div className="detail-icon">
+                      <Target className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                        Proven Performance
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        MeridianAI reduces research time from hours to 45
-                        minutes maximum. Our systems deliver measurable
-                        efficiency gains.
+                      <div className="detail-title">Evidence-Based</div>
+                      <p className="detail-text">
+                        Every model is grounded in peer-reviewed research,
+                        clinical data, and validated biochemical principles.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-green-100 dark:bg-green-900/50 border-2 border-green-200 dark:border-green-500">
-                      <Film className="w-7 h-7 text-green-700 dark:text-green-400" />
+                  <div className="detail-item approach-card">
+                    <div className="detail-icon">
+                      <Brain className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                        Creative & Technical Excellence
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        3+ film festival awards demonstrate our ability to
-                        combine technical innovation with creative storytelling
-                        and user experience.
+                      <div className="detail-title">Adaptive Learning</div>
+                      <p className="detail-text">
+                        Machine learning enables continuous improvement, with
+                        models becoming more accurate through real-world
+                        validation.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="detail-item approach-card">
+                    <div className="detail-icon">
+                      <Shield className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="detail-title">Safety-First</div>
+                      <p className="detail-text">
+                        Privacy, safety, and ethical considerations are designed
+                        in from the foundation - never added as an afterthought.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
 
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50 dark:border-gray-700/50">
-                <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+          <section className="section-shell">
+            <div className="section-inner">
+              <div
+                className="section-heading tech-section-heading"
+                style={{ textAlign: "center", marginBottom: "0" }}
+              >
+                <span className="section-label tech-label">Technology</span>
+                <h2
+                  className="hero-subtitle"
+                  style={{
+                    fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  Proprietary Technology
+                </h2>
+                <p
+                  className="hero-text"
+                  style={{
+                    margin: "0 auto",
+                    maxWidth: "700px",
+                    fontSize: "clamp(1rem, 1.8vw, 1.2rem)",
+                    lineHeight: "1.7",
+                  }}
+                >
+                  Our patent-pending biochemical interaction models predict how
+                  specific compounds affect individual biological systems. By
+                  integrating biometric data, genetic factors, and metabolic
+                  profiles, we generate personalized recommendations with
+                  unprecedented accuracy across therapeutic applications,
+                  performance optimization, and harm reduction.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section
+            className="section-shell"
+            style={{ paddingTop: "clamp(2.5rem, 3.5vw, 3.75rem)" }}
+          >
+            <div className="section-inner">
+              <div className="surface-panel space-y-6">
+                <h3 className="hero-subtitle" style={{ fontSize: "2rem" }}>
                   Real Client Testimonials
                 </h3>
-
-                {/* Real testimonials from original site */}
-                <div className="space-y-6">
-                  <div className="border-l-4 border-blue-500 pl-6 py-4 bg-blue-50/50 dark:bg-blue-900/20 rounded-r-xl">
-                    <p className="text-gray-600 dark:text-gray-300 italic mb-3 text-lg">
-                      &quot;MeridianAI revolutionized our data management. The
-                      patent-pending technology is truly innovative and brought
-                      all insight to our fingertips.&quot;
+                <div className="space-y-3">
+                  <div className="testimonial-card">
+                    <p className="detail-text" style={{ fontStyle: "italic" }}>
+                      &quot;StroomAI revolutionized our data management. The
+                      approach they take is truly innovative and brought all
+                      insight to our fingertips.&quot;
                     </p>
-                    <p className="text-sm font-bold text-blue-700 dark:text-blue-400">
+                    <p
+                      className="story-metric"
+                      style={{ letterSpacing: "0.16em" }}
+                    >
                       — Rejuvatek Medical Marketing Director
                     </p>
                   </div>
-
-                  <div className="border-l-4 border-orange-500 pl-6 py-4 bg-orange-50/50 dark:bg-orange-900/20 rounded-r-xl">
-                    <p className="text-gray-600 dark:text-gray-300 italic mb-3 text-lg">
-                      &quot;The ModeAI Stylist tool touches on all things that
-                      you might expect from an in-person shopping experience and
-                      more! This could be a game changer.&quot;
+                  <div className="testimonial-card">
+                    <p className="detail-text" style={{ fontStyle: "italic" }}>
+                      &quot;The BFF Cannabis App is like having a Budtender with
+                      a PHD in your pocket. Finally, I know just what to
+                      buy.&quot;
                     </p>
-                    <p className="text-sm font-bold text-orange-700 dark:text-orange-400">
-                      — Former Nordstrom Employee of 20+ years
+                    <p
+                      className="story-metric"
+                      style={{ letterSpacing: "0.16em" }}
+                    >
+                      — CEO of Cannabis Therapeutics Organization
                     </p>
                   </div>
-
-                  <div className="border-l-4 border-green-500 pl-6 py-4 bg-green-50/50 dark:bg-green-900/20 rounded-r-xl">
-                    <p className="text-gray-600 dark:text-gray-300 italic mb-3 text-lg">
+                  <div className="testimonial-card">
+                    <p className="detail-text" style={{ fontStyle: "italic" }}>
                       &quot;Near completion with our entire mental health social
                       platform. The AI implementation could really better a lot
                       of lives.&quot;
                     </p>
-                    <p className="text-sm font-bold text-green-700 dark:text-green-400">
-                      — ADM Social Platform Founder
+                    <p
+                      className="story-metric"
+                      style={{ letterSpacing: "0.16em" }}
+                    >
+                      — Mens Mental Health Social Platform Founder
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Blog Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
-          <div className="max-w-4xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center">
-              <div className="inline-flex items-center gap-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-blue-200 dark:border-blue-700 mb-8 shadow-lg">
-                <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                <span className="text-blue-800 dark:text-blue-300 font-bold text-lg">
+          {/* <section className="section-shell">
+            <div className="section-inner">
+              <div className="blog-panel">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div
+                    className="detail-icon"
+                    style={{ width: "52px", height: "52px" }}
+                  >
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <span
+                    className="story-metric"
+                    style={{ letterSpacing: "0.24em" }}
+                  >
                   Blog Posts
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+                <h2 className="hero-subtitle" style={{ fontSize: "2.4rem" }}>
                 Stay Ahead with Expert Analysis
               </h2>
-
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-                Stay ahead with expert analysis and practical strategies for the
-                AI-powered future. Explore insights on enterprise AI, knowledge
-                management, and digital transformation.
-              </p>
-
+                <p
+                  className="hero-text"
+                  style={{ margin: "1.5rem auto", maxWidth: "36rem" }}
+                >
+                  Stay ahead with expert analysis and practical strategies for
+                  the AI-powered future. Explore insights on enterprise AI,
+                  knowledge management, and digital transformation.
+                </p>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-8 py-4 text-white rounded-xl font-medium hover:scale-105 transition-all shadow-lg text-lg"
-                style={{ backgroundColor: "#5C92B2" }}
+                  className="cta-button cta-button--primary"
+                  style={{ marginTop: "1rem" }}
               >
                 View Articles
-                <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
-        </section>
+          </section> */}
 
-        {/* Contact Section */}
-        <section id="contact" className="py-20 px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                Let&apos;s discuss how our patent-pending AI innovations can
-                deliver measurable results for your organization.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  href="/beta"
-                  className="text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl flex items-center gap-3"
-                  style={{ backgroundColor: "#5C92B2" }}
+          <section id="contact" className="section-shell">
+            <div className="section-inner">
+              <div className="section-heading" style={{ textAlign: "center" }}>
+                <span className="section-label">Contact</span>
+                <h2 className="hero-subtitle" style={{ fontSize: "2.8rem" }}>
+                  Partner With Us{" "}
+                </h2>
+                <p
+                  className="hero-text"
+                  style={{ margin: "0 auto", maxWidth: "38rem" }}
                 >
-                  <Star className="w-5 h-5" />
-                  Request Beta Access
-                </Link>
-                <span className="text-gray-400 dark:text-gray-500">or</span>
-                <span className="text-lg text-gray-700 dark:text-gray-300">
-                  Contact us for enterprise solutions:
-                </span>
+                  We collaborate with research institutions, pharmaceutical
+                  companies, professional sports organizations, and healthcare
+                  systems.
+                </p>
+                <div
+                  className="hero-actions"
+                  style={{ justifyContent: "center" }}
+                ></div>
               </div>
-            </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50 dark:border-gray-700/50">
-                <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                  Get Started
-                </h3>
-                <div className="space-y-6">
-                  <div>
+              <div className="contact-grid">
+                <div className="surface-panel">
+                  <h3 className="hero-subtitle" style={{ fontSize: "2rem" }}>
+                    Get Started
+                  </h3>
+                  <div className="contact-form">
                     <input
                       type="text"
                       name="name"
@@ -883,11 +884,8 @@ const StroomAI = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full bg-white/70 dark:bg-gray-700/70 border-2 border-blue-200 dark:border-gray-600 rounded-xl px-6 py-4 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none text-lg"
+                      className="contact-input"
                     />
-                  </div>
-
-                  <div>
                     <input
                       type="email"
                       name="email"
@@ -895,11 +893,8 @@ const StroomAI = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full bg-white/70 dark:bg-gray-700/70 border-2 border-blue-200 dark:border-gray-600 rounded-xl px-6 py-4 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none text-lg"
+                      className="contact-input"
                     />
-                  </div>
-
-                  <div>
                     <input
                       type="text"
                       name="company"
@@ -907,281 +902,135 @@ const StroomAI = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       required
-                      className="w-full bg-white/70 dark:bg-gray-700/70 border-2 border-blue-200 dark:border-gray-600 rounded-xl px-6 py-4 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none text-lg"
+                      className="contact-input"
                     />
-                  </div>
-
-                  <div className="relative">
-                    <select
-                      name="projectInterest"
-                      value={formData.projectInterest}
-                      onChange={handleInputChange}
-                      className="w-full bg-white/70 dark:bg-gray-700/70 border-2 border-blue-200 dark:border-gray-600 rounded-xl px-6 py-4 text-gray-900 dark:text-gray-100 focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none appearance-none text-lg"
-                    >
-                      <option value="">Select Innovation Interest</option>
-                      <option value="museai-partnership">
-                        🎬 MuseAI Film Production Partnership
-                      </option>
-                      <option value="museai-early-access">
-                        🎬 MuseAI Early Access
-                      </option>
-                      <option value="ai-stylist">ModeAI Stylist</option>
-                      <option value="grocery-assistant">HygeiaAI</option>
-                      <option value="MeridianAI">MeridianAI Dashboard</option>
-                      <option value="conservatron">TraffickJam</option>
-                      <option value="mental-space">MentalSpace Platform</option>
-                      <option value="custom-solution">
-                        Custom AI Solution
-                      </option>
-                      <option value="consultation">
-                        Strategic Consultation
-                      </option>
-                    </select>
-                    <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400 dark:text-gray-500 pointer-events-none" />
-                  </div>
-
-                  <div>
                     <textarea
                       name="message"
                       placeholder="Tell us about your project requirements..."
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows={4}
-                      className="w-full bg-white/70 dark:bg-gray-700/70 border-2 border-blue-200 dark:border-gray-600 rounded-xl px-6 py-4 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none resize-none text-lg"
+                      rows={5}
+                      className="contact-input"
+                      style={{ resize: "none" }}
                     ></textarea>
-                  </div>
-
-                  <button
-                    onClick={handleFormSubmit}
-                    className="w-full text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl"
-                    style={{ backgroundColor: "#5C92B2" }}
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </div>
-
-              {/* Contact Info */}
-              <div className="space-y-8">
-                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50 dark:border-gray-700/50">
-                  <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                    Contact Information
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4">
-                      <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                      <span className="text-gray-700 dark:text-gray-300 text-lg">
-                        sales@stroomai.com
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                      <a
-                        href="tel:+19297079902"
-                        className="text-gray-700 dark:text-gray-300 text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        +1 (929) 707-9902
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <Globe className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                      <span className="text-gray-700 dark:text-gray-300 text-lg">
-                        New York City, NY
-                      </span>
-                    </div>
+                    <button
+                      onClick={handleFormSubmit}
+                      className="cta-button cta-button--primary contact-submit"
+                    >
+                      Send Message
+                    </button>
                   </div>
                 </div>
 
-                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50 dark:border-gray-700/50">
-                  <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                    Schedule a Consultation
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
-                    Ready to discuss your AI project? Book a consultation to
-                    explore how our patent-pending innovations can transform
-                    your business.
-                  </p>
-                  <a
-                    href="https://calendly.com/parkere-case/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl"
-                    style={{ backgroundColor: "#5C92B2" }}
-                  >
-                    <Calendar className="w-6 h-6" />
-                    Book Consultation
-                  </a>
+                <div className="surface-panel space-y-8">
+                  <div>
+                    <h3 className="hero-subtitle" style={{ fontSize: "2rem" }}>
+                      Contact Information
+                    </h3>
+                    <div className="contact-info-list">
+                      <div className="contact-info-item">
+                        <Mail className="w-5 h-5" />
+                        <span>sales@stroomai.com</span>
+                      </div>
+                      <div className="contact-info-item">
+                        <Phone className="w-5 h-5" />
+                        <a href="tel:+19297079902">+1 (929) 707-9902</a>
+                      </div>
+                      <div className="contact-info-item">
+                        <Globe className="w-5 h-5" />
+                        <span>New York City, NY</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="hero-subtitle" style={{ fontSize: "2rem" }}>
+                      Schedule a Consultation
+                    </h3>
+                    <p className="detail-text">
+                      Ready to discuss your AI project? Book a consultation to
+                      explore how our patent-pending innovations can transform
+                      your business.
+                    </p>
+                    <a
+                      href="https://calendly.com/parkere-case/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cta-button cta-button--outline"
+                    >
+                      <Calendar className="w-5 h-5" />
+                      Book Consultation
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
 
-        {/* Footer */}
-        <footer className="py-16 px-4 bg-gradient-to-r from-gray-900 to-blue-900 text-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <div className="flex items-center mb-4">
-                  <div className="h-14">
+        <footer className="footer-shell">
+          <div className="footer-inner">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "2rem",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <div style={{ maxWidth: "600px" }}>
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="w-20">
                     <Image
-                      src="/wormhole-full-logo.png"
+                      src="/new-logo-logo-only.png"
                       alt="StroomAI Logo"
-                      width={240}
-                      height={56}
-                      className="h-full w-auto object-contain"
+                      width={80}
+                      height={80}
+                      className="w-full h-auto object-contain opacity-80"
                     />
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
-                  Patent-pending AI innovations that transform businesses with
-                  measurable results across healthcare, retail, conservation,
-                  and enterprise systems.
+                <p
+                  className="detail-text"
+                  style={{
+                    fontSize: "0.95rem",
+                    lineHeight: 1.6,
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  AI-powered systems to help teams predict how biological
+                  compounds interact with individual physiology.
                 </p>
-              </div>
-
-              <div>
-                <h4 className="text-xl font-bold mb-4 text-blue-300">
-                  Innovations
-                </h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>
-                    <a
-                      href="#solutions"
-                      className="hover:text-white transition-colors"
-                    >
-                      ModeAI Stylist
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#solutions"
-                      className="hover:text-white transition-colors"
-                    >
-                      HygeiaAI
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#solutions"
-                      className="hover:text-white transition-colors"
-                    >
-                      MeridianAI
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#solutions"
-                      className="hover:text-white transition-colors"
-                    >
-                      TraffickJam Intelligence System
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-xl font-bold mb-4 text-blue-300">
-                  Industries
-                </h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>
-                    <a
-                      href="#industries"
-                      className="hover:text-white transition-colors"
-                    >
-                      Healthcare
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#industries"
-                      className="hover:text-white transition-colors"
-                    >
-                      E-commerce & Retail
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#industries"
-                      className="hover:text-white transition-colors"
-                    >
-                      Conservation & Legal
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#industries"
-                      className="hover:text-white transition-colors"
-                    >
-                      Knowledge Management
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-xl font-bold mb-4 text-blue-300">
-                  Company
-                </h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>
-                    <a
-                      href="#about"
-                      className="hover:text-white transition-colors"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blog"
-                      className="hover:text-white transition-colors"
-                    >
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <a
-                      href="#contact"
-                      className="hover:text-white transition-colors"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <li>
-                    <Link
-                      href="/privacy-policy"
-                      className="hover:text-white transition-colors"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/terms-of-service"
-                      className="hover:text-white transition-colors"
-                    >
-                      Terms of Service
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/security"
-                      className="hover:text-white transition-colors"
-                    >
-                      Security
-                    </Link>
-                  </li>
-                </ul>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "1.5rem",
+                    justifyContent: "center",
+                    fontSize: "0.85rem",
+                    marginBottom: "2rem",
+                  }}
+                >
+                  <a href="#about" className="footer-link">
+                    About
+                  </a>
+                  {/* <Link href="/blog" className="footer-link">
+                    Blog
+                  </Link> */}
+                  <a href="#contact" className="footer-link">
+                    Contact
+                  </a>
+                  <Link href="/legal" className="footer-link">
+                    Legal
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="border-t border-gray-700 pt-8 text-center">
-              <p className="text-gray-300 text-lg">
-                © 2025 Stroom AI LLC. All rights reserved.
-              </p>
+            <div className="footer-note">
+              © 2025 Stroom AI LLC. All rights reserved.
             </div>
           </div>
         </footer>

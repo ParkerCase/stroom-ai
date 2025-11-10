@@ -11,19 +11,19 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true); // Default to dark mode
+  const [isDark, setIsDark] = useState(false); // Default to light mode (matching Condesa aesthetic)
 
   useEffect(() => {
-    // Check for saved theme preference or default to dark mode
+    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "light") {
-      setIsDark(false);
-      document.documentElement.classList.remove("dark");
-    } else {
-      // Default to dark mode (either saved as dark, no preference, or system prefers dark)
+    if (savedTheme === "dark") {
       setIsDark(true);
       document.documentElement.classList.add("dark");
+    } else {
+      // Default to light mode (either saved as light, no preference, or system prefers light)
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
