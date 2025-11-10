@@ -1,14 +1,28 @@
-// pages/api/submit-brief.js
+// pages/api/submit-brief.ts
 import Anthropic from "@anthropic-ai/sdk";
 import { sendApprovalEmail, sendClientConfirmation } from "../../lib/email";
 import { storeProjectBrief } from "../../lib/storage";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || "",
 });
 
+interface ProjectBriefData {
+  name: string;
+  email: string;
+  company?: string;
+  projectDescription: string;
+  timeline: string;
+  stage: string;
+  budgetRange: string;
+  dataAvailability: string;
+  engagementModel: string;
+  expectedDeliverables: string;
+}
+
 // Spam detection function - Only catches obvious spam/scam phrases
-function detectSpam(data) {
+function detectSpam(data: ProjectBriefData) {
   const { name, email, projectDescription, expectedDeliverables } = data;
 
   // Check 1: Email validation (basic check)
@@ -62,7 +76,7 @@ function detectSpam(data) {
 }
 
 // Claude analysis function
-async function analyzeProjectBrief(data) {
+async function analyzeProjectBrief(data: ProjectBriefData) {
   const prompt = `You are an expert project analyst for a biochemical AI consultant. Analyze this project brief and provide a structured assessment.
 
 PROJECT BRIEF:
@@ -211,7 +225,10 @@ Otherwise flag for manual review.`;
   }
 }
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   // Only allow POST requests
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -223,7 +240,7 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   try {
-    const data = req.body;
+    const data = req.body as ProjectBriefData;
 
     // Spam detection
     const spamCheck = detectSpam(data);
@@ -241,7 +258,7 @@ export default async function handler(req, res) {
     try {
       analysis = await Promise.race([
         analyzeProjectBrief(data),
-        new Promise((_, reject) =>
+        new Promise<never>((_, reject) =>
           setTimeout(() => reject(new Error("Claude analysis timeout")), 45000)
         ),
       ]);
@@ -268,8 +285,8 @@ export default async function handler(req, res) {
 
     // Store submission (non-blocking)
     const ipAddress =
-      req.headers["x-forwarded-for"]?.split(",")[0] ||
-      req.headers["x-real-ip"] ||
+      req.headers["x-forwarded-for"]?.toString().split(",")[0] ||
+      req.headers["x-real-ip"]?.toString() ||
       req.socket?.remoteAddress ||
       "unknown";
     const userAgent = req.headers["user-agent"] || "unknown";
@@ -302,3 +319,4 @@ export default async function handler(req, res) {
     });
   }
 }
+
