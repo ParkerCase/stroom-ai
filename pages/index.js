@@ -722,16 +722,14 @@ const StroomAI = () => {
 
           <section className="section-shell">
             <div className="section-inner">
-              <div
-                className="section-heading tech-section-heading"
-                style={{ textAlign: "center", marginBottom: "0" }}
-              >
-                <span className="section-label tech-label">Technology</span>
+              <div className="section-heading">
+                <span className="section-label">Technology</span>
                 <h2
                   className="hero-subtitle"
                   style={{
                     fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
                     marginBottom: "1rem",
+                    textAlign: "center",
                   }}
                 >
                   Proprietary Technology
@@ -743,6 +741,7 @@ const StroomAI = () => {
                     maxWidth: "700px",
                     fontSize: "clamp(1rem, 1.8vw, 1.2rem)",
                     lineHeight: "1.7",
+                    textAlign: "center",
                   }}
                 >
                   Our patent-pending biochemical interaction models predict how
