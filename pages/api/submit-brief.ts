@@ -306,10 +306,10 @@ export default async function handler(
     // Send email notifications (non-blocking)
     if (typeof sendApprovalEmail === 'function' && typeof sendClientConfirmation === 'function') {
       Promise.all([
-        sendApprovalEmail(data, analysis).catch((err) => {
+        sendApprovalEmail(data, analysis).catch((err: unknown) => {
           console.error("Approval email error:", err);
         }),
-        sendClientConfirmation(data).catch((err) => {
+        sendClientConfirmation(data).catch((err: unknown) => {
           console.error("Confirmation email error:", err);
         }),
       ]).catch(() => {
@@ -331,7 +331,7 @@ export default async function handler(
         "unknown";
       const userAgent = req.headers["user-agent"] || "unknown";
 
-      storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch((err) => {
+      storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch((err: unknown) => {
         console.error("Storage error:", err);
         // Continue even if storage fails
       });
