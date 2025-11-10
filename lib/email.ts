@@ -525,7 +525,7 @@ export async function sendApprovalEmail(
     const result = await resend.emails.send({
       from: 'StroomAI <proposals@stroomai.com>',
       to: 'info@stroomai.com',
-      replyTo: data.email,
+      reply_to: data.email,
       subject: `New Project Brief: ${data.name} - ${analysis.autoApprove ? '✓ Auto-Approve' : '⚠ Needs Review'}`,
       html,
     });
@@ -748,7 +748,7 @@ export async function sendClientConfirmation(
     const result = await resend.emails.send({
       from: 'Parker at StroomAI <parker@stroomai.com>',
       to: data.email,
-      replyTo: 'info@stroomai.com',
+      reply_to: 'info@stroomai.com',
       subject: 'Project Brief Received - StroomAI',
       html,
     });
