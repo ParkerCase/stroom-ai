@@ -236,33 +236,50 @@ export default async function handler(req, res) {
       });
     }
 
-    // Claude analysis
-    const analysis = await analyzeProjectBrief(data);
-
-    // Send email notifications
+    // Claude analysis with timeout
+    let analysis;
     try {
-      await sendApprovalEmail(data, analysis);
-      await sendClientConfirmation(data);
-    } catch (emailError) {
-      console.error("Email sending error:", emailError);
-      // Continue processing even if email fails
+      analysis = await Promise.race([
+        analyzeProjectBrief(data),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("Claude analysis timeout")), 45000)
+        ),
+      ]);
+    } catch (analysisError) {
+      console.error("Claude analysis error:", analysisError);
+      // Return error but don't crash - let user know there was an issue
+      return res.status(500).json({
+        error:
+          "Analysis service is temporarily unavailable. Please try again in a moment.",
+      });
     }
 
-    // Store submission
-    try {
-      const ipAddress =
-        req.headers["x-forwarded-for"]?.split(",")[0] ||
-        req.headers["x-real-ip"] ||
-        req.socket?.remoteAddress ||
-        "unknown";
-      const userAgent = req.headers["user-agent"] || "unknown";
+    // Send email notifications (non-blocking)
+    Promise.all([
+      sendApprovalEmail(data, analysis).catch((err) => {
+        console.error("Approval email error:", err);
+      }),
+      sendClientConfirmation(data).catch((err) => {
+        console.error("Confirmation email error:", err);
+      }),
+    ]).catch(() => {
+      // Emails failed but continue
+    });
 
-      await storeProjectBrief(data, analysis, { ipAddress, userAgent });
-    } catch (storageError) {
-      console.error("Storage error:", storageError);
-      // Continue processing even if storage fails
-    }
+    // Store submission (non-blocking)
+    const ipAddress =
+      req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.headers["x-real-ip"] ||
+      req.socket?.remoteAddress ||
+      "unknown";
+    const userAgent = req.headers["user-agent"] || "unknown";
 
+    storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch((err) => {
+      console.error("Storage error:", err);
+      // Continue even if storage fails
+    });
+
+    // Return success immediately
     return res.status(200).json({
       success: true,
       spam: false,

@@ -44,11 +44,18 @@ export default function ProjectBriefWidget() {
     setError('');
 
     try {
+      // Add timeout to prevent hanging
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+
       const response = await fetch('/api/submit-brief', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       // Check if response is JSON
       const contentType = response.headers.get('content-type');
@@ -71,10 +78,21 @@ export default function ProjectBriefWidget() {
         return;
       }
 
+      // Success - show success message
       setSubmitted(true);
+      setIsSubmitting(false);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
-    } finally {
+      console.error('Form submission error:', err);
+      
+      if (err instanceof Error) {
+        if (err.name === 'AbortError') {
+          setError('Request timed out. Please try again.');
+        } else {
+          setError(err.message || 'Something went wrong. Please try again.');
+        }
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
       setIsSubmitting(false);
     }
   };
