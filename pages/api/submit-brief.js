@@ -252,53 +252,64 @@ Otherwise flag for manual review.`;
 }
 
 export default async function handler(req, res) {
+  // IMPORTANT: Handle all methods first, then check
+  const method = req.method ? req.method.toUpperCase() : "UNKNOWN";
+
   // Set CORS headers first for all requests
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  const method = (req.method || "").toUpperCase();
-
   // Log everything for debugging
-  console.log("[submit-brief] Request details:", {
-    method: method || "UNDEFINED",
-    originalMethod: req.method,
-    url: req.url,
-    path: req.url,
-    contentType: req.headers["content-type"],
-    bodyExists: !!req.body,
-    bodyKeys: req.body ? Object.keys(req.body) : [],
-  });
+  console.log("[submit-brief] === REQUEST START ===");
+  console.log("Method:", method);
+  console.log("Original method:", req.method);
+  console.log("URL:", req.url);
+  console.log("Headers:", JSON.stringify(req.headers, null, 2));
+  console.log("Body exists:", !!req.body);
+  console.log("Body type:", typeof req.body);
+  console.log("[submit-brief] === REQUEST END ===");
 
   // Handle CORS preflight requests
   if (method === "OPTIONS") {
+    console.log("[submit-brief] Handling OPTIONS request");
     return res.status(200).end();
   }
 
-  // Handle GET requests (for testing)
+  // Handle GET requests (for testing/debugging)
   if (method === "GET") {
+    console.log("[submit-brief] Handling GET request (test)");
     return res.status(200).json({
-      message: "API is working",
+      message: "API route is working",
       method: method,
+      originalMethod: req.method,
       timestamp: new Date().toISOString(),
+      route: "/api/submit-brief",
     });
   }
 
   // Only allow POST requests
   if (method !== "POST") {
-    console.error("[submit-brief] Invalid method:", {
+    console.error("[submit-brief] ❌ INVALID METHOD:", {
       received: method,
       original: req.method,
       allowed: "POST",
+      allHeaders: req.headers,
     });
     return res.status(405).json({
       error: "Method not allowed",
-      received: method || "undefined",
+      received: method,
       original: req.method,
       allowed: "POST",
-      hint: "Make sure you're sending a POST request with Content-Type: application/json",
+      debug: {
+        methodExists: !!req.method,
+        methodValue: req.method,
+        methodType: typeof req.method,
+      },
     });
   }
+
+  console.log("[submit-brief] ✅ POST request received, processing...");
 
   // Load modules first
   await loadModules();
