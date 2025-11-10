@@ -1,8 +1,10 @@
 // pages/api/submit-brief.ts
 import Anthropic from "@anthropic-ai/sdk";
-import { sendApprovalEmail, sendClientConfirmation } from "../../lib/email";
+import * as emailLib from "../../lib/email";
 import { storeProjectBrief } from "../../lib/storage";
 import type { NextApiRequest, NextApiResponse } from "next";
+
+const { sendApprovalEmail, sendClientConfirmation } = emailLib;
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || "",
