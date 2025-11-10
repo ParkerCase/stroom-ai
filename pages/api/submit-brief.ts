@@ -1,10 +1,37 @@
 // pages/api/submit-brief.ts
 import Anthropic from "@anthropic-ai/sdk";
-import * as emailLib from "../../lib/email";
-import { storeProjectBrief } from "../../lib/storage";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const { sendApprovalEmail, sendClientConfirmation } = emailLib;
+// Dynamic imports to avoid build-time issues
+let sendApprovalEmail: any;
+let sendClientConfirmation: any;
+let storeProjectBrief: any;
+
+async function loadModules() {
+  try {
+    if (!sendApprovalEmail) {
+      const emailModule = await import("../../lib/email");
+      if (!emailModule.sendApprovalEmail || typeof emailModule.sendApprovalEmail !== 'function') {
+        throw new Error('sendApprovalEmail is not a function in email module');
+      }
+      if (!emailModule.sendClientConfirmation || typeof emailModule.sendClientConfirmation !== 'function') {
+        throw new Error('sendClientConfirmation is not a function in email module');
+      }
+      sendApprovalEmail = emailModule.sendApprovalEmail;
+      sendClientConfirmation = emailModule.sendClientConfirmation;
+    }
+    if (!storeProjectBrief) {
+      const storageModule = await import("../../lib/storage");
+      if (!storageModule.storeProjectBrief || typeof storageModule.storeProjectBrief !== 'function') {
+        throw new Error('storeProjectBrief is not a function in storage module');
+      }
+      storeProjectBrief = storageModule.storeProjectBrief;
+    }
+  } catch (error) {
+    console.error('Error loading modules:', error);
+    throw error;
+  }
+}
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || "",
@@ -241,6 +268,9 @@ export default async function handler(
   res.setHeader("Access-Control-Allow-Methods", "POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
+  // Load modules first
+  await loadModules();
+
   try {
     const data = req.body as ProjectBriefData;
 
@@ -274,29 +304,40 @@ export default async function handler(
     }
 
     // Send email notifications (non-blocking)
-    Promise.all([
-      sendApprovalEmail(data, analysis).catch((err) => {
-        console.error("Approval email error:", err);
-      }),
-      sendClientConfirmation(data).catch((err) => {
-        console.error("Confirmation email error:", err);
-      }),
-    ]).catch(() => {
-      // Emails failed but continue
-    });
+    if (typeof sendApprovalEmail === 'function' && typeof sendClientConfirmation === 'function') {
+      Promise.all([
+        sendApprovalEmail(data, analysis).catch((err) => {
+          console.error("Approval email error:", err);
+        }),
+        sendClientConfirmation(data).catch((err) => {
+          console.error("Confirmation email error:", err);
+        }),
+      ]).catch(() => {
+        // Emails failed but continue
+      });
+    } else {
+      console.error('Email functions not loaded:', {
+        sendApprovalEmail: typeof sendApprovalEmail,
+        sendClientConfirmation: typeof sendClientConfirmation
+      });
+    }
 
     // Store submission (non-blocking)
-    const ipAddress =
-      req.headers["x-forwarded-for"]?.toString().split(",")[0] ||
-      req.headers["x-real-ip"]?.toString() ||
-      req.socket?.remoteAddress ||
-      "unknown";
-    const userAgent = req.headers["user-agent"] || "unknown";
+    if (typeof storeProjectBrief === 'function') {
+      const ipAddress =
+        req.headers["x-forwarded-for"]?.toString().split(",")[0] ||
+        req.headers["x-real-ip"]?.toString() ||
+        req.socket?.remoteAddress ||
+        "unknown";
+      const userAgent = req.headers["user-agent"] || "unknown";
 
-    storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch((err) => {
-      console.error("Storage error:", err);
-      // Continue even if storage fails
-    });
+      storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch((err) => {
+        console.error("Storage error:", err);
+        // Continue even if storage fails
+      });
+    } else {
+      console.error('Storage function not loaded:', typeof storeProjectBrief);
+    }
 
     // Return success immediately
     return res.status(200).json({
