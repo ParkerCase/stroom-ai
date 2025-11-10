@@ -3,6 +3,7 @@
 /.pnp
 .pnp.js
 
+
 # Testing
 /coverage
 
@@ -38,3 +39,9 @@ yarn-error.log*
 .idea/
 *.swp
 *.swo
+# Data storage (don't commit submission data)
+/data/
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
