@@ -8,37 +8,75 @@ async function loadModules() {
   try {
     if (!sendApprovalEmail) {
       const emailModule = await import("../../lib/email");
-      if (
-        !emailModule.sendApprovalEmail ||
-        typeof emailModule.sendApprovalEmail !== "function"
-      ) {
+
+      // Debug: log what's actually in the module
+      console.log(
+        "[submit-brief] Email module keys:",
+        Object.keys(emailModule)
+      );
+      console.log(
+        "[submit-brief] sendApprovalEmail type:",
+        typeof emailModule.sendApprovalEmail
+      );
+      console.log(
+        "[submit-brief] sendApprovalEmail value:",
+        emailModule.sendApprovalEmail
+      );
+
+      // Try different ways to access the function
+      const approvalFn =
+        emailModule.sendApprovalEmail || emailModule.default?.sendApprovalEmail;
+      const confirmationFn =
+        emailModule.sendClientConfirmation ||
+        emailModule.default?.sendClientConfirmation;
+
+      if (!approvalFn || typeof approvalFn !== "function") {
+        console.error("[submit-brief] Module contents:", {
+          keys: Object.keys(emailModule),
+          hasDefault: !!emailModule.default,
+          defaultKeys: emailModule.default
+            ? Object.keys(emailModule.default)
+            : [],
+        });
         throw new Error("sendApprovalEmail is not a function in email module");
       }
-      if (
-        !emailModule.sendClientConfirmation ||
-        typeof emailModule.sendClientConfirmation !== "function"
-      ) {
+      if (!confirmationFn || typeof confirmationFn !== "function") {
         throw new Error(
           "sendClientConfirmation is not a function in email module"
         );
       }
-      sendApprovalEmail = emailModule.sendApprovalEmail;
-      sendClientConfirmation = emailModule.sendClientConfirmation;
+
+      sendApprovalEmail = approvalFn;
+      sendClientConfirmation = confirmationFn;
     }
     if (!storeProjectBrief) {
       const storageModule = await import("../../lib/storage");
-      if (
-        !storageModule.storeProjectBrief ||
-        typeof storageModule.storeProjectBrief !== "function"
-      ) {
+
+      // Debug: log what's actually in the module
+      console.log(
+        "[submit-brief] Storage module keys:",
+        Object.keys(storageModule)
+      );
+
+      const storeFn =
+        storageModule.storeProjectBrief ||
+        storageModule.default?.storeProjectBrief;
+
+      if (!storeFn || typeof storeFn !== "function") {
+        console.error("[submit-brief] Storage module contents:", {
+          keys: Object.keys(storageModule),
+          hasDefault: !!storageModule.default,
+        });
         throw new Error(
           "storeProjectBrief is not a function in storage module"
         );
       }
-      storeProjectBrief = storageModule.storeProjectBrief;
+
+      storeProjectBrief = storeFn;
     }
   } catch (error) {
     console.error("Error loading modules:", error);
+    console.error("Error stack:", error.stack);
     throw error;
   }
 }
