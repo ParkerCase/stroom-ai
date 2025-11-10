@@ -324,7 +324,7 @@ export default async function handler(
         sendClientConfirmation(data).catch((err: unknown) => {
           console.error("Confirmation email error:", err);
         }),
-      ]).catch(() => {
+      ]).catch((_err: unknown) => {
         // Emails failed but continue
       });
     } else {
