@@ -1,34 +1,44 @@
-// pages/api/submit-brief.ts
+// pages/api/submit-brief.js
 import Anthropic from "@anthropic-ai/sdk";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 // Dynamic imports to avoid build-time issues
-let sendApprovalEmail: any;
-let sendClientConfirmation: any;
-let storeProjectBrief: any;
+let sendApprovalEmail, sendClientConfirmation, storeProjectBrief;
 
 async function loadModules() {
   try {
     if (!sendApprovalEmail) {
       const emailModule = await import("../../lib/email");
-      if (!emailModule.sendApprovalEmail || typeof emailModule.sendApprovalEmail !== 'function') {
-        throw new Error('sendApprovalEmail is not a function in email module');
+      if (
+        !emailModule.sendApprovalEmail ||
+        typeof emailModule.sendApprovalEmail !== "function"
+      ) {
+        throw new Error("sendApprovalEmail is not a function in email module");
       }
-      if (!emailModule.sendClientConfirmation || typeof emailModule.sendClientConfirmation !== 'function') {
-        throw new Error('sendClientConfirmation is not a function in email module');
+      if (
+        !emailModule.sendClientConfirmation ||
+        typeof emailModule.sendClientConfirmation !== "function"
+      ) {
+        throw new Error(
+          "sendClientConfirmation is not a function in email module"
+        );
       }
       sendApprovalEmail = emailModule.sendApprovalEmail;
       sendClientConfirmation = emailModule.sendClientConfirmation;
     }
     if (!storeProjectBrief) {
       const storageModule = await import("../../lib/storage");
-      if (!storageModule.storeProjectBrief || typeof storageModule.storeProjectBrief !== 'function') {
-        throw new Error('storeProjectBrief is not a function in storage module');
+      if (
+        !storageModule.storeProjectBrief ||
+        typeof storageModule.storeProjectBrief !== "function"
+      ) {
+        throw new Error(
+          "storeProjectBrief is not a function in storage module"
+        );
       }
       storeProjectBrief = storageModule.storeProjectBrief;
     }
   } catch (error) {
-    console.error('Error loading modules:', error);
+    console.error("Error loading modules:", error);
     throw error;
   }
 }
@@ -37,21 +47,8 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || "",
 });
 
-interface ProjectBriefData {
-  name: string;
-  email: string;
-  company?: string;
-  projectDescription: string;
-  timeline: string;
-  stage: string;
-  budgetRange: string;
-  dataAvailability: string;
-  engagementModel: string;
-  expectedDeliverables: string;
-}
-
 // Spam detection function - Only catches obvious spam/scam phrases
-function detectSpam(data: ProjectBriefData) {
+function detectSpam(data) {
   const { name, email, projectDescription, expectedDeliverables } = data;
 
   // Check 1: Email validation (basic check)
@@ -105,7 +102,7 @@ function detectSpam(data: ProjectBriefData) {
 }
 
 // Claude analysis function
-async function analyzeProjectBrief(data: ProjectBriefData) {
+async function analyzeProjectBrief(data) {
   const prompt = `You are an expert project analyst for a biochemical AI consultant. Analyze this project brief and provide a structured assessment.
 
 PROJECT BRIEF:
@@ -254,37 +251,40 @@ Otherwise flag for manual review.`;
   }
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  console.log('submit-brief API called:', req.method, req.url);
+export default async function handler(req, res) {
+  // Set CORS headers first for all requests
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  const method = req.method?.toUpperCase() || "UNKNOWN";
+
+  console.log("[submit-brief] Request received:", {
+    method,
+    url: req.url,
+    headers: req.headers["content-type"],
+  });
 
   // Handle CORS preflight requests
-  if (req.method === "OPTIONS") {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (method === "OPTIONS") {
     return res.status(200).end();
   }
 
   // Only allow POST requests
-  if (req.method !== "POST") {
-    console.error('Invalid method:', req.method);
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    return res.status(405).json({ error: "Method not allowed", received: req.method });
+  if (method !== "POST") {
+    console.error("[submit-brief] Invalid method:", method);
+    return res.status(405).json({
+      error: "Method not allowed",
+      received: method,
+      allowed: "POST",
+    });
   }
-
-  // CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   // Load modules first
   await loadModules();
 
   try {
-    const data = req.body as ProjectBriefData;
+    const data = req.body;
 
     // Spam detection
     const spamCheck = detectSpam(data);
@@ -302,7 +302,7 @@ export default async function handler(
     try {
       analysis = await Promise.race([
         analyzeProjectBrief(data),
-        new Promise<never>((_, reject) =>
+        new Promise((_, reject) =>
           setTimeout(() => reject(new Error("Claude analysis timeout")), 45000)
         ),
       ]);
@@ -316,39 +316,44 @@ export default async function handler(
     }
 
     // Send email notifications (non-blocking)
-    if (typeof sendApprovalEmail === 'function' && typeof sendClientConfirmation === 'function') {
+    if (
+      typeof sendApprovalEmail === "function" &&
+      typeof sendClientConfirmation === "function"
+    ) {
       Promise.all([
-        sendApprovalEmail(data, analysis).catch((err: unknown) => {
+        sendApprovalEmail(data, analysis).catch((err) => {
           console.error("Approval email error:", err);
         }),
-        sendClientConfirmation(data).catch((err: unknown) => {
+        sendClientConfirmation(data).catch((err) => {
           console.error("Confirmation email error:", err);
         }),
-      ]).catch((_err: unknown) => {
+      ]).catch(() => {
         // Emails failed but continue
       });
     } else {
-      console.error('Email functions not loaded:', {
+      console.error("Email functions not loaded:", {
         sendApprovalEmail: typeof sendApprovalEmail,
-        sendClientConfirmation: typeof sendClientConfirmation
+        sendClientConfirmation: typeof sendClientConfirmation,
       });
     }
 
     // Store submission (non-blocking)
-    if (typeof storeProjectBrief === 'function') {
+    if (typeof storeProjectBrief === "function") {
       const ipAddress =
-        req.headers["x-forwarded-for"]?.toString().split(",")[0] ||
-        req.headers["x-real-ip"]?.toString() ||
+        req.headers["x-forwarded-for"]?.split(",")[0] ||
+        req.headers["x-real-ip"] ||
         req.socket?.remoteAddress ||
         "unknown";
       const userAgent = req.headers["user-agent"] || "unknown";
 
-      storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch((err: unknown) => {
-        console.error("Storage error:", err);
-        // Continue even if storage fails
-      });
+      storeProjectBrief(data, analysis, { ipAddress, userAgent }).catch(
+        (err) => {
+          console.error("Storage error:", err);
+          // Continue even if storage fails
+        }
+      );
     } else {
-      console.error('Storage function not loaded:', typeof storeProjectBrief);
+      console.error("Storage function not loaded:", typeof storeProjectBrief);
     }
 
     // Return success immediately
@@ -374,4 +379,3 @@ export default async function handler(
     });
   }
 }
-
