@@ -3,8 +3,12 @@
 
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 
-const STORAGE_DIR = path.join(process.cwd(), 'data');
+// Use /tmp on serverless (Vercel) or local data directory
+const STORAGE_DIR = process.env.VERCEL 
+  ? path.join(os.tmpdir(), 'stroom-briefs')
+  : path.join(process.cwd(), 'data');
 const BRIEFS_FILE = path.join(STORAGE_DIR, 'project-briefs.json');
 
 interface ProjectBriefData {
@@ -57,8 +61,14 @@ export interface StoredBrief {
 
 // Ensure storage directory exists
 function ensureStorageDir() {
-  if (!fs.existsSync(STORAGE_DIR)) {
-    fs.mkdirSync(STORAGE_DIR, { recursive: true });
+  try {
+    if (!fs.existsSync(STORAGE_DIR)) {
+      fs.mkdirSync(STORAGE_DIR, { recursive: true });
+    }
+  } catch (error) {
+    console.error('Error creating storage directory:', error);
+    // On Vercel, if /tmp doesn't work, we'll handle it gracefully
+    throw new Error(`Cannot create storage directory: ${STORAGE_DIR}. Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
 
