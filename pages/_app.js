@@ -4,7 +4,6 @@ import Head from "next/head";
 import Script from "next/script";
 import "../styles/globals.css";
 import { ThemeProvider } from "../components/ThemeContext";
-import ProjectBriefWidget from "../components/Projectbriefwidget";
 
 // Google Analytics Measurement ID
 const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-BS9W00BBL2";
@@ -166,7 +165,6 @@ function MyApp({ Component, pageProps }) {
       />
 
       <Component {...pageProps} />
-      <ProjectBriefWidget />
     </ThemeProvider>
   );
 }

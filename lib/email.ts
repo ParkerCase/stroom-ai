@@ -53,16 +53,14 @@ function checkRateLimit(key: string): boolean {
 }
 
 // HTML sanitization helper
-function sanitizeHtml(text: string): string {
-  const div = typeof document !== 'undefined' 
-    ? document.createElement('div') 
-    : { textContent: text } as any;
-  if (div.textContent !== undefined) {
-    div.textContent = text;
-    return div.innerHTML;
+function sanitizeHtml(text: string | undefined | null): string {
+  // Handle undefined/null values
+  if (text === undefined || text === null || text === 'undefined' || text === 'null') {
+    return 'Not provided';
   }
-  // Fallback for server-side
-  return text
+  // Convert to string and sanitize
+  const str = String(text);
+  return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -104,11 +102,11 @@ export async function sendApprovalEmail(
     'equity-commission': 'Equity + Commission',
   };
 
-  const approveSubject = encodeURIComponent(`Approve: ${data.name} - ${data.company || 'No Company'}`);
-  const approveBody = encodeURIComponent(`Hi ${data.name},\n\nI'd like to move forward with your project. Let's schedule a call to discuss next steps.\n\nBest,\nParker`);
+  const approveSubject = encodeURIComponent(`Approve: ${data.name || 'Unknown'} - ${data.company || 'No Company'}`);
+  const approveBody = encodeURIComponent(`Hi ${data.name || 'there'},\n\nI'd like to move forward with your project. Let's schedule a call to discuss next steps.\n\nBest,\nParker`);
   
-  const rejectSubject = encodeURIComponent(`Regarding: ${data.name} - ${data.company || 'No Company'}`);
-  const rejectBody = encodeURIComponent(`Hi ${data.name},\n\nThank you for your interest. Unfortunately, I'm not able to take on this project at this time.\n\nBest,\nParker`);
+  const rejectSubject = encodeURIComponent(`Regarding: ${data.name || 'Unknown'} - ${data.company || 'No Company'}`);
+  const rejectBody = encodeURIComponent(`Hi ${data.name || 'there'},\n\nThank you for your interest. Unfortunately, I'm not able to take on this project at this time.\n\nBest,\nParker`);
 
   const html = `
     <!DOCTYPE html>
@@ -161,21 +159,21 @@ export async function sendApprovalEmail(
             <div style="display: grid; gap: 0.75rem;">
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Name</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.name)}</div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.name || 'Not provided')}</div>
               </div>
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Email</div>
                 <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">
-                  <a href="mailto:${sanitizeHtml(data.email)}" style="color: #e5734d; text-decoration: none;">${sanitizeHtml(data.email)}</a>
+                  ${data.email ? `<a href="mailto:${sanitizeHtml(data.email)}" style="color: #e5734d; text-decoration: none;">${sanitizeHtml(data.email)}</a>` : 'Not provided'}
                 </div>
-              </div>
-              ${data.company ? `
+        </div>
+        ${data.company ? `
                 <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                   <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Company</div>
                   <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.company)}</div>
-                </div>
-              ` : ''}
-            </div>
+        </div>
+        ` : ''}
+      </div>
           </div>
 
           <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
@@ -183,15 +181,15 @@ export async function sendApprovalEmail(
             <div style="display: grid; gap: 0.75rem;">
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Stage</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.stage)}</div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.stage || 'Not provided')}</div>
               </div>
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Timeline</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.timeline)}</div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.timeline || 'Not provided')}</div>
               </div>
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Engagement Model</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(engagementLabels[data.engagementModel] || data.engagementModel)}</div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.engagementModel ? (engagementLabels[data.engagementModel] || data.engagementModel) : 'Not provided')}</div>
               </div>
               ${analysis.recommendedEngagementModel ? `
                 <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
@@ -199,81 +197,80 @@ export async function sendApprovalEmail(
                   <div style="font-size: 0.875rem; color: #e5734d; font-weight: 500; text-align: right;">
                     ${engagementLabels[analysis.recommendedEngagementModel] || analysis.recommendedEngagementModel}
                   </div>
-                </div>
+          </div>
               ` : ''}
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Budget Range</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.budgetRange)}</div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.budgetRange || 'Not provided')}</div>
         </div>
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Complexity (Claude Determined)</div>
                 <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">
-                  ${analysis.complexityScore <= 3 ? 'Simple' : analysis.complexityScore <= 6 ? 'Medium' : 'Complex'} 
-                  (Score: ${analysis.complexityScore}/10)
-                </div>
-              </div>
+                  ${analysis.complexityScore ? (analysis.complexityScore <= 3 ? 'Simple' : analysis.complexityScore <= 6 ? 'Medium' : 'Complex') + ` (Score: ${analysis.complexityScore}/10)` : 'Not determined'}
+          </div>
+          </div>
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Data Availability</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.dataAvailability)}</div>
-              </div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${sanitizeHtml(data.dataAvailability || 'Not provided')}</div>
+          </div>
               <div style="display: flex; justify-content: space-between;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Expected Deliverables</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right; white-space: pre-wrap;">${sanitizeHtml(data.expectedDeliverables)}</div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right; white-space: pre-wrap;">${sanitizeHtml(data.expectedDeliverables || 'Not provided')}</div>
         </div>
             </div>
-          </div>
+        </div>
 
           <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
             <h3 style="margin: 0 0 1rem 0; font-size: 1.125rem; color: #2c3e50;">Project Description</h3>
-            <p style="margin: 0; font-size: 0.875rem; color: #2c3e50; line-height: 1.6; white-space: pre-wrap;">${sanitizeHtml(data.projectDescription)}</p>
-          </div>
+            <p style="margin: 0; font-size: 0.875rem; color: #2c3e50; line-height: 1.6; white-space: pre-wrap;">${sanitizeHtml(data.projectDescription || 'Not provided')}</p>
+        </div>
 
           ${analysis.reasoning ? `
             <div style="background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">
               <h4 style="margin: 0 0 0.5rem 0; font-size: 0.875rem; font-weight: 600; color: #2e7d32;">Claude's Analysis</h4>
-              <p style="margin: 0; font-size: 0.875rem; color: #1b5e20; line-height: 1.6;">${sanitizeHtml(analysis.reasoning)}</p>
-            </div>
+              <p style="margin: 0; font-size: 0.875rem; color: #1b5e20; line-height: 1.6;">${sanitizeHtml(analysis.reasoning || 'No analysis available')}</p>
+      </div>
           ` : ''}
 
           ${analysis.riskFactors && analysis.riskFactors.length > 0 ? `
             <div style="background-color: #fff3e0; border-left: 4px solid #ff9800; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">
               <h4 style="margin: 0 0 0.5rem 0; font-size: 0.875rem; font-weight: 600; color: #e65100;">Risk Factors</h4>
               <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; color: #e65100; line-height: 1.6;">
-                ${analysis.riskFactors.map(risk => `<li>${sanitizeHtml(risk)}</li>`).join('')}
-              </ul>
-            </div>
-          ` : ''}
+                ${analysis.riskFactors.map(risk => `<li>${sanitizeHtml(risk || 'Not specified')}</li>`).join('')}
+        </ul>
+      </div>
+      ` : ''}
 
           ${analysis.questions && analysis.questions.length > 0 ? `
             <div style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">
               <h4 style="margin: 0 0 0.5rem 0; font-size: 0.875rem; font-weight: 600; color: #1565c0;">Clarifying Questions</h4>
               <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; color: #1565c0; line-height: 1.6;">
-                ${analysis.questions.map(question => `<li>${sanitizeHtml(question)}</li>`).join('')}
-              </ul>
-            </div>
-          ` : ''}
+                ${analysis.questions.map(question => `<li>${sanitizeHtml(question || 'Not specified')}</li>`).join('')}
+        </ul>
+      </div>
+      ` : ''}
 
           <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
             <h3 style="margin: 0 0 1rem 0; font-size: 1.125rem; color: #2c3e50;">Estimated Breakdown</h3>
             <div style="display: grid; gap: 0.75rem;">
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Hourly Rate</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${formatCurrency(analysis.recommendedRate)}/hr</div>
-              </div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${analysis.recommendedRate ? formatCurrency(analysis.recommendedRate) + '/hr' : 'Not determined'}</div>
+        </div>
               <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid #dee2e6;">
                 <div style="font-size: 0.875rem; color: #6c757d; font-weight: 500;">Hours Range</div>
-                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${analysis.hourRange.min} - ${analysis.hourRange.max} hours</div>
-              </div>
+                <div style="font-size: 0.875rem; color: #2c3e50; font-weight: 500; text-align: right;">${analysis.hourRange && analysis.hourRange.min && analysis.hourRange.max ? `${analysis.hourRange.min} - ${analysis.hourRange.max} hours` : 'Not determined'}</div>
+        </div>
               <div style="display: flex; justify-content: space-between;">
                 <div style="font-size: 1rem; color: #2c3e50; font-weight: 600;">Total Estimate</div>
-                <div style="font-size: 1rem; color: #e5734d; font-weight: 700; text-align: right;">${formatCurrency(analysis.totalEstimate.min)} - ${formatCurrency(analysis.totalEstimate.max)}</div>
-              </div>
-            </div>
-          </div>
+                <div style="font-size: 1rem; color: #e5734d; font-weight: 700; text-align: right;">${analysis.totalEstimate && analysis.totalEstimate.min && analysis.totalEstimate.max ? `${formatCurrency(analysis.totalEstimate.min)} - ${formatCurrency(analysis.totalEstimate.max)}` : 'Not determined'}</div>
+        </div>
+        </div>
+      </div>
 
       <div class="actions">
-            <a href="mailto:${data.email}?subject=${approveSubject}&body=${approveBody}" class="btn btn-approve">Approve & Send Proposal</a>
-            <a href="mailto:${data.email}?subject=${rejectSubject}&body=${rejectBody}" class="btn btn-reject">Decline</a>
+            ${data.email ? `<a href="mailto:${sanitizeHtml(data.email)}?subject=${approveSubject}&body=${approveBody}" class="btn btn-approve">Approve & Send Proposal</a>` : '<span class="btn btn-approve" style="opacity: 0.5; cursor: not-allowed;">Approve & Send Proposal (No email)</span>'}
+            ${data.email ? `<a href="mailto:${sanitizeHtml(data.email)}?subject=${rejectSubject}&body=${rejectBody}" class="btn btn-reject">Decline</a>` : '<span class="btn btn-reject" style="opacity: 0.5; cursor: not-allowed;">Decline (No email)</span>'}
           </div>
         </div>
       </div>
@@ -286,7 +283,7 @@ export async function sendApprovalEmail(
       from: 'StroomAI <proposals@stroomai.com>',
       to: 'info@stroomai.com',
       reply_to: data.email,
-      subject: `New Project Brief: ${data.name} - ${analysis.autoApprove ? '✓ Auto-Approve' : '⚠ Needs Review'}`,
+      subject: `New Project Brief: ${data.name || 'Unknown'} - ${analysis.autoApprove ? '✓ Auto-Approve' : '⚠ Needs Review'}`,
       html,
     });
 
@@ -334,11 +331,11 @@ export async function sendClientConfirmation(
       <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 0;">
         <div style="background: linear-gradient(135deg, #e5734d 0%, #d85a3a 100%); padding: 2rem; text-align: center;">
           <h1 style="color: #ffffff; margin: 0; font-size: 1.5rem; font-weight: 600;">Thank You!</h1>
-        </div>
+      </div>
 
         <div style="padding: 2rem;">
           <p style="margin: 0 0 1rem 0; font-size: 1rem; color: #2c3e50; line-height: 1.6;">
-            Hi ${sanitizeHtml(data.name)},
+            Hi ${data.name ? sanitizeHtml(data.name) : 'there'},
           </p>
 
           <p>
@@ -369,7 +366,7 @@ export async function sendClientConfirmation(
             <strong style="color: #e5734d;">Parker</strong><br>
             StroomAI
           </p>
-        </div>
+      </div>
       </div>
     </body>
     </html>

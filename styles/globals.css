@@ -860,7 +860,13 @@ a:hover {
   padding: 1rem 1.2rem;
   color: var(--ink);
   font-size: 1rem;
+  font-weight: 400;
   transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.contact-input::placeholder {
+  color: var(--ink-muted);
+  opacity: 0.7;
 }
 
 .contact-input:focus {
@@ -869,8 +875,64 @@ a:hover {
   outline: none;
 }
 
+.dark .contact-input {
+  background: var(--surface-soft);
+  border-color: var(--border-soft);
+  color: var(--ink);
+}
+
+.dark .contact-input::placeholder {
+  color: var(--ink-muted);
+  opacity: 0.6;
+}
+
 .contact-submit {
   margin-top: 0.75rem;
+}
+
+.contact-tab {
+  font-family: "Inter", sans-serif;
+}
+
+.contact-tab:hover {
+  color: var(--accent-clay) !important;
+}
+
+.dark .contact-tab {
+  color: var(--ink-muted);
+}
+
+.dark .contact-tab:hover {
+  color: var(--accent-clay) !important;
+}
+
+/* Select elements should match input styling */
+select.contact-input {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232f2a28' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  background-size: 12px 12px !important;
+  padding-right: 2.5rem !important;
+  cursor: pointer;
+}
+
+.dark select.contact-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f5f0eb' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+}
+
+/* Ensure select options are styled properly */
+select.contact-input option {
+  background-color: var(--surface-soft);
+  color: var(--ink);
+  padding: 0.5rem;
+}
+
+.dark select.contact-input option {
+  background-color: var(--surface-soft);
+  color: var(--ink);
 }
 
 .industry-icon {

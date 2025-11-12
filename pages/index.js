@@ -18,11 +18,13 @@ import {
   Target,
 } from "lucide-react";
 import Image from "next/image";
+import ProjectBriefForm from "../components/ProjectBriefForm";
 import ThemeToggle from "../components/ThemeToggle";
 
 const StroomAI = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [contactTab, setContactTab] = useState("quick"); // "quick" or "brief"
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -872,54 +874,141 @@ const StroomAI = () => {
 
               <div className="contact-grid">
                 <div className="surface-panel">
-                  <h3 className="hero-subtitle" style={{ fontSize: "2rem" }}>
-                    Get Started
-                  </h3>
-                  <div className="contact-form">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="contact-input"
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Business Email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="contact-input"
-                    />
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Company Name"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      required
-                      className="contact-input"
-                    />
-                    <textarea
-                      name="message"
-                      placeholder="Tell us about your project requirements..."
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={5}
-                      className="contact-input"
-                      style={{ resize: "none" }}
-                    ></textarea>
+                  {/* Tab Navigation */}
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.5rem",
+                      marginBottom: "2rem",
+                      borderBottom: "1px solid var(--border-soft)",
+                    }}
+                  >
                     <button
-                      onClick={handleFormSubmit}
-                      className="cta-button cta-button--primary contact-submit"
+                      type="button"
+                      onClick={() => setContactTab("quick")}
+                      className="contact-tab"
+                      style={{
+                        padding: "0.75rem 1.5rem",
+                        border: "none",
+                        background: "transparent",
+                        color:
+                          contactTab === "quick"
+                            ? "var(--accent-clay)"
+                            : "var(--ink-muted)",
+                        borderBottom:
+                          contactTab === "quick"
+                            ? "2px solid var(--accent-clay)"
+                            : "2px solid transparent",
+                        cursor: "pointer",
+                        fontWeight: contactTab === "quick" ? 600 : 400,
+                        transition: "all 0.2s",
+                        fontSize: "1rem",
+                      }}
                     >
-                      Send Message
+                      Get Started
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setContactTab("brief")}
+                      className="contact-tab"
+                      style={{
+                        padding: "0.75rem 1.5rem",
+                        border: "none",
+                        background: "transparent",
+                        color:
+                          contactTab === "brief"
+                            ? "var(--accent-clay)"
+                            : "var(--ink-muted)",
+                        borderBottom:
+                          contactTab === "brief"
+                            ? "2px solid var(--accent-clay)"
+                            : "2px solid transparent",
+                        cursor: "pointer",
+                        fontWeight: contactTab === "brief" ? 600 : 400,
+                        transition: "all 0.2s",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Project Brief
                     </button>
                   </div>
+
+                  {/* Quick Contact Form */}
+                  {contactTab === "quick" && (
+                    <div>
+                      <p
+                        style={{
+                          color: "var(--ink-muted)",
+                          marginBottom: "1.5rem",
+                          fontSize: "0.95rem",
+                        }}
+                      >
+                        Send us a quick message and we&apos;ll get back to you
+                        within 24 hours.
+                      </p>
+                      <div className="contact-form">
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Full Name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="contact-input"
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Business Email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="contact-input"
+                        />
+                        <input
+                          type="text"
+                          name="company"
+                          placeholder="Company Name"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          required
+                          className="contact-input"
+                        />
+                        <textarea
+                          name="message"
+                          placeholder="Tell us about your project requirements..."
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          required
+                          rows={5}
+                          className="contact-input"
+                          style={{ resize: "none" }}
+                        ></textarea>
+                        <button
+                          onClick={handleFormSubmit}
+                          className="cta-button cta-button--primary contact-submit"
+                        >
+                          Send Message
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Project Brief Form */}
+                  {contactTab === "brief" && (
+                    <div>
+                      <p
+                        style={{
+                          color: "var(--ink-muted)",
+                          marginBottom: "1.5rem",
+                          fontSize: "0.95rem",
+                        }}
+                      >
+                        Skip the meeting - get a detailed proposal in 48 hours.
+                      </p>
+                      <ProjectBriefForm />
+                    </div>
+                  )}
                 </div>
 
                 <div className="surface-panel space-y-8">

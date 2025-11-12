@@ -389,11 +389,17 @@ export default async function handler(req, res) {
       typeof sendApprovalEmail === "function" &&
       typeof sendClientConfirmation === "function"
     ) {
+      // Ensure data has all required fields for email
+      const emailData = {
+        ...data,
+        name: data.name || "there",
+      };
+
       Promise.all([
-        sendApprovalEmail(data, analysis).catch((err) => {
+        sendApprovalEmail(emailData, analysis).catch((err) => {
           console.error("Approval email error:", err);
         }),
-        sendClientConfirmation(data).catch((err) => {
+        sendClientConfirmation(emailData).catch((err) => {
           console.error("Confirmation email error:", err);
         }),
       ]).catch(() => {
